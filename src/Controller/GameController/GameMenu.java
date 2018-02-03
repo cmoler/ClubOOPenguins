@@ -1,4 +1,9 @@
 package Controller.GameController;
 
-public class GameMenu {
+public abstract class GameMenu {
+
+    public abstract void open();
+
+    public abstract void close();
 }
+

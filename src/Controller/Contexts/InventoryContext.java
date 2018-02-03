@@ -1,4 +1,10 @@
 package Controller.Contexts;
 
-public class InventoryContext {
+import Controller.MainControl.Input;
+
+public class InventoryContext extends Context{
+    @Override
+    public void processInput(Input input) {
+
+    }
 }
