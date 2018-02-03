@@ -1,4 +1,9 @@
 package Model.Map.Terrain;
 
-public class Terrain {
+import Model.Entity.EntityType;
+
+public abstract class Terrain {
+
+    public abstract boolean enter(EntityType entityType);
+
 }

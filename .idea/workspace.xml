@@ -2,20 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d9c1e80-d94a-4fca-891b-c888b897266d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/Context.java" afterPath="$PROJECT_DIR$/src/Controller/Contexts/Context.java" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameContext.java" afterPath="$PROJECT_DIR$/src/Controller/Contexts/GameContext.java" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameController.java" afterPath="$PROJECT_DIR$/src/Controller/GameController/GameController.java" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameLoader.java" afterPath="$PROJECT_DIR$/src/Controller/MainMenuControl/GameLoader.java" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameMenu.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameMenu.java" afterPath="$PROJECT_DIR$/src/Controller/GameController/GameMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameSaver.java" afterPath="$PROJECT_DIR$/src/Controller/MainMenuControl/GameSaver.java" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Input.java" afterPath="$PROJECT_DIR$/src/Controller/MainControl/Input.java" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/InventoryContext.java" afterPath="$PROJECT_DIR$/src/Controller/Contexts/InventoryContext.java" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/InventoryMenu.java" afterPath="$PROJECT_DIR$/src/Controller/GameController/InventoryMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.java" afterPath="$PROJECT_DIR$/src/Controller/MainControl/MainController.java" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MainMenuController.java" afterPath="$PROJECT_DIR$/src/Controller/MainMenuControl/MainMenuController.java" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MapBuilder.java" afterPath="$PROJECT_DIR$/src/Controller/MainMenuControl/MapBuilder.java" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MenuContext.java" afterPath="$PROJECT_DIR$/src/Controller/Contexts/MenuContext.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Direction.java" afterPath="$PROJECT_DIR$/src/Model/Entity/Direction.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Entity.java" afterPath="$PROJECT_DIR$/src/Model/Entity/Entity.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/EntityType.java" afterPath="$PROJECT_DIR$/src/Model/Entity/EntityType.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Equipment.java" afterPath="$PROJECT_DIR$/src/Model/Entity/Equipment.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Inventory.java" afterPath="$PROJECT_DIR$/src/Model/Entity/Inventory.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/InteractiveItem.java" afterPath="$PROJECT_DIR$/src/Model/Item/InteractiveItem.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/Item.java" afterPath="$PROJECT_DIR$/src/Model/Item/Item.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/OneShotItem.java" afterPath="$PROJECT_DIR$/src/Model/Item/OneShotItem.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/TakeableItem.java" afterPath="$PROJECT_DIR$/src/Model/Item/TakeableItem.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/Teleporter.java" afterPath="$PROJECT_DIR$/src/Model/Item/Teleporter.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Map/AreaEffect/AreaEffect.java" afterPath="$PROJECT_DIR$/src/Model/Map/AreaEffect/AreaEffect.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Map/AreaEffect/DamageAreaEffect.java" afterPath="$PROJECT_DIR$/src/Model/Map/AreaEffect/DamageAreaEffect.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Map/AreaEffect/HealAreaEffect.java" afterPath="$PROJECT_DIR$/src/Model/Map/AreaEffect/HealAreaEffect.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Map/AreaEffect/KillAreaEffect.java" afterPath="$PROJECT_DIR$/src/Model/Map/AreaEffect/KillAreaEffect.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Map/AreaEffect/LevelUpAreaEffect.java" afterPath="$PROJECT_DIR$/src/Model/Map/AreaEffect/LevelUpAreaEffect.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Map/Location.java" afterPath="$PROJECT_DIR$/src/Model/Map/Location.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Map/Map.java" afterPath="$PROJECT_DIR$/src/Model/Map/Map.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Map/Terrain/Glacier.java" afterPath="$PROJECT_DIR$/src/Model/Map/Terrain/Glacier.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Map/Terrain/Ice.java" afterPath="$PROJECT_DIR$/src/Model/Map/Terrain/Ice.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Map/Terrain/Terrain.java" afterPath="$PROJECT_DIR$/src/Model/Map/Terrain/Terrain.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Map/Terrain/Water.java" afterPath="$PROJECT_DIR$/src/Model/Map/Terrain/Water.java" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Map/World.java" afterPath="$PROJECT_DIR$/src/Model/Map/World.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,102 +35,108 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GameLoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/MainMenuControl/GameLoader.java">
+      <file leaf-file-name="AreaEffect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/AreaEffect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="567">
+              <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#321#322#0" expanded="true" />
+                <element signature="e#350#351#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DamageAreaEffect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/DamageAreaEffect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="29" lean-forward="false" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/MainMenuControl/MapBuilder.java">
+      <file leaf-file-name="HealAreaEffect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/HealAreaEffect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="84">
+              <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainMenuController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/MainMenuControl/MainMenuController.java">
+      <file leaf-file-name="KillAreaEffect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/KillAreaEffect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="105">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Context.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Contexts/Context.java">
+      <file leaf-file-name="LevelUpAreaEffect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/LevelUpAreaEffect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            <state relative-caret-position="105">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameContext.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Contexts/GameContext.java">
+      <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Item/Item.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="126">
+              <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuContext.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Contexts/MenuContext.java">
+      <file leaf-file-name="InteractiveItem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Item/InteractiveItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="147">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InventoryContext.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Contexts/InventoryContext.java">
+      <file leaf-file-name="OneShotItem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Item/OneShotItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="147">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/GameController/GameController.java">
+      <file leaf-file-name="TakeableItem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Item/TakeableItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="168">
+              <caret line="8" column="5" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InventoryMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/GameController/InventoryMenu.java">
+      <file leaf-file-name="Teleporter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Model/Item/Teleporter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameMenu.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/GameController/GameMenu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="189">
+              <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,34 +173,12 @@
         <option value="$PROJECT_DIR$/src/View/StatusView/EquipmentView.java" />
         <option value="$PROJECT_DIR$/src/View/StatusView/InventoryView.java" />
         <option value="$PROJECT_DIR$/src/View/StatusView/StatsView.java" />
-        <option value="$PROJECT_DIR$/src/Model/Entity/Entity.java" />
-        <option value="$PROJECT_DIR$/src/Model/Entity/Direction.java" />
-        <option value="$PROJECT_DIR$/src/Model/Entity/EntityType.java" />
-        <option value="$PROJECT_DIR$/src/Model/Entity/Inventory.java" />
-        <option value="$PROJECT_DIR$/src/Model/Entity/Equipment.java" />
-        <option value="$PROJECT_DIR$/src/Model/Map/World.java" />
-        <option value="$PROJECT_DIR$/src/Model/Map/Map.java" />
-        <option value="$PROJECT_DIR$/src/Model/Map/Location.java" />
         <option value="$PROJECT_DIR$/src/Model/Map/AreaEffect.java" />
         <option value="$PROJECT_DIR$/src/Model/Map/Terrain.java" />
         <option value="$PROJECT_DIR$/src/Model/Map/Ice.java" />
         <option value="$PROJECT_DIR$/src/Model/Map/Water.java" />
         <option value="$PROJECT_DIR$/src/Model/Map/Glacier.java" />
         <option value="$PROJECT_DIR$/src/Model/Map/HealAreaEffect.java" />
-        <option value="$PROJECT_DIR$/src/Model/Map/AreaEffect/AreaEffect.java" />
-        <option value="$PROJECT_DIR$/src/Model/Map/AreaEffect/HealAreaEffect.java" />
-        <option value="$PROJECT_DIR$/src/Model/Map/AreaEffect/DamageAreaEffect.java" />
-        <option value="$PROJECT_DIR$/src/Model/Map/AreaEffect/KillAreaEffect.java" />
-        <option value="$PROJECT_DIR$/src/Model/Map/AreaEffect/LevelUpAreaEffect.java" />
-        <option value="$PROJECT_DIR$/src/Model/Map/Terrain/Glacier.java" />
-        <option value="$PROJECT_DIR$/src/Model/Map/Terrain/Ice.java" />
-        <option value="$PROJECT_DIR$/src/Model/Map/Terrain/Terrain.java" />
-        <option value="$PROJECT_DIR$/src/Model/Map/Terrain/Water.java" />
-        <option value="$PROJECT_DIR$/src/Model/Item/Item.java" />
-        <option value="$PROJECT_DIR$/src/Model/Item/OneShotItem.java" />
-        <option value="$PROJECT_DIR$/src/Model/Item/InteractiveItem.java" />
-        <option value="$PROJECT_DIR$/src/Model/Item/TakeableItem.java" />
-        <option value="$PROJECT_DIR$/src/Model/Item/Teleporter.java" />
         <option value="$PROJECT_DIR$/src/Controller/MainControl/MainController.java" />
         <option value="$PROJECT_DIR$/src/Controller/MainControl/Input.java" />
         <option value="$PROJECT_DIR$/src/Controller/MainMenuControl/GameSaver.java" />
@@ -200,6 +192,28 @@
         <option value="$PROJECT_DIR$/src/Controller/GameController/GameController.java" />
         <option value="$PROJECT_DIR$/src/Controller/GameController/InventoryMenu.java" />
         <option value="$PROJECT_DIR$/src/Controller/GameController/GameMenu.java" />
+        <option value="$PROJECT_DIR$/src/Model/Entity/Entity.java" />
+        <option value="$PROJECT_DIR$/src/Model/Entity/Equipment.java" />
+        <option value="$PROJECT_DIR$/src/Model/Entity/Inventory.java" />
+        <option value="$PROJECT_DIR$/src/Model/Entity/Direction.java" />
+        <option value="$PROJECT_DIR$/src/Model/Entity/EntityType.java" />
+        <option value="$PROJECT_DIR$/src/Model/Map/Location.java" />
+        <option value="$PROJECT_DIR$/src/Model/Map/Map.java" />
+        <option value="$PROJECT_DIR$/src/Model/Map/World.java" />
+        <option value="$PROJECT_DIR$/src/Model/Map/Terrain/Terrain.java" />
+        <option value="$PROJECT_DIR$/src/Model/Map/Terrain/Glacier.java" />
+        <option value="$PROJECT_DIR$/src/Model/Map/Terrain/Ice.java" />
+        <option value="$PROJECT_DIR$/src/Model/Map/Terrain/Water.java" />
+        <option value="$PROJECT_DIR$/src/Model/Map/AreaEffect/AreaEffect.java" />
+        <option value="$PROJECT_DIR$/src/Model/Map/AreaEffect/KillAreaEffect.java" />
+        <option value="$PROJECT_DIR$/src/Model/Map/AreaEffect/LevelUpAreaEffect.java" />
+        <option value="$PROJECT_DIR$/src/Model/Item/Item.java" />
+        <option value="$PROJECT_DIR$/src/Model/Item/InteractiveItem.java" />
+        <option value="$PROJECT_DIR$/src/Model/Item/OneShotItem.java" />
+        <option value="$PROJECT_DIR$/src/Model/Item/TakeableItem.java" />
+        <option value="$PROJECT_DIR$/src/Model/Map/AreaEffect/DamageAreaEffect.java" />
+        <option value="$PROJECT_DIR$/src/Model/Map/AreaEffect/HealAreaEffect.java" />
+        <option value="$PROJECT_DIR$/src/Model/Item/Teleporter.java" />
       </list>
     </option>
   </component>
@@ -238,6 +252,41 @@
               <item name="ClubOOPenguins" type="b2602c69:ProjectViewProjectNode" />
               <item name="ClubOOPenguins" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ClubOOPenguins" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ClubOOPenguins" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ClubOOPenguins" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ClubOOPenguins" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ClubOOPenguins" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ClubOOPenguins" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Item" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ClubOOPenguins" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ClubOOPenguins" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Map" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ClubOOPenguins" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ClubOOPenguins" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Map" type="462c0819:PsiDirectoryNode" />
+              <item name="AreaEffect" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -359,6 +408,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -372,7 +422,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -563,182 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Entity/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Entity/Direction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Entity/EntityType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Entity/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Entity/Equipment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Map/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Map/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Map/Location.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/AreaEffect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/HealAreaEffect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/DamageAreaEffect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/KillAreaEffect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/LevelUpAreaEffect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Map/Terrain/Glacier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Map/Terrain/Ice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Map/Terrain/Terrain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Map/Terrain/Water.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Item/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Item/OneShotItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Item/InteractiveItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Item/TakeableItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Item/Teleporter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/MainControl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -848,6 +722,237 @@
         <state relative-caret-position="42">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Entity/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="46" lean-forward="false" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#245#246#0" expanded="false" />
+            <element signature="e#273#274#0" expanded="false" />
+            <element signature="e#324#325#0" expanded="false" />
+            <element signature="e#352#353#0" expanded="false" />
+            <element signature="e#400#401#0" expanded="false" />
+            <element signature="e#427#428#0" expanded="false" />
+            <element signature="e#477#478#0" expanded="false" />
+            <element signature="e#505#506#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Entity/Equipment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding>
+            <element signature="e#160#161#0" expanded="false" />
+            <element signature="e#188#189#0" expanded="false" />
+            <element signature="e#236#237#0" expanded="false" />
+            <element signature="e#264#265#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Entity/EntityType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Entity/Direction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Entity/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="766">
+          <caret line="61" column="5" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="61" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#319#320#0" expanded="false" />
+            <element signature="e#352#353#0" expanded="false" />
+            <element signature="e#393#394#0" expanded="false" />
+            <element signature="e#425#426#0" expanded="false" />
+            <element signature="e#515#516#0" expanded="false" />
+            <element signature="e#542#543#0" expanded="false" />
+            <element signature="e#614#615#0" expanded="false" />
+            <element signature="e#647#648#0" expanded="false" />
+            <element signature="e#673#674#0" expanded="false" />
+            <element signature="e#699#700#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Map/Location.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="808">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#474#475#0" expanded="false" />
+            <element signature="e#501#502#0" expanded="false" />
+            <element signature="e#542#543#0" expanded="false" />
+            <element signature="e#575#576#0" expanded="false" />
+            <element signature="e#623#624#0" expanded="false" />
+            <element signature="e#651#652#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Map/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="e#146#147#0" expanded="false" />
+            <element signature="e#184#185#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Map/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Map/Terrain/Terrain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Map/Terrain/Glacier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <element signature="e#161#162#0" expanded="false" />
+            <element signature="e#189#190#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Map/Terrain/Ice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <element signature="e#157#158#0" expanded="false" />
+            <element signature="e#185#186#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Map/Terrain/Water.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <element signature="e#159#160#0" expanded="false" />
+            <element signature="e#187#188#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/AreaEffect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" column="34" lean-forward="false" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/KillAreaEffect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/LevelUpAreaEffect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Item/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Item/InteractiveItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Item/OneShotItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/DamageAreaEffect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="29" lean-forward="false" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Map/AreaEffect/HealAreaEffect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Item/TakeableItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Item/Teleporter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,4 +1,10 @@
 package Model.Item;
 
-public class OneShotItem {
+import Model.Entity.Entity;
+
+public class OneShotItem extends Item{
+    @Override
+    public void touch(Entity entity) {
+
+    }
 }

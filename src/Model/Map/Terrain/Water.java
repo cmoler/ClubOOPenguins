@@ -1,4 +1,10 @@
 package Model.Map.Terrain;
 
-public class Water {
+import Model.Entity.EntityType;
+
+public class Water extends Terrain{
+    @Override
+    public boolean enter(EntityType entityType) {
+        return false;
+    }
 }

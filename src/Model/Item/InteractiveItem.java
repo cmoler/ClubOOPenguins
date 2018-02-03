@@ -1,4 +1,10 @@
 package Model.Item;
 
-public class InteractiveItem {
+import Model.Entity.Entity;
+
+public class InteractiveItem extends Item{
+    @Override
+    public void touch(Entity entity) {
+
+    }
 }
