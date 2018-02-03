@@ -2,5 +2,5 @@ package View.AreaView.ItemView;
 
 import View.View;
 
-public class ItemView {
+public abstract class ItemView extends View.Viewport{
 }

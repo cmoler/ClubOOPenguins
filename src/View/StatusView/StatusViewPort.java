@@ -2,5 +2,11 @@ package View.StatusView;
 
 import View.View;
 
-public class StatusViewPort {
+import java.awt.*;
+
+public class StatusViewPort extends View.Viewport{
+    @Override
+    public void draw(Graphics2D graphics2D) {
+
+    }
 }

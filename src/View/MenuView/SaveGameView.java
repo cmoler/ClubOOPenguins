@@ -2,5 +2,18 @@ package View.MenuView;
 
 import View.View;
 
-public class SaveGameView {
+import java.awt.*;
+import java.util.List;
+
+public class SaveGameView extends View.Viewport{
+
+    @Override
+    public void draw(Graphics2D graphics2D) {
+
+    }
+
+    @Override
+    public List<View.Viewport> getChildren(){
+        return null;
+    }
 }
