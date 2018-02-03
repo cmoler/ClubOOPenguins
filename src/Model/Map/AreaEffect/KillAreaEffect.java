@@ -1,4 +1,4 @@
-package Model;
+package Model.Map.AreaEffect;
 
 public class KillAreaEffect {
 }
