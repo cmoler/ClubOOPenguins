@@ -10,8 +10,8 @@ public class World {
     private Map currentMap;
     private List<Map> maps;
 
-    public void changCurrentMapTo(Map map){
-
+    public void changeCurrentMapTo(Map map){
+        currentMap = map;
     }
 
     public void buildMap(MapBuilder mapBuilder){
