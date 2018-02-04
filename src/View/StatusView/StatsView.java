@@ -15,10 +15,10 @@ public class StatsView extends Viewport {
     private final int ENTITY_HEALTH_HEIGHT = 20;
     private final int ENTITY_HEALTH_WIDTH = 20;
 
-    private final int ENTITY_EXP_X = 20;
-    private final int ENTITY_EXP_Y = 20;
-    private final int ENTITY_EXP_HEIGHT = 20;
-    private final int ENTITY_EXP_WIDTH = 20;
+    private final int ENTITY_EXP_X = 40;
+    private final int ENTITY_EXP_Y = 40;
+    private final int ENTITY_EXP_HEIGHT = 40;
+    private final int ENTITY_EXP_WIDTH = 40;
 
     private Entity entity;
 
