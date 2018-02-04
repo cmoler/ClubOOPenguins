@@ -12,8 +12,12 @@ public class ItemView extends Viewport {
 
     private Image itemImage;
 
+    public ItemView(){
+
+    }
+
     public ItemView(String fileName, Location location){
-        ImageIcon imageIcon = new ImageIcon("fileName");
+        ImageIcon imageIcon = new ImageIcon(fileName);
         itemImage = imageIcon.getImage();
     }
 

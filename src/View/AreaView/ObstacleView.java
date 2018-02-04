@@ -12,7 +12,7 @@ public class ObstacleView extends Viewport {
     private Image obstacleImage;
 
     public ObstacleView(String fileName, Location location){
-        ImageIcon imageIcon = new ImageIcon("fileName");
+        ImageIcon imageIcon = new ImageIcon(fileName);
         obstacleImage = imageIcon.getImage();
     }
 

@@ -13,7 +13,7 @@ public class AreaEffectView extends Viewport {
     private Image areaEffectImage;
 
     public AreaEffectView(String fileName, Location location){
-        ImageIcon imageIcon = new ImageIcon("fileName");
+        ImageIcon imageIcon = new ImageIcon(fileName);
         areaEffectImage = imageIcon.getImage();
     }
 

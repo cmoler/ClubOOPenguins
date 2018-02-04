@@ -12,7 +12,7 @@ public class TerrainView extends Viewport {
     private Image terrainImage;
 
     public TerrainView(String fileName, Location location){
-        ImageIcon imageIcon = new ImageIcon("fileName");
+        ImageIcon imageIcon = new ImageIcon(fileName);
         terrainImage = imageIcon.getImage();
     }
 

@@ -14,7 +14,7 @@ public class AvatarView extends Viewport {
     private Entity entity;
 
     public AvatarView(String fileName, Entity entity){
-        ImageIcon imageIcon = new ImageIcon("fileName");
+        ImageIcon imageIcon = new ImageIcon(fileName);
         avatarImage = imageIcon.getImage();
         this.entity = entity;
         entity.attach(this);
