@@ -10,19 +10,23 @@ import java.util.List;
 public class LocationView extends Viewport {
 
     private Location location;
+    private int x;
+    private int y;
 
-    public LocationView(Location location){
+    public LocationView(Location location, int x, int y){
         this.location = location;
+        this.x = x;
+        this.y = y;
     }
 
     @Override
     public int getX(){
-        return location.getX();
+        return x;
     }
 
     @Override
     public int getY(){
-        return location.getY();
+        return y;
     }
 
     @Override

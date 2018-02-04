@@ -12,7 +12,7 @@ public class MapView extends Viewport {
     private final int VIEW_SIZE_X = 20;
     private final int VIEW_SIZE_Y = 20;
 
-    public MapView(Map map, Entity entity){
+    public MapView(){
 
     }
 
