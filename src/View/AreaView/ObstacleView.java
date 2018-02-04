@@ -1,6 +1,5 @@
 package View.AreaView;
 
-import Model.Map.Location;
 import View.Viewport;
 
 import javax.swing.*;

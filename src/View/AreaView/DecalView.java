@@ -1,10 +1,8 @@
 package View.AreaView;
 
 
-import Model.Map.Location;
 import View.Viewport;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
