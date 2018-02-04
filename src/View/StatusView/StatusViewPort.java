@@ -1,13 +1,15 @@
 package View.StatusView;
 
 
+import Model.Entity.Entity;
 import View.Viewport;
 
 import java.awt.*;
 
 public class StatusViewPort extends Viewport {
-    @Override
-    public void draw(Graphics2D graphics2D) {
 
+    public StatusViewPort(Entity entity){
+        add(new StatsView(entity));
     }
+
 }
