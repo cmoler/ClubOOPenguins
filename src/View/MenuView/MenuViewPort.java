@@ -1,10 +1,10 @@
 package View.MenuView;
 
-import View.View;
+import View.Viewport;
 
 import java.awt.*;
 
-public class MenuViewPort extends View.Viewport {
+public class MenuViewPort extends Viewport {
 
     public MenuViewPort(){
 

@@ -1,11 +1,12 @@
 package View.AreaView;
 
-import View.View;
+
+import View.Viewport;
 
 import java.awt.*;
 import java.util.List;
 
-public class AvatarView extends View.Viewport{
+public class AvatarView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D) {
@@ -13,7 +14,7 @@ public class AvatarView extends View.Viewport{
     }
 
     @Override
-    public List<View.Viewport> getChildren(){
+    public List<Viewport> getChildren(){
         return null;
     }
 }
