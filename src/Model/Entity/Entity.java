@@ -60,4 +60,21 @@ public class Entity {
     public void notifyView(){
 
     }
+
+    public int getX(){
+        return -1;
+    }
+
+    public int getY(){
+        return -1;
+    }
+
+    public int getWidth(){
+        return -1;
+    }
+
+    public int getHeight(){
+        return -1;
+    }
+
 }
