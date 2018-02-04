@@ -17,7 +17,7 @@ public class Entity {
     private Location location;
     private Map map;
 
-    // should there be a default location and map?
+    // TODO: should there be a default location and map?
     public Entity() {
         entityType = EntityType.ICE; // default EntityType
     }
@@ -79,12 +79,28 @@ public class Entity {
     }
 
     // getters
+    public int getHealth(){
+        return health;
+    }
+
+    public int getExperience(){
+        return experience;
+    }
+
+    public int getLevel(){
+        return level;
+    }
+
     public Map getMap(){
         return map;
     }
 
     public Inventory getInventory() {
         return inventory;
+    }
+
+    public Location getLocation() {
+        return location;
     }
 
     public int getX(){
