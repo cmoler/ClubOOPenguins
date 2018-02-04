@@ -1,11 +1,11 @@
 package View.MenuView;
 
-import View.View;
+import View.Viewport;
 
 import java.awt.*;
 import java.util.List;
 
-public class SaveGameView extends View.Viewport{
+public class SaveGameView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D) {
@@ -13,7 +13,7 @@ public class SaveGameView extends View.Viewport{
     }
 
     @Override
-    public List<View.Viewport> getChildren(){
+    public List<Viewport> getChildren(){
         return null;
     }
 }
