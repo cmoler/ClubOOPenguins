@@ -1,18 +1,18 @@
 package View.StatusView;
 
-import View.View;
+import View.Viewport;
 
 import java.awt.*;
 import java.util.List;
 
-public class EquipmentView extends View.Viewport{
+public class EquipmentView extends Viewport {
     @Override
     public void draw(Graphics2D graphics2D) {
 
     }
 
     @Override
-    public List<View.Viewport> getChildren(){
+    public List<Viewport> getChildren(){
         return null;
     }
 }
