@@ -1,10 +1,12 @@
 package View;
 
+import Configs.Commons;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
-public abstract class Viewport extends JPanel{
+public abstract class Viewport extends JPanel implements Commons {
 
     private Graphics2D graphics2D;
 
