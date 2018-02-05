@@ -12,7 +12,7 @@ public class DecalView extends Viewport {
 
     private Image decalImage;
 
-    public DecalView(String fileName, Location location){
+    public DecalView(String fileName){
         ImageIcon imageIcon = new ImageIcon(fileName);
         decalImage = imageIcon.getImage();
     }

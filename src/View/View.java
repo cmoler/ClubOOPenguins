@@ -7,14 +7,16 @@ import javax.swing.*;
 public class View extends JFrame {
 
 
-    public View(){
+    public View(Viewport viewport){
 
-        initUI();
+        initUI(viewport);
     }
 
-    private void initUI() {
+    private void initUI(Viewport viewport) {
 
         setTitle("CLUBOOP");
+        add(viewport);
+
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(Commons.WIDTH, Commons.HEIGHT);
         setLocationRelativeTo(null);

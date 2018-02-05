@@ -8,10 +8,25 @@ import java.util.List;
 
 public abstract class Viewport extends JPanel implements Commons {
 
-    private Graphics2D graphics2D;
-
     protected Viewport parent;
     protected List<Viewport> children;
+
+    @Override
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+
+        Graphics2D graphics2D = (Graphics2D) g;
+
+        graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON);
+
+        graphics2D.setRenderingHint(RenderingHints.KEY_RENDERING,
+                RenderingHints.VALUE_RENDER_QUALITY);
+
+        draw(graphics2D);
+
+        Toolkit.getDefaultToolkit().sync();
+    }
 
     public void draw(Graphics2D graphics2D){
         for(Viewport child: children){
