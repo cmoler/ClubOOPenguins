@@ -4,12 +4,31 @@ import Configs.Commons;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Timer;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.TimerTask;
 
-public abstract class Viewport extends JPanel implements Commons {
+public class Viewport extends JPanel implements Commons {
+
+    Timer timer;
 
     protected Viewport parent;
-    protected List<Viewport> children;
+    protected List<Viewport> children = new ArrayList<Viewport>();
+
+    public Viewport(){
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new ScheduleTask(), 1000, 10);
+    }
+
+    private class ScheduleTask extends TimerTask {
+
+        @Override
+        public void run() {
+
+            repaint();
+        }
+    }
 
     @Override
     public void paintComponent(Graphics g){
