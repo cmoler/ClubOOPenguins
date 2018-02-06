@@ -17,6 +17,10 @@ public class Viewport extends JPanel implements Commons {
     protected List<Viewport> children = new ArrayList<Viewport>();
 
     public Viewport(){
+
+        setFocusable(true);
+        setDoubleBuffered(true);
+
         timer = new Timer();
         timer.scheduleAtFixedRate(new ScheduleTask(), 1000, 10);
     }
@@ -29,6 +33,13 @@ public class Viewport extends JPanel implements Commons {
             repaint();
         }
     }
+
+    @Override
+    public void addNotify() {
+
+        super.addNotify();
+    }
+
 
     @Override
     public void paintComponent(Graphics g){

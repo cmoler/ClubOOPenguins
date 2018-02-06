@@ -14,14 +14,15 @@ public class View extends JFrame {
 
     private void initUI(Viewport viewport) {
 
-        setTitle("CLUBOOP");
         add(viewport);
+        setTitle("CLUBOOP");
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(Commons.WIDTH, Commons.HEIGHT);
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
+
     }
 
 }
