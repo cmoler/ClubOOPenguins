@@ -3,6 +3,7 @@ package Model.Item;
 import Model.Entity.Entity;
 import Model.Map.Location;
 import Model.Map.Map;
+import Model.Map.World;
 
 public class Teleporter extends InteractiveItem{
 
@@ -14,5 +15,7 @@ public class Teleporter extends InteractiveItem{
     @Override
     public void touch(Entity entity) {
         entity.teleport(location, map);
+        World.getWorld().changeCurrentMapTo(map);
+
     }
 }
