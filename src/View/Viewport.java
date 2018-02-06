@@ -4,6 +4,8 @@ import Configs.Commons;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.Timer;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +20,23 @@ public class Viewport extends JPanel implements Commons {
 
     public Viewport(){
 
+        addKeyListener(new TAdapter());
         setFocusable(true);
         setDoubleBuffered(true);
 
         timer = new Timer();
         timer.scheduleAtFixedRate(new ScheduleTask(), 1000, 10);
+    }
+
+    private class TAdapter extends KeyAdapter {
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+        }
     }
 
     private class ScheduleTask extends TimerTask {
