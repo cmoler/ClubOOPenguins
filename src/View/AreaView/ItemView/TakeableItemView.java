@@ -1,6 +1,6 @@
 package View.AreaView.ItemView;
 
-import View.View;
+import View.Viewport;
 
 import java.awt.*;
 import java.util.List;
@@ -13,7 +13,7 @@ public class TakeableItemView extends ItemView{
     }
 
     @Override
-    public List<View.Viewport> getChildren(){
+    public List<Viewport> getChildren(){
         return null;
     }
 }

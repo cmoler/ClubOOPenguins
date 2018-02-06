@@ -1,14 +1,18 @@
 package View.AreaView;
 
-import View.View;
+import Model.Entity.Entity;
+import Model.Map.Map;
+import View.Viewport;
 
 import java.awt.*;
 import java.util.List;
 
-public class MapView extends View.Viewport{
+public class MapView extends Viewport {
 
-    @Override
-    public void draw(Graphics2D graphics2D) {
+    private final int VIEW_SIZE_X = 20;
+    private final int VIEW_SIZE_Y = 20;
+
+    public MapView(){
 
     }
 
