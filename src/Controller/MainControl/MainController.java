@@ -1,6 +1,7 @@
 package Controller.MainControl;
 
 import Controller.Contexts.Context;
+import Controller.Contexts.MenuContext;
 import Controller.GameController.GameController;
 import Controller.MainMenuControl.MainMenuController;
 import View.Viewport;
@@ -13,7 +14,7 @@ import javax.swing.*;
 public class MainController {
 
     private Input input;
-    private Context context;
+    private Context activeContext;
     private OOPenguinGame game;
 
     private Viewport viewport;
@@ -24,7 +25,8 @@ public class MainController {
 
     public MainController(){
         game = new OOPenguinGame();
-        input = new Input();
+        activeContext = new MenuContext();
+        input = new Input(activeContext);
         game.addKeyListener(input);
 
 

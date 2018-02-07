@@ -1,12 +1,13 @@
 package Controller.Contexts;
 
-import Controller.MainControl.Input;
 import Controller.MainControl.MainController;
+
+import java.awt.event.KeyEvent;
 
 public abstract class Context {
 
     private MainController mainController;
 
-    public abstract void processInput(Input input);
+    public abstract void processKeyEvent(KeyEvent event);
 
 }

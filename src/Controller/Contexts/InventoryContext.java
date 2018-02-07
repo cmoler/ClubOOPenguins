@@ -1,10 +1,10 @@
 package Controller.Contexts;
 
-import Controller.MainControl.Input;
+import java.awt.event.KeyEvent;
 
 public class InventoryContext extends Context{
     @Override
-    public void processInput(Input input) {
+    public void processKeyEvent(KeyEvent event) {
 
     }
 }
