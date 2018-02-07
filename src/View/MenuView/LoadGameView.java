@@ -1,19 +1,29 @@
 package View.MenuView;
 
-import View.View;
+import Configs.TextBoxInfo;
+import View.Viewport;
 
 import java.awt.*;
 import java.util.List;
 
-public class LoadGameView extends View.Viewport{
+public class LoadGameView extends Viewport {
 
-    @Override
-    public void draw(Graphics2D graphics2D) {
+    private int x;
+    private int y;
 
+    public LoadGameView(int x, int y){
+        this.x = x;
+        this.y = y;
     }
 
     @Override
-    public List<View.Viewport> getChildren(){
+    public void draw(Graphics2D graphics2D) {
+        graphics2D.drawRect(x, y, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
+        graphics2D.drawString("Load Game", (x+TextBoxInfo.TEXTBOX_WIDTH)/2, (y+TextBoxInfo.TEXTBOX_HEIGHT)/2);
+    }
+
+    @Override
+    public List<Viewport> getChildren(){
         return null;
     }
 }

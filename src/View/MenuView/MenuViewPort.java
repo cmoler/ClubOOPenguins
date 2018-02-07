@@ -1,17 +1,17 @@
 package View.MenuView;
 
-import View.View;
+import Configs.TextBoxInfo;
+import View.Viewport;
 
 import java.awt.*;
 
-public class MenuViewPort extends View.Viewport {
 
-    public MenuViewPort(){
+public class MenuViewPort extends Viewport {
 
+    public MenuViewPort(int startX, int startY){
+        add(new SaveGameView(startX, startY));
+        add(new LoadGameView(startX, startY+ TextBoxInfo.TEXTBOX_HEIGHT));
+        add(new ExitGameView(startX, startY + 2*TextBoxInfo.TEXTBOX_HEIGHT));
     }
 
-    @Override
-    public void draw(Graphics2D graphics2D) {
-
-    }
 }
