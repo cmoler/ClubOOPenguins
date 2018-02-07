@@ -12,17 +12,28 @@ public class MapBuilder {
     public MapBuilder(){}
 
     public Map buildMap(String mapID) throws FileNotFoundException {
-        String filename = "tests/Model/Map/MapBuilder/MapModel" + mapID + ".txt";
+        String filename = "tests/Model/Map/MapBuilder/MapModel" + mapID + ".txt"; // will change after testing
+
         Scanner s = new Scanner(new File(filename));
         List<String> mapData = new ArrayList<String>();
         while (s.hasNextLine()) {
             mapData.add(s.nextLine());
         }
-        for(String line : mapData){
-            System.out.println(line);
-        }
+
+        Map map;
+
+        if(!mapData.get(0).equals(mapID))
+            error("mapID error in " + filename);
+        if(!mapData.get(1).equals("MAP"))
+            error("format error--no MAP on second line");
+        System.out.println(mapData.get(2).charAt(0));
+        System.out.println(mapData.get(2).charAt(1));
 
         return new Map();
+    }
+
+    private void error(String message){
+        System.out.println("MapBuilder.java: " + message);
     }
 
 }
