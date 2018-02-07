@@ -1,6 +1,7 @@
 package View.AreaView;
 
 
+import Configs.Commons;
 import Model.Map.Location;
 import View.Viewport;
 
@@ -19,8 +20,8 @@ public class DecalView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        graphics2D.drawImage(decalImage, parent.getX(), parent.getY(),
-                parent.getWidth(), parent.getHeight(),this );
+        graphics2D.drawImage(decalImage, parent.getLocationX(), parent.getLocationY(),
+                Commons.TILE_WIDTH, Commons.TILE_HEIGHT,this );
     }
 
     @Override

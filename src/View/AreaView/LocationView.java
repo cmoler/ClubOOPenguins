@@ -20,23 +20,13 @@ public class LocationView extends Viewport {
     }
 
     @Override
-    public int getX(){
+    public int getLocationX(){
         return x;
     }
 
     @Override
-    public int getY(){
+    public int getLocationY(){
         return y;
-    }
-
-    @Override
-    public int getWidth(){
-        return location.getWidth();
-    }
-
-    @Override
-    public int getHeight(){
-        return location.getHeight();
     }
 
 }

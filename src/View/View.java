@@ -30,7 +30,7 @@ public class View extends JFrame {
         setResizable(false);
 
         add(locationView);
-        add(decalView);
+        //add(decalView);
         setTitle("CLUBOOP");
 
         //setVisible(true);

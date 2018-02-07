@@ -15,7 +15,7 @@ import java.util.TimerTask;
 public class Viewport extends JPanel implements Commons {
 
     Timer timer;
-
+    
     protected Viewport parent;
     protected List<Viewport> children = new ArrayList<Viewport>();
 
@@ -27,6 +27,14 @@ public class Viewport extends JPanel implements Commons {
 
         timer = new Timer();
         timer.scheduleAtFixedRate(new ScheduleTask(), 1000, 10);
+    }
+
+    public int getLocationX() {
+        return -1;
+    }
+
+    public int getLocationY() {
+        return -1;
     }
 
     private class TAdapter extends KeyAdapter {
@@ -94,22 +102,6 @@ public class Viewport extends JPanel implements Commons {
     public List<Viewport> getChildren(){
 
         return children;
-    }
-
-    public int getX(){
-        return -1;
-    }
-
-    public int getY(){
-        return -1;
-    }
-
-    public int getWidth(){
-        return -1;
-    }
-
-    public int getHeight(){
-        return -1;
     }
 
     public void update(){
