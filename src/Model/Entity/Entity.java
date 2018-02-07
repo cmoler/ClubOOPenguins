@@ -1,5 +1,6 @@
 package Model.Entity;
 
+import Model.Item.Item;
 import Model.Map.Location;
 import Model.Map.Map;
 import Model.Map.World;
@@ -24,7 +25,6 @@ public class Entity{
     private Location location;
     // map is in World
 
-    // TODO: should there be a default location and map?
     public Entity(Location initialLocation) {
         entityType = EntityType.ICE; // default EntityType
         location = initialLocation;
@@ -70,9 +70,7 @@ public class Entity{
             return false;
     }
 
-
-
-    private void moveToLocation(Direction direction){
+    private void move(Direction direction){
         if(location.getAdjacentAt(direction) == null) // if trying to move off edge of map
             return;
         Location nextLocation = location.getAdjacentAt(direction);
@@ -80,6 +78,13 @@ public class Entity{
             this.location = nextLocation;
             if (this.location.getAreaEffect() != null){
                 this.location.getAreaEffect().activate(this);
+            }
+            if (this.location.getItems() != null){
+                List<Item> items = this.location.getItems();
+                for (Item item : items){
+                    // remove from list if should be removed
+                    // add to inventory if TakeableItem
+                }
             }
         }
     }
@@ -117,6 +122,7 @@ public class Entity{
         observers.remove(viewport);
     }
 
+    // TODO: add notifyView() to functions that require it
     public void notifyView(){
         for (Viewport viewport : observers){
             viewport.update();
