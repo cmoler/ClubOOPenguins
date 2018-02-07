@@ -25,13 +25,14 @@ public class Entity{
     // map is in World
 
     // TODO: should there be a default location and map?
-    public Entity() {
+    public Entity(Location initialLocation) {
         entityType = EntityType.ICE; // default EntityType
-//        location = World... .center ?
+        location = initialLocation;
     }
 
-    public Entity(EntityType type){
+    public Entity(EntityType type, Location initialLocation){
         entityType = type;
+        location = initialLocation;
     }
 
     public EntityType getEntityType(){
