@@ -2,16 +2,29 @@ package Model.Map;
 
 import Controller.MainMenuControl.MapBuilder;
 import View.Viewport;
-
 import java.util.List;
 
 public class World {
 
+    public static World instance = null;
+
     private Map currentMap;
     private List<Map> maps;
 
-    public void changCurrentMapTo(Map map){
+    protected World(){
+        // Can't instantiate
+    }
 
+    public static World getWorld(){
+        if (instance == null)
+        {
+            instance = new World();
+        }
+        return instance;
+    }
+
+    public void changeCurrentMapTo(Map map){
+        currentMap = map;
     }
 
     public void buildMap(MapBuilder mapBuilder){

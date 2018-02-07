@@ -7,23 +7,38 @@ import java.util.List;
 
 public class Inventory {
 
+//    TODO - implement observer pattern
+//    TODO - error handling
+
     private List<TakeableItem> items;
     private Equipment equipment;
 
     public boolean addItem(TakeableItem item){
-        return false;
+        boolean itemAdded;
+        itemAdded = items.add(item);
+
+        return itemAdded;
     }
 
     public boolean removeItem(TakeableItem item){
-        return false;
+        boolean itemRemoved;
+        itemRemoved = items.remove(item);
+
+        return itemRemoved;
     }
 
     public TakeableItem removeItem(int index){
-        return null;
+        TakeableItem removedItem;
+        removedItem = items.remove(index);
+
+        return removedItem;
     }
 
     public boolean doesExist(TakeableItem item){
-        return false;
+        boolean itemExists;
+        itemExists = items.contains(item);
+
+        return itemExists;
     }
 
     public void attach(Viewport viewport){
