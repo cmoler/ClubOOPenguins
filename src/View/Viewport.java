@@ -1,6 +1,7 @@
 package View;
 
 import Configs.Commons;
+import Model.Entity.Direction;
 
 import javax.swing.*;
 import java.awt.*;
@@ -112,6 +113,10 @@ public class Viewport extends JPanel implements Commons {
     }
 
     public void update(){
+
+    }
+
+    public void moveUpdate(Direction direction){
 
     }
 }

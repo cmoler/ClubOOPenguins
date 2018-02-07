@@ -12,14 +12,13 @@ import java.util.concurrent.TimeUnit;
 public class LocationViewTests {
 
     @Test
-    public void locationAppears(){
+    public void locationAppears() throws InterruptedException {
 
-        View view = new View();
+        EventQueue.invokeLater(() -> {
+            View game = new View();
+            game.setVisible(true);
+        });
+        //TimeUnit.SECONDS.sleep(10);
 
-        try {
-            TimeUnit.SECONDS.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }

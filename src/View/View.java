@@ -12,37 +12,28 @@ public class View extends JFrame {
 
 
     public View(){
-        Location location = new Location();
-        LocationView locationView = new LocationView(location, 1, 1);
+        initUI();
+    }
 
-        DecalView decalView = new DecalView("resources/Interface.png");
+
+    private void initUI() {
+
+        Location location = new Location();
+        Viewport locationView = new LocationView(location, 250, 250);
+
+        DecalView decalView = new DecalView("resources/bluePenguin.png");
         locationView.add(decalView);
 
-        EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                View game = new View(locationView);
-                game.setVisible(true);
-
-            }
-        });
-    }
-
-    public View(Viewport viewport){
-
-        initUI(viewport);
-    }
-
-    private void initUI(Viewport viewport) {
-
-        add(viewport);
-        setTitle("CLUBOOP");
-
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(Commons.WIDTH, Commons.HEIGHT);
+        setSize(1300, 700);
         setLocationRelativeTo(null);
         setResizable(false);
-        setVisible(true);
+
+        add(locationView);
+        add(decalView);
+        setTitle("CLUBOOP");
+
+        //setVisible(true);
 
     }
 
