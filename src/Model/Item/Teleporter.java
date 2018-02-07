@@ -17,4 +17,8 @@ public class Teleporter extends InteractiveItem{
         entity.teleport(location);
         World.getWorld().changeCurrentMapTo(map);
     }
+
+    public boolean shouldBeRemoved(){
+        return false;
+    }
 }
