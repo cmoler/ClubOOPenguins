@@ -6,6 +6,10 @@ public class DamageAreaEffect extends AreaEffect{
 
     private int damageAmount;
 
+    public DamageAreaEffect(){
+        damageAmount = 10;
+    }
+
     public DamageAreaEffect(int damageAmount){
         this.damageAmount = damageAmount;
     }
