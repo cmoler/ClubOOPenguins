@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TimerTask;
 
-public class Viewport extends JPanel implements Commons {
+public abstract class Viewport extends JPanel implements Commons {
 
     Timer timer;
-    
+
     protected Viewport parent;
     protected List<Viewport> children = new ArrayList<Viewport>();
 
