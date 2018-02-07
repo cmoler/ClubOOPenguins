@@ -12,7 +12,7 @@ public class MapBuilder {
     public MapBuilder(){}
 
     public Map buildMap(String mapID) throws FileNotFoundException {
-        String filename = "MapModel" + mapID + ".txt";
+        String filename = "tests/Model/Map/MapBuilder/MapModel" + mapID + ".txt";
         Scanner s = new Scanner(new File(filename));
         List<String> mapData = new ArrayList<String>();
         while (s.hasNextLine()) {
