@@ -7,4 +7,9 @@ public class InteractiveItem extends Item{
     public void touch(Entity entity) {
 
     }
+
+    public boolean shouldBeRemoved(){
+        return false;
+    }
+
 }

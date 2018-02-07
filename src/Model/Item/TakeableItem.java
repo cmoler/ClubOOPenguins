@@ -10,4 +10,8 @@ public class TakeableItem extends Item{
     public void touch(Entity entity) {
         entity.getInventory().addItem(this);
     }
+
+    public boolean shouldBeRemoved(){
+        return true; // always true?
+    }
 }

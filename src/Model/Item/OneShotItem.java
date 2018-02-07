@@ -7,4 +7,8 @@ public class OneShotItem extends Item{
     public void touch(Entity entity) {
 
     }
+
+    public boolean shouldBeRemoved(){
+        return true;
+    }
 }

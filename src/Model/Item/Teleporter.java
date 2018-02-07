@@ -14,8 +14,11 @@ public class Teleporter extends InteractiveItem{
 
     @Override
     public void touch(Entity entity) {
-        entity.teleport(location, map);
+        entity.teleport(location);
         World.getWorld().changeCurrentMapTo(map);
+    }
 
+    public boolean shouldBeRemoved(){
+        return false;
     }
 }

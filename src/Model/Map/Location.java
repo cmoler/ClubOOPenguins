@@ -17,10 +17,19 @@ public class Location {
     private HashMap<Direction, Location> adjacentLocations;
     private AreaEffect areaEffect;
     private List<Item> items;
-    private int cordX;
-    private int cordY;
-    private int width;
-    private int height;
+
+
+    public void Location(Terrain terrain, boolean obstacle, AreaEffect areaEffect, List<Item> items){
+        this.terrain = terrain;
+        this.obstacle = obstacle;
+        this.areaEffect = areaEffect;
+        this.items = items;
+    }
+
+    public void setAdjacentLocations(HashMap<Direction, Location> adjacentLocations)
+    {
+        this.adjacentLocations = adjacentLocations;
+    }
 
     public Location getAdjacentAt(Direction direction){
         return adjacentLocations.get(direction);
@@ -40,22 +49,6 @@ public class Location {
 
     public List<Item> getItems(){
         return items;
-    }
-
-    public int getX(){
-        return cordX;
-    }
-
-    public int getY(){
-        return cordY;
-    }
-
-    public int getWidth(){
-        return width;
-    }
-
-    public int getHeight(){
-        return height;
     }
 
     public void attach(Viewport viewport){
