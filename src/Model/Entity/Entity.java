@@ -1,6 +1,7 @@
 package Model.Entity;
 
 import Model.Item.Item;
+import Model.Item.TakeableItem;
 import Model.Map.Location;
 import Model.Map.Map;
 import Model.Map.World;
@@ -82,8 +83,11 @@ public class Entity{
             if (this.location.getItems() != null){
                 List<Item> items = this.location.getItems();
                 for (Item item : items){
-                    // remove from list if should be removed
-                    // add to inventory if TakeableItem
+                    // I KNOW ITS BAD
+                    if (item.getClass().equals(TakeableItem.class))
+                        inventory.addItem((TakeableItem) item);
+                    if(item.shouldBeRemoved())
+                        items.remove(item);
                 }
             }
         }
