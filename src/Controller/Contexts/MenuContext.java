@@ -1,20 +1,25 @@
 package Controller.Contexts;
 
+import Controller.MainControl.MainController;
+
 import java.awt.event.KeyEvent;
 
 public class MenuContext extends Context{
-    @Override
+
+    public MenuContext(MainController mainController){
+        super(mainController);
+    }
+
     public void processKeyEvent(KeyEvent event) {
+        int keyCode = event.getKeyCode();
+        MainController mainController = getMainController();
 
-        //ESCAPE
-        if(event.getKeyCode() == 27){
+        switch(keyCode){
 
-            System.out.println("ESCAPE WAS PRESSED");
-            //CLOSE MENU
-            //SWITCH ACTIVECONTEXT TO GAMECONTEXT
+            case KeyEvent.VK_ESCAPE:
+                mainController.closeMenu();
+                break;
 
         }
-
-        System.out.println("KeyChar: " + event.getKeyChar() + "  | KeyCode: " + event.getKeyCode());
     }
 }

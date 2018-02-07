@@ -13,7 +13,13 @@ public class Input implements KeyListener {
         this.activeContext = activeContext;
     }
 
+    public void setActiveContext(Context context){
+        this.activeContext = context;
+    }
+
     private void forwardKeyEvent(KeyEvent event){
+        //activeContext.setLastEvent(event);
+        System.out.println("Active context in input is " + activeContext.getClass().toString());
         activeContext.processKeyEvent(event);
     }
 
