@@ -6,11 +6,6 @@ import Controller.GameController.GameController;
 import Controller.MainMenuControl.MainMenuController;
 import View.Viewport;
 
-import java.awt.EventQueue;
-import javax.swing.JFrame;
-
-import javax.swing.*;
-
 public class MainController {
 
     private Input input;
@@ -21,28 +16,27 @@ public class MainController {
     private GameController gameController;
     private MainMenuController mainMenuController;
 
+    private boolean gameRunning = true;
 
-
-    public MainController(){
+    public MainController() {
         game = new OOPenguinGame();
         activeContext = new MenuContext();
         input = new Input(activeContext);
         game.addKeyListener(input);
+    }
 
-
+    private void setContext(Context context) {
 
     }
 
-    public void setContext(Context context){
+    public void gameLoop() {
 
     }
 
 
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
         MainController mainController = new MainController();
-        while(true){
 
-        }
+        mainController.gameLoop();
     }
 }
