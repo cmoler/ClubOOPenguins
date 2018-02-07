@@ -2,12 +2,17 @@ package Model.Entity;
 
 import Model.Map.Location;
 import Model.Map.Map;
+import Model.Map.World;
 import View.Viewport;
+import javafx.beans.Observable;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
-public class Entity {
+public class Entity{
+
+    private List<Viewport> observers;
 
     private int x;
     private int y;
@@ -19,11 +24,12 @@ public class Entity {
     private Inventory inventory = new Inventory();
     private EntityType entityType;
     private Location location;
-    private Map map;
+    // map is in World
 
     // TODO: should there be a default location and map?
     public Entity() {
         entityType = EntityType.ICE; // default EntityType
+//        location = World... .center ?
     }
 
     public Entity(EntityType type){
@@ -133,8 +139,7 @@ public class Entity {
         }
     }
 
-    public void teleport(Location location, Map map){
-        this.map = map;
+    public void teleport(Location location){
         this.location = location;
     }
 
@@ -149,10 +154,6 @@ public class Entity {
 
     public int getLevel(){
         return level;
-    }
-
-    public Map getMap(){
-        return map;
     }
 
     public Inventory getInventory() {
@@ -179,25 +180,19 @@ public class Entity {
         return location.getHeight();
     }
 
-    // setters
-    // use case: setting Entity's map at the beginning of game
-    public void setMap(Map map) {
-        this.map = map;
-        // this.location = map.middle // default location?
-    }
-
     public void attach(Viewport viewport){
-
+        observers.add(viewport);
     }
 
     public void detach(Viewport viewport){
-
+        observers.remove(viewport);
     }
 
     public void notifyView(){
-
+        for (Viewport viewport : observers){
+            viewport.update();
+        }
     }
-
 
     private static final int finalLevel = 100;
     private static final java.util.Map<Integer, Integer> ExperienceForLevel; // <Level,Experience required for level>
