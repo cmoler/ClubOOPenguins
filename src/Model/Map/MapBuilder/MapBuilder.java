@@ -134,7 +134,7 @@ public class MapBuilder {
                     case "TELEPORTER":
                         String teleporterMapID = mapData.get(lineIndex++).split("\t")[1];
                         String[] teleporterLocationXAndY = mapData.get(lineIndex++).split("\t")[1].split(",");
-                        items.add(new Teleporter());
+//                        items.add(new Teleporter());
                         itemViews.add(new ItemView(Commons.ITEM_TELEPORTER_IMAGE));
                         break;
                     default:
@@ -156,7 +156,7 @@ public class MapBuilder {
 
 
 
-            return new Map();
+            return new Map(1,1); //
     }
 
 }
