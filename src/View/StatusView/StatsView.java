@@ -57,8 +57,6 @@ public class StatsView extends Viewport {
         graphics2D.drawRect(ENTITY_HEALTH_X, ENTITY_HEALTH_Y, ENTITY_HEALTH_WIDTH, ENTITY_HEALTH_HEIGHT);
         graphics2D.drawRect(ENTITY_HEALTH_X + (ENTITY_HEALTH_WIDTH-hprectSize), ENTITY_HEALTH_Y, hprectSize, ENTITY_HEALTH_HEIGHT);
 
-
-
         //EXPBAR
         graphics2D.setColor(new Color(3, 3, 233));
         graphics2D.drawRect(ENTITY_EXP_X, ENTITY_EXP_Y, ENTITY_EXP_WIDTH, ENTITY_EXP_HEIGHT);
@@ -66,8 +64,8 @@ public class StatsView extends Viewport {
 
         graphics2D.drawOval(ENTITY_LEVEL_X, ENTITY_LEVEL_Y, ENTITY_LEVEL_WIDTH, ENTITY_LEVEL_HEIGHT);
         graphics2D.drawString("" + getLevel,  ENTITY_LEVEL_X + ENTITY_LEVEL_WIDTH/2, ENTITY_LEVEL_Y + ENTITY_LEVEL_HEIGHT/2);
-//        graphics2D.drawString("entity.getHealth()", (ENTITY_HEALTH_X + ENTITY_HEALTH_HEIGHT)/2, (ENTITY_HEALTH_Y + ENTITY_HEALTH_WIDTH)/2);
-//        graphics2D.drawString("entity.getEXP()", (ENTITY_EXP_X + ENTITY_EXP_HEIGHT)/2, (ENTITY_EXP_Y + ENTITY_EXP_WIDTH)/2);
+//      graphics2D.drawString("entity.getHealth()", (ENTITY_HEALTH_X + ENTITY_HEALTH_HEIGHT)/2, (ENTITY_HEALTH_Y + ENTITY_HEALTH_WIDTH)/2);
+//      graphics2D.drawString("entity.getEXP()", (ENTITY_EXP_X + ENTITY_EXP_HEIGHT)/2, (ENTITY_EXP_Y + ENTITY_EXP_WIDTH)/2);
 
     }
 
@@ -78,7 +76,7 @@ public class StatsView extends Viewport {
 
     @Override
     public void update(){
-
+        repaint();
     }
 
 }
