@@ -7,8 +7,6 @@ import Model.Map.World;
 
 public class Teleporter extends InteractiveItem{
 
-//    TODO - how to update world map?
-
     private Map map;
     private Location location;
 

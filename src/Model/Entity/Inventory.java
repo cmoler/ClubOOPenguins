@@ -8,8 +8,7 @@ import java.util.List;
 
 public class Inventory {
 
-//    TODO - implement observer pattern
-//    TODO - error handling
+    private List<Viewport> observers;
 
     private List<TakeableItem> items;
     private Equipment equipment;
@@ -21,6 +20,7 @@ public class Inventory {
     public boolean addItem(TakeableItem item){
         boolean itemAdded;
         itemAdded = items.add(item);
+        if(itemAdded) { notifyView(); }
 
         return itemAdded;
     }
@@ -28,6 +28,7 @@ public class Inventory {
     public boolean removeItem(TakeableItem item){
         boolean itemRemoved;
         itemRemoved = items.remove(item);
+        if(itemRemoved) { notifyView(); }
 
         return itemRemoved;
     }
@@ -35,6 +36,7 @@ public class Inventory {
     public TakeableItem removeItem(int index){
         TakeableItem removedItem;
         removedItem = items.remove(index);
+        notifyView();
 
         return removedItem;
     }
@@ -47,15 +49,17 @@ public class Inventory {
     }
 
     public void attach(Viewport viewport){
-
+        observers.add(viewport);
     }
 
     public void detach(Viewport viewport){
-
+        observers.remove(viewport);
     }
 
     public void notifyView(){
-
+        for (Viewport viewport : observers){
+            viewport.update();
+        }
     }
 
     public class InventoryIterator{
