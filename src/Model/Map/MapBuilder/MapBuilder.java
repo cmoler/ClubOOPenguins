@@ -170,28 +170,28 @@ public class MapBuilder {
 
         }
 
-        lineIndex++; // line is "ENTITIES"
-        while(lineIndex < mapData.size()){
-            String[] entityPositions = mapData.get(lineIndex++).split("\t")[1].split(",");
-            int entityX = Integer.parseInt(entityPositions[0]);
-            int entityY = Integer.parseInt(entityPositions[1]);
-            String terrainType = mapData.get(lineIndex++).split("\t")[1];
-            EntityType entityType;
-            switch (terrainType){
-                case "ICE":
-                    entityType = EntityType.ICE;
-                    break;
-                case "WATER":
-                    entityType = EntityType.WATER;
-                    break;
-/*                case "GLACIER":
-                    entityType = EntityType.GLACIER;
-                    break;*/
-            }
-            Entity e = new Entity(locations[entityX][entityY]);
-        }
+//        lineIndex++; // line is "ENTITIES"
+//        while(lineIndex < mapData.size()){
+//            String[] entityPositions = mapData.get(lineIndex++).split("\t")[1].split(",");
+//            int entityX = Integer.parseInt(entityPositions[0]);
+//            int entityY = Integer.parseInt(entityPositions[1]);
+//            String terrainType = mapData.get(lineIndex++).split("\t")[1];
+//            EntityType entityType;
+//            switch (terrainType){
+//                case "ICE":
+//                    entityType = EntityType.ICE;
+//                    break;
+//                case "WATER":
+//                    entityType = EntityType.WATER;
+//                    break;
+///*                case "GLACIER":
+//                    entityType = EntityType.GLACIER;
+//                    break;*/
+//            }
+//            Entity e = new Entity(locations[entityX][entityY]);
+//        }
 
-        return new Map(1,1); //
+        return new Map(locations, locations[defaultX][defaultY]);
     }
 
 }
