@@ -6,6 +6,10 @@ public class HealAreaEffect extends AreaEffect{
 
     private int healAmount;
 
+    public HealAreaEffect() {
+        healAmount = 10;
+    }
+
     public HealAreaEffect(int healAmount){
         this.healAmount = healAmount;
     }

@@ -28,10 +28,8 @@ public class AvatarView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-//        graphics2D.drawImage(avatarImage, entity.getX(), entity.getY(),
-//                entity.getWidth(), entity.getHeight(),this );
-        graphics2D.drawImage(avatarImage, 0, 0,
-                0, 0,this );
+       graphics2D.drawImage(avatarImage, x, x,
+               10, 10,this );
     }
 
     @Override
