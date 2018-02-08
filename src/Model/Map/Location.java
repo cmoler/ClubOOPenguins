@@ -1,6 +1,5 @@
 package Model.Map;
 
-import Model.Entity.Direction;
 import Model.Entity.Entity;
 import Model.Item.Item;
 import Model.Map.AreaEffect.AreaEffect;
@@ -23,6 +22,8 @@ public class Location {
         this.terrain = terrain;
         this.obstacle = obstacle;
         this.areaEffect = areaEffect;
+        if (this.areaEffect != null)
+            this.areaEffect.setLocation(this);
         this.items = items;
     }
 

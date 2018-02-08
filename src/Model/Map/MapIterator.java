@@ -45,14 +45,6 @@ public class MapIterator<T> implements Iter{
         i = 0;
         j = 0;
     }
-
-    public int getCurrRow(){
-        return i;
-    }
-
-    public int getCurrCol(){
-        return j;
-    }
 }
 
 

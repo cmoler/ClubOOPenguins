@@ -4,6 +4,7 @@ import Model.Item.Item;
 import Model.Item.TakeableItem;
 import View.Viewport;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Inventory {
@@ -15,6 +16,12 @@ public class Inventory {
 
     public InventoryIterator getIterator(){
         return new InventoryIterator();
+    }
+
+    public Inventory() {
+        observers = new ArrayList<>();
+        items = new ArrayList<>();
+        equipment = new Equipment();
     }
 
     public boolean addItem(TakeableItem item){
@@ -46,6 +53,14 @@ public class Inventory {
         itemExists = items.contains(item);
 
         return itemExists;
+    }
+
+    public boolean equip(TakeableItem item) {
+        return equipment.equip(item);
+    }
+
+    public boolean unEquip(TakeableItem item) {
+        return equipment.unEquip(item);
     }
 
     public void attach(Viewport viewport){

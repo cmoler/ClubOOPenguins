@@ -1,6 +1,8 @@
 package Model.Map.MapBuilder;
 
 import Configs.Commons;
+import Model.Entity.Entity;
+import Model.Entity.EntityType;
 import Model.Item.*;
 import Model.Map.AreaEffect.*;
 import Model.Map.Location;
@@ -49,18 +51,24 @@ public class MapBuilder {
         int lineIndex = 2;
         int height = Integer.parseInt(mapData.get(lineIndex++).split("\t")[1]);
         int width = Integer.parseInt(mapData.get(lineIndex++).split("\t")[1]);
+        System.out.println("Height: " + height);
+        System.out.println("Width: " + width);
 
         Location[][] locations = new Location[height][width];
 
         String[] defaultPositions = mapData.get(lineIndex++).split("\t")[1].split(",");
         int defaultX = Integer.parseInt(defaultPositions[0]);
         int defaultY = Integer.parseInt(defaultPositions[1]);
+        System.out.println("Default x: " + defaultX);
+        System.out.println("Default y: " + defaultY);
         lineIndex++; // line is "LOCATIONS"
-        while(mapData.get(lineIndex).substring(0,1).equals("\t\t")){
+        while(mapData.get(lineIndex).substring(0,2).equals("\t\t")){
             // Getting location
             String[] locationCoords = mapData.get(lineIndex++).split("\t\t")[1].split(",");
             int xCoord = Integer.parseInt(locationCoords[0]);
             int yChord = Integer.parseInt(locationCoords[1]);
+            System.out.println(" x: " + xCoord);
+            System.out.println(" y: " + yChord);
 
             //Getting Terrain
             Terrain terrain = null;
@@ -80,6 +88,7 @@ public class MapBuilder {
                     terrainView = new TerrainView(Commons.GLACIER_IMAGE);
                     break;
             }
+            System.out.println("    terrain: " + terrainType);
 
             // Getting Obstacle
             String obstacle = mapData.get(lineIndex++).split("\t\t\t")[1];
@@ -89,6 +98,7 @@ public class MapBuilder {
                 obstacleBool = true;
                 obstacleView = new ObstacleView(Commons.OBSTACLE_IMAGE);
             }
+            System.out.println("    obstacle: " + obstacle);
 
             // Getting AreaEffect
             String areaEffectType = mapData.get(lineIndex++).split("\t\t\t")[1];
@@ -114,38 +124,43 @@ public class MapBuilder {
                 default:
                     areaEffect = null;
             }
+            System.out.println("    area effect: " + areaEffectType);
 
             // Get Items
             lineIndex++; // line is "ITEMS"
             List<Item> items = new ArrayList<Item>();
             List<ItemView> itemViews = new ArrayList<ItemView>();
-            if(mapData.get(lineIndex).contains("\t\t\t")) {
-                while (mapData.get(lineIndex).substring(0, 1).equals("\t\t")) {
-                    String itemType = mapData.get(lineIndex++).split("\t")[1];
-                    switch (itemType) {
-                        case "INTERACTIVE":
-                            items.add(new InteractiveItem());
-                            itemViews.add(new ItemView(Commons.ITEM_ITERACTIVE_IMAGE));
-                            break;
-                        case "ONESHOT":
-                            items.add(new OneShotItem());
-                            itemViews.add(new ItemView(Commons.ITEM_ONESHOT_IMAGE));
-                            break;
-                        case "TAKEABLE":
-                            items.add(new TakeableItem());
-                            itemViews.add(new ItemView(Commons.ITEM_TAKEABLE_IMAGE));
-                            break;
-                        case "TELEPORTER":
-                            String teleporterMapID = mapData.get(lineIndex++).split("\t")[1];
-                            String[] teleporterLocationXAndY = mapData.get(lineIndex++).split("\t")[1].split(",");
-                            //                        items.add(new Teleporter());
-                            itemViews.add(new ItemView(Commons.ITEM_TELEPORTER_IMAGE));
-                            break;
-                        default:
-                            areaEffect = null;
-                    }
+            while (mapData.get(lineIndex).substring(0, 4).equals("\t\t\t\t")) {
+                String itemType = mapData.get(lineIndex).split("\t\t\t\t")[1];
+                System.out.println("    item: " + itemType);
+                switch (itemType) {
+                    case "INTERACTIVE":
+                        items.add(new InteractiveItem());
+                        itemViews.add(new ItemView(Commons.ITEM_ITERACTIVE_IMAGE));
+                        break;
+                    case "ONESHOT":
+                        items.add(new OneShotItem());
+                        itemViews.add(new ItemView(Commons.ITEM_ONESHOT_IMAGE));
+                        break;
+                    case "TAKEABLE":
+                        items.add(new TakeableItem());
+                        itemViews.add(new ItemView(Commons.ITEM_TAKEABLE_IMAGE));
+                        break;
+                    case "TELEPORTER":
+                        lineIndex++;
+                        String teleporterMapID = mapData.get(lineIndex++).split("\t\t\t\t\t")[1];
+                        String[] teleporterLocationXAndY = mapData.get(lineIndex).split("\t\t\t\t\t")[1].split(",");
+                        int teleportLocationX = Integer.parseInt(teleporterLocationXAndY[0]);
+                        int teleportLocationY = Integer.parseInt(teleporterLocationXAndY[1]);
+                        items.add(new Teleporter(teleporterMapID,teleportLocationX,teleportLocationY));
+                        itemViews.add(new ItemView(Commons.ITEM_TELEPORTER_IMAGE));
+                        System.out.println("        mapID: " + teleporterMapID);
+                        System.out.println("        x: " + teleportLocationX);
+                        System.out.println("        y: " + teleportLocationY);
+                        break;
                 }
-            }
+                lineIndex++;
+        }
 
             locations[yChord][xCoord] = new Location(terrain, obstacleBool, areaEffect, items);
             LocationView locationView = new LocationView(locations[yChord][xCoord], xCoord, yChord);
@@ -156,14 +171,32 @@ public class MapBuilder {
                 locationView.add(itemView);
             }
 
+        }
             this.viewport = locationView;
 
+        lineIndex++; // line is "ENTITIES"
+        while(lineIndex < mapData.size()){
+            String[] entityPositions = mapData.get(lineIndex++).split("\t")[1].split(",");
+            int entityX = Integer.parseInt(entityPositions[0]);
+            int entityY = Integer.parseInt(entityPositions[1]);
+            String terrainType = mapData.get(lineIndex++).split("\t")[1];
+            EntityType entityType;
+            switch (terrainType){
+                case "ICE":
+                    entityType = EntityType.ICE;
+                    break;
+                case "WATER":
+                    entityType = EntityType.WATER;
+                    break;
+/*                case "GLACIER":
+                    entityType = EntityType.GLACIER;
+                    break;*/
+            }
+            Entity e = new Entity(locations[entityX][entityY]);
 
         }
 
-
-
-            return new Map(1,1); //
+        return new Map(1,1); //
     }
 
 }

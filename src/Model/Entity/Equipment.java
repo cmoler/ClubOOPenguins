@@ -3,24 +3,34 @@ package Model.Entity;
 import Model.Item.TakeableItem;
 import View.Viewport;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Equipment {
 
     private List<Viewport> observers;
 
-    private TakeableItem equiped;
+    private TakeableItem equipped;
+
+    public Equipment() {
+        observers = new ArrayList<>();
+    }
 
     public boolean equip(TakeableItem item){
-        return false;
+        equipped = item;
+        return true;
     }
 
     public boolean unEquip(TakeableItem item){
+        if(equipped == item) {
+            equipped = null;
+            return true;
+        }
         return false;
     }
 
-    public TakeableItem getEquiped() {
-        return equiped;
+    public TakeableItem getEquipped() {
+        return equipped;
     }
 
     public void attach(Viewport viewport){

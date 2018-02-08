@@ -2,11 +2,9 @@ package Model.Entity;
 
 import Model.Item.Item;
 import Model.Item.TakeableItem;
+import Model.Map.Direction;
 import Model.Map.Location;
-import Model.Map.Map;
-import Model.Map.World;
 import View.Viewport;
-import javafx.beans.Observable;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -86,9 +84,7 @@ public class Entity{
             if (this.location.getItems() != null){
                 List<Item> items = this.location.getItems();
                 for (Item item : items){
-                    // I KNOW ITS BAD
-                    if (item.getClass().equals(TakeableItem.class))
-                        inventory.addItem((TakeableItem) item);
+                    item.touch(this);
                     if(item.shouldBeRemoved())
                         items.remove(item);
                 }
@@ -111,6 +107,14 @@ public class Entity{
 
     public int getLevel(){
         return level;
+    }
+
+    public int getExperienceForNextLevel(){
+        return ExperienceForLevel.get(level + 1);
+    }
+
+    public int getExperienceForCurrentLevel(){
+        return ExperienceForLevel.get(level);
     }
 
     public Inventory getInventory() {
