@@ -16,9 +16,8 @@ public class ItemView extends Viewport {
 
     }
 
-    public ItemView(String fileName){
-        ImageIcon imageIcon = new ImageIcon(fileName);
-        itemImage = imageIcon.getImage();
+    public ItemView(Image image){
+        this.itemImage = image;
     }
 
     @Override

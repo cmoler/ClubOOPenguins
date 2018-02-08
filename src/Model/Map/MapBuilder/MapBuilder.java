@@ -14,6 +14,7 @@ import View.AreaView.ItemView.ItemView;
 import View.AreaView.LocationView;
 import View.AreaView.ObstacleView;
 import View.AreaView.TerrainView;
+import View.Viewport;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -27,9 +28,15 @@ public class MapBuilder {
 
     public MapBuilder(){}
 
-    public Map buildMap(String mapID) throws FileNotFoundException {
-        String filename = "tests/Model/Map/MapBuilder/MapModel" + mapID + ".txt"; // will change after testing
+    private Viewport viewport;
 
+    public Viewport getViewport() {
+        return viewport;
+    }
+
+    public Map buildMap(String mapID) throws FileNotFoundException {
+        //String filename = "tests/Model/Map/MapBuilder/MapModel" + mapID + ".txt"; // will change after testing
+        String filename = "resources/maps/MapModel"+mapID+".txt";
         Scanner s = new Scanner(new File(filename));
         List<String> mapData = new ArrayList<String>();
         while (s.hasNextLine()) {
@@ -54,10 +61,6 @@ public class MapBuilder {
             String[] locationCoords = mapData.get(lineIndex++).split("\t\t")[1].split(",");
             int xCoord = Integer.parseInt(locationCoords[0]);
             int yChord = Integer.parseInt(locationCoords[1]);
-
-            /*
-        NOT SURE WHERE THIS GOES WITH THE WHILE LOOP BUT I FEEL LIKE IT MIGHT BE INSIDE
-         */
 
             //Getting Terrain
             Terrain terrain = null;
@@ -147,11 +150,13 @@ public class MapBuilder {
             locations[yChord][xCoord] = new Location(terrain, obstacleBool, areaEffect, items);
             LocationView locationView = new LocationView(locations[yChord][xCoord], xCoord, yChord);
             if(terrainView != null) locationView.add(terrainView);
-            if(obstacleView != null) locationView.add(obstacleView);
             if(areaEffectView != null) locationView.add(areaEffectView);
+            if(obstacleView != null) locationView.add(obstacleView);
             for(ItemView itemView: itemViews){
                 locationView.add(itemView);
             }
+
+            this.viewport = locationView;
 
 
         }

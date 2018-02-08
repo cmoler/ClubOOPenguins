@@ -2,7 +2,6 @@ package Model.Entity;
 
 import Model.Item.TakeableItem;
 import View.Viewport;
-import com.sun.prism.image.ViewPort;
 
 import java.util.List;
 
