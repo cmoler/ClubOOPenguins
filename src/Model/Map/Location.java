@@ -1,6 +1,5 @@
 package Model.Map;
 
-import Model.Entity.Direction;
 import Model.Entity.Entity;
 import Model.Item.Item;
 import Model.Map.AreaEffect.AreaEffect;

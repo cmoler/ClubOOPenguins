@@ -1,7 +1,7 @@
 package View;
 
 import Configs.Commons;
-import Model.Entity.Direction;
+import Model.Map.Direction;
 
 import javax.swing.*;
 import java.awt.*;

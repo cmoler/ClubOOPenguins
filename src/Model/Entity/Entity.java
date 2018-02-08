@@ -2,11 +2,9 @@ package Model.Entity;
 
 import Model.Item.Item;
 import Model.Item.TakeableItem;
+import Model.Map.Direction;
 import Model.Map.Location;
-import Model.Map.Map;
-import Model.Map.World;
 import View.Viewport;
-import javafx.beans.Observable;
 
 import java.util.Collections;
 import java.util.HashMap;

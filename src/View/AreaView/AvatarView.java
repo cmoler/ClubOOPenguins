@@ -1,7 +1,7 @@
 package View.AreaView;
 
 
-import Model.Entity.Direction;
+import Model.Map.Direction;
 import Model.Entity.Entity;
 import View.Viewport;
 

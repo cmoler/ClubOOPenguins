@@ -1,6 +1,6 @@
 package Controller.GameController;
 
-import Model.Entity.Direction;
+import Model.Map.Direction;
 import Model.Entity.Entity;
 import Model.Item.Item;
 import Model.Map.Map;

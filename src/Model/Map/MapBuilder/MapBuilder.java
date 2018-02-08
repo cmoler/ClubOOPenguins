@@ -184,9 +184,9 @@ public class MapBuilder {
                 case "WATER":
                     entityType = EntityType.WATER;
                     break;
-                case "GLACIER":
+/*                case "GLACIER":
                     entityType = EntityType.GLACIER;
-                    break;
+                    break;*/
             }
             Entity e = new Entity(locations[entityX][entityY]);
         }

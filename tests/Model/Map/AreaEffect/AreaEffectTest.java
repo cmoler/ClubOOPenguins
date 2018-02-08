@@ -1,6 +1,6 @@
 package Model.Map.AreaEffect;
 
-import Model.Entity.Direction;
+import Model.Map.Direction;
 import Model.Entity.Entity;
 import Model.Map.Location;
 import Model.Map.Terrain.Ice;

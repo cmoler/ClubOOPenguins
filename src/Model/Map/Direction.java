@@ -1,4 +1,4 @@
-package Model.Entity;
+package Model.Map;
 
 public enum Direction {
 

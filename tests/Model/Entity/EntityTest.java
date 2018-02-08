@@ -2,10 +2,16 @@ package Model.Entity;
 
 import Model.Item.Item;
 import Model.Item.Teleporter;
+import Model.Map.Direction;
+import Model.Map.Location;
 import Model.Map.Map;
+import Model.Map.Terrain.Ice;
 import Model.Map.World;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+
+import static Model.Map.Direction.E;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EntityTest {
@@ -71,8 +77,23 @@ class EntityTest {
     void moveNormallyWithNoObstacles(){
         Map m = new Map(5,5);
         World.getWorld().changeCurrentMapTo(m);
-        Entity e = new Entity(m.getDefaultLocation());
-        e.move(Direction.E);
+
+
+
+        Location test = new Location(new Ice(), false, null, null);
+        Location testE = new Location(new Ice(), false, null, null);
+
+        Entity e = new Entity(test);
+
+        HashMap<Direction, Location> hash = new HashMap<Direction, Location>();
+        hash.put(E, testE);
+        test.setAdjacentLocations(hash);
+        m.setLocation(2,2, test);
+        m.setLocation(2,3, testE);
+
+
+
+        e.move(E);
         assertEquals(m.getLocation(2,3),e.getLocation(),"e should have moved one location to the east");
     }
 }
