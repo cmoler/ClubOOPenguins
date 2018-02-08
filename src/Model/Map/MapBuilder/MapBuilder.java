@@ -11,11 +11,8 @@ import Model.Map.Terrain.Glacier;
 import Model.Map.Terrain.Ice;
 import Model.Map.Terrain.Terrain;
 import Model.Map.Terrain.Water;
-import View.AreaView.AreaEffectView;
+import View.AreaView.*;
 import View.AreaView.ItemView.ItemView;
-import View.AreaView.LocationView;
-import View.AreaView.ObstacleView;
-import View.AreaView.TerrainView;
 import View.Viewport;
 
 import java.io.File;
@@ -30,7 +27,7 @@ public class MapBuilder {
 
     public MapBuilder(){}
 
-    private Viewport viewport;
+    private Viewport viewport = new MapView();
 
     public Viewport getViewport() {
         return viewport;
@@ -148,7 +145,7 @@ public class MapBuilder {
                         break;
                 }
                 lineIndex++;
-        }
+            }
 
             locations[yChord][xCoord] = new Location(terrain, obstacleBool, areaEffect, items);
             LocationView locationView = new LocationView(locations[yChord][xCoord], xCoord, yChord);
@@ -158,9 +155,9 @@ public class MapBuilder {
             for(ItemView itemView: itemViews){
                 locationView.add(itemView);
             }
+            this.viewport.add(locationView);
 
         }
-            this.viewport = locationView;
 
         // if we ever want to include Entities
 //        lineIndex++; // line is "ENTITIES"

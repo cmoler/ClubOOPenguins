@@ -1,6 +1,7 @@
 package View.AreaView;
 
 
+import Configs.SpriteSizes;
 import Model.Map.Location;
 import View.Viewport;
 
@@ -19,7 +20,7 @@ public class AreaEffectView extends Viewport {
     @Override
     public void draw(Graphics2D graphics2D) {
         graphics2D.drawImage(areaEffectImage, parent.getX(), parent.getY(),
-                parent.getWidth(), parent.getHeight(),this );
+                SpriteSizes.AREA_EFFECT_WIDTH, SpriteSizes.AREA_EFFECT_HEIGHT,this );
     }
 
     @Override

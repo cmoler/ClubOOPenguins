@@ -1,5 +1,6 @@
 package View.AreaView;
 
+import Configs.SpriteSizes;
 import Model.Map.Location;
 import View.Viewport;
 
@@ -18,7 +19,7 @@ public class TerrainView extends Viewport {
     @Override
     public void draw(Graphics2D graphics2D) {
         graphics2D.drawImage(terrainImage, parent.getX(), parent.getY(),
-                parent.getWidth(), parent.getHeight(),this );
+                SpriteSizes.TERRAIN_WIDTH, SpriteSizes.TERRAIN_HEIGHT,this );
     }
 
     @Override

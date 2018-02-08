@@ -1,6 +1,7 @@
 package View.AreaView.ItemView;
 
 
+import Configs.SpriteSizes;
 import Model.Map.Location;
 import View.Viewport;
 
@@ -23,7 +24,7 @@ public class ItemView extends Viewport {
     @Override
     public void draw(Graphics2D graphics2D) {
         graphics2D.drawImage(itemImage, parent.getX(), parent.getY(),
-                parent.getWidth(), parent.getHeight(),this );
+                SpriteSizes.ITEM_WIDTH, SpriteSizes.ITEM_HEIGHT,this );
     }
 
     @Override
