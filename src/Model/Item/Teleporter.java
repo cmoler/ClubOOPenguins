@@ -7,18 +7,22 @@ import Model.Map.World;
 
 public class Teleporter extends InteractiveItem{
 
-    private Map map;
-    private Location location;
+    private String mapID;
+    private int locationX;
+    private int locationY;
 
-    public Teleporter(Map map, Location location){
-        this.map = map;
-        this.location = location;
+    public Teleporter(String mapID, int locationX, int locationY){
+        this.mapID = mapID;
+        this.locationX = locationX;
+        this.locationY = locationY;
     }
 
     @Override
     public void touch(Entity entity) {
-        entity.teleport(location);
-        World.getWorld().changeCurrentMapTo(map);
+        Map nextMap = World.getWorld().getMap(mapID);
+        Location nextLocation = nextMap.getLocation(locationX,locationY);
+        World.getWorld().changeCurrentMapTo(nextMap);
+        entity.teleport(nextLocation);
     }
 
     public boolean shouldBeRemoved(){
