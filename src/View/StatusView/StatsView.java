@@ -1,6 +1,7 @@
 package View.StatusView;
 
 
+import Configs.Commons;
 import Configs.TextBoxInfo;
 import Model.Entity.Entity;
 import View.Viewport;
@@ -47,6 +48,9 @@ public class StatsView extends Viewport {
         //Portion of XP
         double percentEXP = (expNeeded-prevExp)/(exp-prevExp);
         int xprectsize = (int) (percentEXP * ENTITY_EXP_WIDTH);
+
+        //Load Interfrace
+        graphics2D.drawImage(Commons.RUNESCAPE_GUI,0,0, Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT);
 
         //HPBAR
         graphics2D.setColor(new Color(233, 3, 3));
