@@ -46,18 +46,21 @@ public class Entity{
         health -= damage;
         if (health < 0)
             health = 0;
+        notifyView();
     }
 
     public void heal(int healing){
         health += healing;
         if (health > 100)
             health = 100;
+        notifyView();
     }
 
     public void gainExperience(int experience){
         this.experience += experience;
         if (canLevelUp())
             level++;
+        notifyView();
     }
 
     // don't think this needs to be public
@@ -89,11 +92,13 @@ public class Entity{
                         items.remove(item);
                 }
             }
+            notifyView();
         }
     }
 
     public void teleport(Location location){
         this.location = location;
+        notifyView();
     }
 
     // getters
@@ -133,7 +138,6 @@ public class Entity{
         observers.remove(viewport);
     }
 
-    // TODO: add notifyView() to functions that require it
     public void notifyView(){
         for (Viewport viewport : observers){
             viewport.update();
