@@ -65,6 +65,9 @@ class EntityTest {
     }
 
     @Test
+    void move(){}
+
+    @Test
     void moveNormallyWithNoObstacles(){
         Map m = new Map(5,5);
         World.getWorld().changeCurrentMapTo(m);

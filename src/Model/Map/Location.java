@@ -23,6 +23,8 @@ public class Location {
         this.terrain = terrain;
         this.obstacle = obstacle;
         this.areaEffect = areaEffect;
+        if (this.areaEffect != null)
+            this.areaEffect.setLocation(this);
         this.items = items;
     }
 
