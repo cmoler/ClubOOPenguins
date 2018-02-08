@@ -15,7 +15,7 @@ public class MapIterator<T> implements Iter{
     }
 
     @Override
-    public Object currentItem() {
+    public T currentItem() {
         return map[i][j];
     }
 
@@ -44,6 +44,14 @@ public class MapIterator<T> implements Iter{
     public void reset() {
         i = 0;
         j = 0;
+    }
+
+    public int getCurrRow(){
+        return i;
+    }
+
+    public int getCurrCol(){
+        return j;
     }
 }
 
