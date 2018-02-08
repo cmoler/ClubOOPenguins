@@ -1,5 +1,6 @@
 package Model.Map;
 
+import Model.Map.Terrain.Ice;
 import View.Viewport;
 
 public class Map {
@@ -10,21 +11,35 @@ public class Map {
     private Location defaultLocation;
 
     //Default Location is center of map
-    public void Map(int x, int y)
+    public Map(int x, int y)
     {
         this.locations = new Location[x][y];
         this.defaultLocation = locations[x/2][y/2];
+
+        // for testing: Locations need to be initialized to test Entity movement
+        for (Location[] row : this.locations){
+            for (Location l : row){
+                l = new Location(new Ice(), false, null, null);
+            }
+        }
+        for (Location[] row : this.locations){
+            for (Location l : row){
+                // make list of adjacent locations
+                //l.setAdjacentLocations(...);
+            }
+        }
+        // --------------------------------------- //
     }
 
     //Default Location is specified
-    public void Map(int x, int y, Location defaultLocation)
+    public Map(int x, int y, Location defaultLocation)
     {
         this.locations = new Location[x][y];
         this.defaultLocation = defaultLocation;
     }
 
     // used in MapBuilder
-    public void Map(Location[][] locations, Location defaultLocation){
+    public Map(Location[][] locations, Location defaultLocation){
         this.locations = locations;
         this.defaultLocation = defaultLocation;
     }
