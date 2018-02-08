@@ -19,7 +19,7 @@ public class Location {
     private List<Item> items;
 
 
-    public void Location(Terrain terrain, boolean obstacle, AreaEffect areaEffect, List<Item> items){
+    public Location(Terrain terrain, boolean obstacle, AreaEffect areaEffect, List<Item> items){
         this.terrain = terrain;
         this.obstacle = obstacle;
         this.areaEffect = areaEffect;
