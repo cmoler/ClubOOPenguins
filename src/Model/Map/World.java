@@ -2,6 +2,8 @@ package Model.Map;
 
 import Controller.MainMenuControl.MapBuilder;
 import View.Viewport;
+
+import java.util.HashMap;
 import java.util.List;
 
 public class World {
@@ -9,7 +11,7 @@ public class World {
     public static World instance = null;
 
     private Map currentMap;
-    private List<Map> maps;
+    private HashMap<String,Map> maps;
 
     protected World(){
         // Can't instantiate
@@ -25,6 +27,14 @@ public class World {
 
     public void changeCurrentMapTo(Map map){
         currentMap = map;
+    }
+
+    public void addMap(String mapID, Map map){
+        maps.put(mapID, map);
+    }
+
+    public Map getMap(String mapID){
+        return maps.get(mapID);
     }
 
     public void buildMap(MapBuilder mapBuilder){
