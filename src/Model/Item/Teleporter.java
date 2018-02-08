@@ -12,6 +12,11 @@ public class Teleporter extends InteractiveItem{
     private Map map;
     private Location location;
 
+    public Teleporter(Map map, Location location){
+        this.map = map;
+        this.location = location;
+    }
+
     @Override
     public void touch(Entity entity) {
         entity.teleport(location);
