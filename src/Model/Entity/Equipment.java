@@ -13,10 +13,15 @@ public class Equipment {
     private TakeableItem equiped;
 
     public boolean equip(TakeableItem item){
-        return false;
+        equiped = item;
+        return true;
     }
 
     public boolean unEquip(TakeableItem item){
+        if(equiped == item) {
+            equiped = null;
+            return true;
+        }
         return false;
     }
 
