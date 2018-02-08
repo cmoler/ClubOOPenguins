@@ -1,12 +1,16 @@
 package View;
 
 import Configs.Commons;
+import Model.Item.Item;
+import Model.Map.AreaEffect.DamageAreaEffect;
 import Model.Map.Location;
+import Model.Map.Terrain.Glacier;
 import View.AreaView.DecalView;
 import View.AreaView.LocationView;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class View extends JFrame {
 
@@ -15,10 +19,10 @@ public class View extends JFrame {
         initUI();
     }
 
-
     private void initUI() {
 
-        Location location = new Location();
+        // TODO: this location constructor is just to get rid of errors
+        Location location = new Location(new Glacier(), false, new DamageAreaEffect(), new ArrayList<Item>());
         Viewport locationView = new LocationView(location, 250, 250);
 
         DecalView decalView = new DecalView("resources/bluePenguin.png");
