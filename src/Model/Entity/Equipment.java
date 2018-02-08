@@ -4,29 +4,34 @@ import Model.Item.TakeableItem;
 import View.Viewport;
 //import com.sun.prism.image.ViewPort; // was throwing error for me
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Equipment {
 
     private List<Viewport> observers;
 
-    private TakeableItem equiped;
+    private TakeableItem equipped;
+
+    public Equipment() {
+        observers = new ArrayList<>();
+    }
 
     public boolean equip(TakeableItem item){
-        equiped = item;
+        equipped = item;
         return true;
     }
 
     public boolean unEquip(TakeableItem item){
-        if(equiped == item) {
-            equiped = null;
+        if(equipped == item) {
+            equipped = null;
             return true;
         }
         return false;
     }
 
-    public TakeableItem getEquiped() {
-        return equiped;
+    public TakeableItem getEquipped() {
+        return equipped;
     }
 
     public void attach(Viewport viewport){
