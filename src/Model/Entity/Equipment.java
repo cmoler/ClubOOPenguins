@@ -2,7 +2,7 @@ package Model.Entity;
 
 import Model.Item.TakeableItem;
 import View.Viewport;
-import com.sun.prism.image.ViewPort;
+//import com.sun.prism.image.ViewPort; // was throwing error for me
 
 import java.util.List;
 

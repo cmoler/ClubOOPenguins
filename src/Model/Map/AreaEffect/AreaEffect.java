@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public abstract class AreaEffect {
 
     private AtomicInteger totalEntitiesOn = new AtomicInteger(0);
-    private Location location;
+    protected Location location;
 
     public boolean isActive(){
         return totalEntitiesOn.get() > 0;
@@ -22,7 +22,11 @@ public abstract class AreaEffect {
         thread.start();
     }
 
-    public abstract void affect(Entity entity);
+    public void setLocation(Location location){
+        this.location = location;
+    }
+
+    protected abstract void affect(Entity entity);
 
     private class AffectEntityThread extends Thread {
 
@@ -34,10 +38,10 @@ public abstract class AreaEffect {
         }
 
         public void run() {
-            System.out.print(entity.toString() + " entered " + this.toString()); // for testing
             totalEntitiesOn.getAndAdd(1);
             while (entity.getLocation() == location) {
                 affect(entity);
+//                System.out.println("Health: " + entity.getHealth()); // for testing
                 try {
                     Thread.sleep(effectIntervalInSeconds * 1000);
                 } catch (InterruptedException e) {
@@ -45,7 +49,6 @@ public abstract class AreaEffect {
                 }
             }
             totalEntitiesOn.decrementAndGet();
-            System.out.print(entity.toString() + " exited " + this.toString()); // for testing
         }
     }
 }
