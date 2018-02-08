@@ -16,6 +16,7 @@ import View.AreaView.ItemView.ItemView;
 import View.AreaView.LocationView;
 import View.AreaView.ObstacleView;
 import View.AreaView.TerrainView;
+import View.Viewport;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,6 +29,12 @@ import static Configs.Commons.AREAEFFECT_DAMAGE_IMAGE;
 public class MapBuilder {
 
     public MapBuilder(){}
+
+    private Viewport viewport;
+
+    public Viewport getViewport() {
+        return viewport;
+    }
 
     public Map buildMap(String mapID) throws FileNotFoundException {
         // will change file location after testing
@@ -57,10 +64,6 @@ public class MapBuilder {
             String[] locationCoords = mapData.get(lineIndex++).split("\t\t")[1].split(",");
             int xCoord = Integer.parseInt(locationCoords[0]);
             int yChord = Integer.parseInt(locationCoords[1]);
-
-            /*
-        NOT SURE WHERE THIS GOES WITH THE WHILE LOOP BUT I FEEL LIKE IT MIGHT BE INSIDE
-         */
 
             //Getting Terrain
             Terrain terrain = null;
@@ -150,13 +153,14 @@ public class MapBuilder {
             locations[yChord][xCoord] = new Location(terrain, obstacleBool, areaEffect, items);
             LocationView locationView = new LocationView(locations[yChord][xCoord], xCoord, yChord);
             if(terrainView != null) locationView.add(terrainView);
-            if(obstacleView != null) locationView.add(obstacleView);
             if(areaEffectView != null) locationView.add(areaEffectView);
+            if(obstacleView != null) locationView.add(obstacleView);
             for(ItemView itemView: itemViews){
                 locationView.add(itemView);
             }
 
         }
+            this.viewport = locationView;
 
         // if we ever want to include Entities
 //        lineIndex++; // line is "ENTITIES"

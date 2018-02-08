@@ -12,9 +12,8 @@ public class AreaEffectView extends Viewport {
 
     private Image areaEffectImage;
 
-    public AreaEffectView(String fileName){
-        ImageIcon imageIcon = new ImageIcon(fileName);
-        areaEffectImage = imageIcon.getImage();
+    public AreaEffectView(Image image){
+        this.areaEffectImage = image;
     }
 
     @Override

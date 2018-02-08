@@ -42,7 +42,6 @@ public class Map {
         this.locations = new Location[x][y];
         numRows = this.locations.length;
         numCols = this.locations[0].length;
-        this.defaultLocation = locations[x/2][y/2];
 
         // for testing: Locations need to be initialized to test Entity movement
         for (int i = 0; i < numRows - 1; i++) {
@@ -51,8 +50,8 @@ public class Map {
             }
         }
 
+        this.defaultLocation = locations[x/2][y/2];
         setAdjacencyList();
-        // --------------------------------------- //
     }
 
     public void setAdjacencyList() {

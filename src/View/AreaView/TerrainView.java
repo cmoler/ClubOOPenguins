@@ -11,9 +11,8 @@ public class TerrainView extends Viewport {
 
     private Image terrainImage;
 
-    public TerrainView(String fileName){
-        ImageIcon imageIcon = new ImageIcon(fileName);
-        terrainImage = imageIcon.getImage();
+    public TerrainView(Image terrainImage){
+        this.terrainImage = terrainImage;
     }
 
     @Override

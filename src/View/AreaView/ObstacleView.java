@@ -11,9 +11,8 @@ public class ObstacleView extends Viewport {
 
     private Image obstacleImage;
 
-    public ObstacleView(String fileName){
-        ImageIcon imageIcon = new ImageIcon(fileName);
-        obstacleImage = imageIcon.getImage();
+    public ObstacleView(Image image){
+        this.obstacleImage = image;
     }
 
     @Override
