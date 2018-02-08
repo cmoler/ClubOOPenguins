@@ -48,6 +48,14 @@ public class Inventory {
         return itemExists;
     }
 
+    public boolean equip(TakeableItem item) {
+        return equipment.equip(item);
+    }
+
+    public boolean unEquip(TakeableItem item) {
+        return equipment.unEquip(item);
+    }
+
     public void attach(Viewport viewport){
         observers.add(viewport);
     }
