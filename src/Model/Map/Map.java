@@ -23,6 +23,12 @@ public class Map {
         this.defaultLocation = defaultLocation;
     }
 
+    // used in MapBuilder
+    public void Map(Location[][] locations, Location defaultLocation){
+        this.locations = locations;
+        this.defaultLocation = defaultLocation;
+    }
+
     public Location getDefaultLocation(){
         return defaultLocation;
     }

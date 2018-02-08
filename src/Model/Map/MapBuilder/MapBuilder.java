@@ -22,18 +22,21 @@ public class MapBuilder {
 
         Map map;
 
-        if(!mapData.get(0).equals(mapID))
-            error("mapID error in " + filename);
-        if(!mapData.get(1).equals("MAP"))
-            error("format error--no MAP on second line");
-        System.out.println(mapData.get(2).charAt(0));
-        System.out.println(mapData.get(2).charAt(1));
+        // first 2 lines are mapID and "MAP"
+        int lineIndex = 2;
+        int height = Integer.parseInt(mapData.get(lineIndex++).split("\t")[1]);
+        int width = Integer.parseInt(mapData.get(lineIndex++).split("\t")[1]);
+        String[] defaultPositions = mapData.get(lineIndex++).split("\t")[1].split(",");
+        int defaultX = Integer.parseInt(defaultPositions[0]);
+        int defaultY = Integer.parseInt(defaultPositions[1]);
+        lineIndex++; // line is "LOCATIONS"
+        while(mapData.get(lineIndex).substring(0,1).equals("\t\t")){
+            String[] locationCoords = mapData.get(lineIndex++).split("\t")[1].split(",");
+            int xCoord = Integer.parseInt(locationCoords[0]);
+            int yChord = Integer.parseInt(locationCoords[1]);
+        }
 
         return new Map();
-    }
-
-    private void error(String message){
-        System.out.println("MapBuilder.java: " + message);
     }
 
 }
