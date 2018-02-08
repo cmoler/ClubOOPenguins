@@ -1,5 +1,7 @@
-package Controller.MainMenuControl;
+package Controller.Controller;
 
+import Controller.Utility.GameLoader;
+import Controller.Utility.GameSaver;
 import Model.Entity.Entity;
 
 public class MainMenuController {

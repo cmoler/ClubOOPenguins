@@ -1,15 +1,16 @@
-package Controller.MainControl;
+package Controller.Controller;
 
 import Controller.Contexts.Context;
 import Controller.Contexts.GameContext;
-import Controller.Contexts.InventoryContext;
+import Controller.Contexts.EquipmentContext;
 import Controller.Contexts.MenuContext;
-import Controller.GameController.GameController;
-import Controller.MainMenuControl.MainMenuController;
+import Controller.Input.Input;
+import Controller.Game.OOPenguinGame;
+
 import View.Viewport;
 
 
-public class MainController {
+public class MainController extends Controller {
 
     private Input input;
     private Context gameContext;
@@ -24,19 +25,17 @@ public class MainController {
     private boolean gameRunning = true;
 
     public MainController() {
-
         game = new OOPenguinGame();
         gameContext = new GameContext(this);
         menuContext = new MenuContext(this);
-        inventoryContext = new InventoryContext(this);
+        inventoryContext = new EquipmentContext(this);
         input = new Input(menuContext);
         game.addKeyListener(input);
     }
 
-
-    public void setActiveContext(Context context) {
-        System.out.println("Set Active context called with " + context.getClass().toString());
+    private void setActiveContext(Context context) {
         input.setActiveContext(context);
+        //make visible whatever you're setting
     }
 
     public void openMenu() {
@@ -49,12 +48,12 @@ public class MainController {
         setActiveContext(gameContext);
     }
 
-    public void openInventory(){
+    public void openInventory() {
         System.out.println("Opening Inventory");
         setActiveContext(inventoryContext);
     }
 
-    public void closeInventory(){
+    public void closeInventory() {
         System.out.println("Closing Inventory");
         setActiveContext(gameContext);
     }

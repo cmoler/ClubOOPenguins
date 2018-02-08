@@ -1,4 +1,4 @@
-package Controller.MainControl;
+package Controller.Input;
 
 import Controller.Contexts.Context;
 

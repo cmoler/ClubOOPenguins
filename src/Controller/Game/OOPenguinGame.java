@@ -1,4 +1,4 @@
-package Controller.MainControl;
+package Controller.Game;
 
 import javax.swing.JFrame;
 

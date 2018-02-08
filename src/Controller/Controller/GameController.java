@@ -1,4 +1,4 @@
-package Controller.GameController;
+package Controller.Controller;
 
 import Model.Entity.Direction;
 import Model.Entity.Entity;
@@ -11,12 +11,8 @@ public class GameController {
     private Entity entity;
     private World world;
 
-    public GameController(){
+    public GameController() {
 
-    }
-
-    public Map getCurrentMap(){
-        return null;
     }
 
     public void move(Direction direction){

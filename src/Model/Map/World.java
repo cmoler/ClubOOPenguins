@@ -1,6 +1,6 @@
 package Model.Map;
 
-import Controller.MainMenuControl.MapBuilder;
+import Controller.Utility.MapBuilder;
 import View.Viewport;
 
 import java.util.List;

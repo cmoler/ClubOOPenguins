@@ -1,6 +1,6 @@
 package Controller.Contexts;
 
-import Controller.MainControl.MainController;
+import Controller.Controller.MainController;
 
 import java.awt.event.KeyEvent;
 
