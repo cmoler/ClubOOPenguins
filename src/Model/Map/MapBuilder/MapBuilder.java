@@ -30,7 +30,8 @@ public class MapBuilder {
     public MapBuilder(){}
 
     public Map buildMap(String mapID) throws FileNotFoundException {
-        String filename = "tests/Model/Map/MapBuilder/MapModel" + mapID + ".txt"; // will change after testing
+        // will change file location after testing
+        String filename = "tests/Model/Map/MapBuilder/MapModel" + mapID + ".txt";
 
         Scanner s = new Scanner(new File(filename));
         List<String> mapData = new ArrayList<String>();
@@ -44,24 +45,18 @@ public class MapBuilder {
         int lineIndex = 2;
         int height = Integer.parseInt(mapData.get(lineIndex++).split("\t")[1]);
         int width = Integer.parseInt(mapData.get(lineIndex++).split("\t")[1]);
-        System.out.println("Height: " + height);
-        System.out.println("Width: " + width);
 
         Location[][] locations = new Location[height][width];
 
         String[] defaultPositions = mapData.get(lineIndex++).split("\t")[1].split(",");
         int defaultX = Integer.parseInt(defaultPositions[0]);
         int defaultY = Integer.parseInt(defaultPositions[1]);
-        System.out.println("Default x: " + defaultX);
-        System.out.println("Default y: " + defaultY);
         lineIndex++; // line is "LOCATIONS"
         while(mapData.get(lineIndex).substring(0,2).equals("\t\t")){
             // Getting location
             String[] locationCoords = mapData.get(lineIndex++).split("\t\t")[1].split(",");
             int xCoord = Integer.parseInt(locationCoords[0]);
             int yChord = Integer.parseInt(locationCoords[1]);
-            System.out.println(" x: " + xCoord);
-            System.out.println(" y: " + yChord);
 
             /*
         NOT SURE WHERE THIS GOES WITH THE WHILE LOOP BUT I FEEL LIKE IT MIGHT BE INSIDE
@@ -85,7 +80,6 @@ public class MapBuilder {
                     terrainView = new TerrainView(Commons.GLACIER_IMAGE);
                     break;
             }
-            System.out.println("    terrain: " + terrainType);
 
             // Getting Obstacle
             String obstacle = mapData.get(lineIndex++).split("\t\t\t")[1];
@@ -95,7 +89,6 @@ public class MapBuilder {
                 obstacleBool = true;
                 obstacleView = new ObstacleView(Commons.OBSTACLE_IMAGE);
             }
-            System.out.println("    obstacle: " + obstacle);
 
             // Getting AreaEffect
             String areaEffectType = mapData.get(lineIndex++).split("\t\t\t")[1];
@@ -121,7 +114,6 @@ public class MapBuilder {
                 default:
                     areaEffect = null;
             }
-            System.out.println("    area effect: " + areaEffectType);
 
             // Get Items
             lineIndex++; // line is "ITEMS"
@@ -129,7 +121,6 @@ public class MapBuilder {
             List<ItemView> itemViews = new ArrayList<ItemView>();
             while (mapData.get(lineIndex).substring(0, 4).equals("\t\t\t\t")) {
                 String itemType = mapData.get(lineIndex).split("\t\t\t\t")[1];
-                System.out.println("    item: " + itemType);
                 switch (itemType) {
                     case "INTERACTIVE":
                         items.add(new InteractiveItem());
@@ -151,9 +142,6 @@ public class MapBuilder {
                         int teleportLocationY = Integer.parseInt(teleporterLocationXAndY[1]);
                         items.add(new Teleporter(teleporterMapID,teleportLocationX,teleportLocationY));
                         itemViews.add(new ItemView(Commons.ITEM_TELEPORTER_IMAGE));
-                        System.out.println("        mapID: " + teleporterMapID);
-                        System.out.println("        x: " + teleportLocationX);
-                        System.out.println("        y: " + teleportLocationY);
                         break;
                 }
                 lineIndex++;
@@ -170,6 +158,7 @@ public class MapBuilder {
 
         }
 
+        // if we ever want to include Entities
 //        lineIndex++; // line is "ENTITIES"
 //        while(lineIndex < mapData.size()){
 //            String[] entityPositions = mapData.get(lineIndex++).split("\t")[1].split(",");

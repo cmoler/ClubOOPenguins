@@ -1,5 +1,6 @@
 package Model.Map.MapBuilder;
 
+import Model.Map.Map;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
@@ -9,8 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class MapBuilderTest {
 
     @Test
-    void ShouldPrintMapFile() throws FileNotFoundException {
+    void makeMap() throws FileNotFoundException {
         MapBuilder b = new MapBuilder();
-        b.buildMap("0001");
+        Map m = b.buildMap("0001");
     }
 }
