@@ -6,7 +6,7 @@ public class TakeableItem extends Item{
 
     @Override
     public void touch(Entity entity) {
-        entity.getInventory().addItem(this);
+
     }
 
     public boolean shouldBeRemoved(){
