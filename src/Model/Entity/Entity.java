@@ -58,9 +58,12 @@ public class Entity{
 
     public void gainExperience(int experience){
         this.experience += experience;
+        if (canLevelUp())
+            level++;
     }
 
-    public boolean canLevelUp(){
+    // don't think this needs to be public
+    private boolean canLevelUp(){
         if (level < finalLevel) {
             if (experience > ExperienceForLevel.get(level + 1))
                 return true;
@@ -71,7 +74,7 @@ public class Entity{
             return false;
     }
 
-    private void move(Direction direction){
+    public void move(Direction direction){
         if(location.getAdjacentAt(direction) == null) // if trying to move off edge of map
             return;
         Location nextLocation = location.getAdjacentAt(direction);
