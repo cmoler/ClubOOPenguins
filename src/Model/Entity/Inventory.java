@@ -63,6 +63,10 @@ public class Inventory {
         return equipment.unEquip(item);
     }
 
+    public TakeableItem getEquipped() {
+        return equipment.getEquipped();
+    }
+
     public void attach(Viewport viewport){
         observers.add(viewport);
     }
