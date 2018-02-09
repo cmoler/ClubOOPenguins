@@ -1,9 +1,15 @@
 package Model.Entity;
 
 
+import Model.Item.Item;
+import Model.Item.Teleporter;
+import Model.Map.Direction;
 import Model.Map.Map;
+import Model.Map.MapBuilder.MapBuilder;
 import Model.Map.World;
 import org.junit.jupiter.api.Test;
+
+import java.io.FileNotFoundException;
 
 import static Model.Map.Direction.E;
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,8 +17,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class EntityTest {
 
     @Test
-    void isAlive() {
-        Map m = new Map(5,5);
+    void isAlive() throws FileNotFoundException {
+        MapBuilder mb = new MapBuilder();
+        Map m = mb.buildMap("0001");
         World.getWorld().changeCurrentMapTo(m);
         Entity e = new Entity(m.getDefaultLocation());
         e.takeDamage(70);
@@ -54,14 +61,18 @@ class EntityTest {
     }
 
     @Test
-    void teleport() {
-//        Map m = new Map(5,5);
-//        World.getWorld().changeCurrentMapTo(m);
-//        Entity e = new Entity(m.getDefaultLocation());
-//        Map mapToTeleportTo = new Map(6, 6);
-//        Item i = new Teleporter(mapToTeleportTo, mapToTeleportTo.getDefaultLocation());
-//        i.touch(e);
-//        assertEquals(mapToTeleportTo.getDefaultLocation(), e.getLocation(), "e's location should be the teleported to's map's default location");
+    void teleport() throws FileNotFoundException {
+//        World world = World.getWorld();
+//        MapBuilder mb = new MapBuilder();
+//        Map m1 = mb.buildMap("0001");
+//        Map m2 = mb.buildMap("0002");
+//        world.addMap("0001", m1);
+//        world.addMap("0002", m2);
+//        world.changeCurrentMapTo(m1);
+//        Entity e = new Entity(m1.getDefaultLocation());
+//        e.move(Direction.W);
+//        assertEquals(world.getMap("0002"), world.currentMap, "Current map should have changed to 0002");
+//        // it works
     }
 
     @Test

@@ -1,5 +1,6 @@
 package Model.Map.MapBuilder;
 
+import Model.Item.Item;
 import Model.Map.Map;
 import org.junit.jupiter.api.Test;
 
@@ -13,5 +14,6 @@ class MapBuilderTest {
     void makeMap() throws FileNotFoundException {
         MapBuilder b = new MapBuilder();
         Map m = b.buildMap("0001");
+        m = b.buildMap("0002");
     }
 }

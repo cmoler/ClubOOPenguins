@@ -11,7 +11,7 @@ public class World {
     public static World instance = null;
 
     private Map currentMap;
-    private HashMap<String,Map> maps;
+    private HashMap<String,Map> maps = new HashMap<String,Map>();
 
     protected World(){
         // Can't instantiate

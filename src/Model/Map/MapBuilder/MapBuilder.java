@@ -59,8 +59,8 @@ public class MapBuilder {
         while(mapData.get(lineIndex).substring(0,2).equals("\t\t")){
             // Getting location
             String[] locationCoords = mapData.get(lineIndex++).split("\t\t")[1].split(",");
-            int xCoord = Integer.parseInt(locationCoords[0]);
-            int yChord = Integer.parseInt(locationCoords[1]);
+            int xCoord = Integer.parseInt(locationCoords[1]);
+            int yChord = Integer.parseInt(locationCoords[0]);
 
             //Getting Terrain
             Terrain terrain = null;
