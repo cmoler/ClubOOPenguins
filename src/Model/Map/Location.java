@@ -40,6 +40,10 @@ public class Location {
         return areaEffect;
     }
 
+    public Terrain getTerrain() {
+        return terrain;
+    }
+
     public boolean moveAllowed(Entity entity){
         if (!obstacle && terrain.enter(entity.getEntityType()))
         {
