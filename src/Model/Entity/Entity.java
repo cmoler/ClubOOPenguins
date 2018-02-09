@@ -6,13 +6,14 @@ import Model.Map.Direction;
 import Model.Map.Location;
 import View.Viewport;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
 public class Entity{
 
-    private List<Viewport> observers;
+    private List<Viewport> observers = new ArrayList<Viewport>();
 
     private int velocity = 5;
 
@@ -85,11 +86,10 @@ public class Entity{
                 this.location.getAreaEffect().activate(this);
             }
             if (this.location.getItems() != null){
-                List<Item> items = this.location.getItems();
-                for (Item item : items){
+                for (Item item : this.location.getItems()){
                     item.touch(this);
                     if(item.shouldBeRemoved())
-                        items.remove(item);
+                        this.location.getItems().remove(item);
                 }
             }
             notifyView();
