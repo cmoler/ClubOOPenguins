@@ -17,6 +17,16 @@ public class Map {
     private int numRows = 0;
     private int numCols = 0;
 
+    //Used for saving game map
+    public int getRows() {
+      return numRows;
+    }
+
+    public int getCols() {
+      return numCols;
+    }
+
+
     //Default Location is center of map
     public Map(Location[][] allLocations) {
         this.locations = allLocations;
