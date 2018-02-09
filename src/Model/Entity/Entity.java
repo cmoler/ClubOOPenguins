@@ -115,7 +115,9 @@ public class Entity{
     }
 
     public int getExperienceForNextLevel(){
-        return ExperienceForLevel.get(level + 1);
+        if(canLevelUp())
+            return ExperienceForLevel.get(level + 1);
+        else return -1;
     }
 
     public int getExperienceForCurrentLevel(){
