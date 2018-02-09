@@ -25,10 +25,6 @@ class InventoryTest {
     }
 
     @Test
-    void removeItem1() {
-    }
-
-    @Test
     void doesExist() {
         TakeableItem item1 = new TakeableItem();
         TakeableItem item2 = new TakeableItem();
@@ -43,6 +39,11 @@ class InventoryTest {
 
     @Test
     void equip() {
+        TakeableItem item1 = new TakeableItem();
+        TakeableItem item2 = new TakeableItem();
+        Inventory i = new Inventory();
+        assertEquals(true, i.equip(item1));
+        assertEquals(item1, i.getEquipped());
     }
 
     @Test
