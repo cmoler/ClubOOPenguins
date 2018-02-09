@@ -18,12 +18,14 @@ public class Equipment {
 
     public boolean equip(TakeableItem item){
         equipped = item;
+        notifyView();
         return true;
     }
 
     public boolean unEquip(TakeableItem item){
         if(equipped == item) {
             equipped = null;
+            notifyView();
             return true;
         }
         return false;
