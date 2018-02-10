@@ -93,7 +93,7 @@ public abstract class Viewport extends JPanel {
     }
 
     public void update(){
-
+        repaint();
     }
 
     public void moveUpdate(Direction direction){

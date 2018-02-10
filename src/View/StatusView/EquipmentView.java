@@ -32,9 +32,4 @@ public class EquipmentView extends Viewport {
         return null;
     }
 
-    @Override
-    public void update(){
-
-    }
-
 }
