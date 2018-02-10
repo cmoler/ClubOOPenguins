@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class StatusViewPort extends Viewport {
 
-    public enum RenderOption{ STATS, EQUIPMENT, INVENTORY}
+    public enum RenderOption{ EQUIPMENT, INVENTORY}
 
     private RenderOption renderOption;
 
@@ -27,10 +27,10 @@ public class StatusViewPort extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D){
+
+        children.get(0).draw(graphics2D);
+
         switch (renderOption){
-            case STATS:
-                children.get(0).draw(graphics2D);
-                break;
 
             case EQUIPMENT:
                 children.get(1).draw(graphics2D);
