@@ -25,7 +25,7 @@ import java.util.Scanner;
 public class EntityBuilder {
 
     private Viewport avatarView;
-    private Viewport statusViewport;
+    private StatusViewPort statusViewport;
 
     public EntityBuilder(){}
 
@@ -119,7 +119,7 @@ public class EntityBuilder {
         return avatarView;
     }
 
-    public Viewport getStatusViewport() {
+    public StatusViewPort getStatusViewport() {
         return statusViewport;
     }
 }

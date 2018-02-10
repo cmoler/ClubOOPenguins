@@ -6,6 +6,8 @@ public interface ImagesInfo {
 
 
     public static final String TILE_SHEET = "resources/images/terrain.png";
+    public static final String AVATAR_SHEET = "resources/images/bluePenguin.png";
+
     public static final String AREAEFFECT_DAMAGE_FILELOCATION = "resources/images/Red_AOE.png";
     public static final String AREAEFFECT_HEAL_FILELOCATION = "resources/images/Green_AOE.png";
     public static final String AREAEFFECT_KILL_FILELOCATION = "resources/images/Black_AOE.png";
@@ -32,6 +34,8 @@ public interface ImagesInfo {
     public static final Image ITEM_ONESHOT_IMAGE = SpriteParser.getSpriteParser().getOneShotItemImage();
     public static final Image ITEM_TAKEABLE_IMAGE = SpriteParser.getSpriteParser().getTakeAbleItemImage();
     public static final Image ITEM_TELEPORTER_IMAGE = SpriteParser.getSpriteParser().getTeleporterItemImage();
+
+    public static final Image AVATAR_IMAGE = SpriteParser.getSpriteParser().getAvatarImage();
 
 
 

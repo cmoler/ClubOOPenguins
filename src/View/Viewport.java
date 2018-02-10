@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TimerTask;
 
-public abstract class Viewport extends JPanel {
+public class Viewport extends JPanel {
 
     Timer timer;
 
