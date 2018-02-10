@@ -26,8 +26,8 @@ public class MapView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D){
-        int i;
-        int j;
+        int i = 0;
+        int j = 0;
         MapIterator mapIterator = new MapIterator(World.getWorld().getCurrentMap());
         for(mapIterator.reset(); mapIterator.isValid(); mapIterator.next()){
             if(mapIterator.currentItem() == entity.getLocation()){
@@ -36,7 +36,10 @@ public class MapView extends Viewport {
             }
         }
         for(Viewport child: children){
-            for()
+            if(child.getLocationX() <= j + 2 && child.getLocationX() >= j - 2&&
+                    child.getLocationY() <= i + 2 && child.getLocationY() >= i - 2 ){
+                child.draw(graphics2D);
+            }
         }
     }
 
