@@ -29,7 +29,7 @@ MAP
 			FALSE
 			NONE
 			ITEMS
-				INTERACTIVE
+				ONESHOT
 		0,4
 			ICE
 			TRUE
@@ -95,7 +95,7 @@ MAP
 			FALSE
 			NONE
 			ITEMS
-				INTERACTIVE
+				TAKEABLE
 		3,0
 			GLACIER
 			FALSE
@@ -156,8 +156,3 @@ MAP
 			NONE
 			ITEMS
 				INTERACTIVE
-	ENTITIES
-		2,0
-		WATER
-		4,1
-		ICE
