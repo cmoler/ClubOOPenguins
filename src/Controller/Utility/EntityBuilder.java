@@ -25,13 +25,13 @@ import java.util.Scanner;
 public class EntityBuilder {
 
     private Viewport avatarView;
-    private Viewport statusViewport;
+    private StatusViewPort statusViewport;
 
     public EntityBuilder(){}
 
     public Entity buildEntity(String entityID) throws FileNotFoundException {
 
-        String filename = "tests/Model/Map/EntityBuilder/EntityModel" + entityID + ".txt";
+        String filename = "resources/entities/EntityModel" + entityID + ".txt";
 
         Scanner s = new Scanner(new File(filename));
         List<String> entityData = new ArrayList<String>();
@@ -119,7 +119,7 @@ public class EntityBuilder {
         return avatarView;
     }
 
-    public Viewport getStatusViewport() {
+    public StatusViewPort getStatusViewport() {
         return statusViewport;
     }
 }

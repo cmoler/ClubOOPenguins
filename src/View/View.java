@@ -3,6 +3,7 @@ package View;
 import Configs.Commons;
 import Controller.Utility.EntityBuilder;
 import Controller.Utility.MapBuilder;
+import View.StatusView.StatusViewPort;
 
 import javax.swing.*;
 import java.io.FileNotFoundException;
@@ -23,21 +24,28 @@ public class View extends JFrame {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        Viewport viewport = mapBuilder.getViewport();
+        Viewport mapView = mapBuilder.getViewport();
 
         EntityBuilder entityBuilder = new EntityBuilder();
-
+        try {
+            entityBuilder.buildEntity("0001");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         Viewport avatarView = entityBuilder.getAvatarView();
-        Viewport statusView = entityBuilder.getStatusViewport();
-
+        StatusViewPort statusView = entityBuilder.getStatusViewport();
+        statusView.setRenderOption(StatusViewPort.RenderOption.INVENTORY);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT);
         setLocationRelativeTo(null);
         setResizable(false);
 
+        Viewport viewport = new Viewport();
+        viewport.add(mapView);
+        viewport.add(avatarView);
+        viewport.add(statusView);
+
         add(viewport);
-        add(avatarView);
-        add(statusView);
         //add(decalView);
         setTitle("CLUBOOP");
 
