@@ -45,6 +45,14 @@ public class MapIterator<T> implements Iter{
         i = 0;
         j = 0;
     }
+
+    public int getI() {
+        return i;
+    }
+    public int getJ(){
+        return j;
+    }
+
 }
 
 
