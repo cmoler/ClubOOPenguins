@@ -31,7 +31,7 @@ public class EntityBuilder {
 
     public Entity buildEntity(String entityID) throws FileNotFoundException {
 
-        String filename = "tests/Model/Map/EntityBuilder/EntityModel" + entityID + ".txt";
+        String filename = "resources/entities/EntityModel" + entityID + ".txt";
 
         Scanner s = new Scanner(new File(filename));
         List<String> entityData = new ArrayList<String>();
