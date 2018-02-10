@@ -31,7 +31,7 @@ public class MapBuilder {
 
     public Map buildMap(String mapID) throws FileNotFoundException {
         // will change file location after testing
-        String filename = "tests/Model/Map/MapBuilder/MapModel" + mapID + ".txt";
+        String filename = "resources/maps/MapModel" + mapID + ".txt";
 
         Scanner s = new Scanner(new File(filename));
         List<String> mapData = new ArrayList<String>();
