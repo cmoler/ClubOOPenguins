@@ -1,4 +1,4 @@
-package Model.Map.MapBuilder;
+package Controller.MapBuilder;
 
 import Controller.Utility.MapBuilder;
 import Model.Map.Map;

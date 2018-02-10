@@ -63,6 +63,10 @@ public class Inventory {
         return equipment.unEquip(item);
     }
 
+    public Equipment getEquipment() {
+        return equipment;
+    }
+
     public TakeableItem getEquipped() {
         return equipment.getEquipped();
     }
