@@ -36,6 +36,10 @@ public class World {
         maps.put(mapID, map);
     }
 
+    public String getMapID(Map map) {
+      return maps.get(map);
+    }
+
     public Map getMap(String mapID){
         return maps.get(mapID);
     }
