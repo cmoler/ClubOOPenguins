@@ -1,30 +1,23 @@
 package Controller.Contexts;
 
-import Controller.Controller.MainController;
+import Controller.Controller.Controller;
+import Controller.Controller.GameController;
 
 import java.awt.event.KeyEvent;
 
 public class GameContext extends Context{
 
-    public GameContext(MainController mainController){
-        super(mainController);
+    private GameController gameController;
+
+    public GameContext(GameController gameController){
+        this.gameController = gameController;
+    }
+
+    public Controller getController() {
+        return gameController;
     }
 
     public void processKeyEvent(KeyEvent event) {
-        int keyCode = event.getKeyCode();
-        MainController mainController = getMainController();
 
-        switch(keyCode){
-
-            case KeyEvent.VK_I:
-                mainController.openInventory();
-                break;
-
-            case KeyEvent.VK_ESCAPE:
-                mainController.openMenu();
-                break;
-
-
-        }
     }
 }

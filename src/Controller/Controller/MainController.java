@@ -1,61 +1,46 @@
 package Controller.Controller;
 
-import Controller.Contexts.Context;
-import Controller.Contexts.GameContext;
-import Controller.Contexts.EquipmentContext;
-import Controller.Contexts.MenuContext;
+import Controller.Contexts.*;
 import Controller.Input.Input;
-import Controller.Game.OOPenguinGame;
-
-import View.Viewport;
+import Controller.Game.OOPenguinGameFrame;
 
 
-public class MainController extends Controller {
+public class MainController {
 
+    private OOPenguinGameFrame game;
     private Input input;
+
     private Context gameContext;
     private Context menuContext;
     private Context inventoryContext;
-    private OOPenguinGame game;
+    private Context equipmentContext;
 
-    private Viewport viewport;
     private GameController gameController;
-    private MainMenuController mainMenuController;
-
-    private boolean gameRunning = true;
+    private MenuController menuController;
+    private InventoryController inventoryController;
+    private EquipmentController equipmentController;
 
     public MainController() {
-        game = new OOPenguinGame();
-        gameContext = new GameContext(this);
-        menuContext = new MenuContext(this);
-        inventoryContext = new EquipmentContext(this);
+        game = new OOPenguinGameFrame();
+
+
+        gameController = new GameController(this);
+        menuController = new MenuController(this);
+        inventoryController = new InventoryController(this);
+        equipmentController = new EquipmentController(this);
+
+        gameContext = new GameContext(gameController);
+        menuContext = new MenuContext(menuController);
+        inventoryContext = new InventoryContext(inventoryController);
+        equipmentContext = new EquipmentContext(equipmentController);
+
         input = new Input(menuContext);
         game.addKeyListener(input);
     }
 
     private void setActiveContext(Context context) {
         input.setActiveContext(context);
-        //make visible whatever you're setting
-    }
 
-    public void openMenu() {
-        System.out.println("Opening Menu");
-        setActiveContext(menuContext);
-    }
-
-    public void closeMenu() {
-        System.out.println("Closing Menu");
-        setActiveContext(gameContext);
-    }
-
-    public void openInventory() {
-        System.out.println("Opening Inventory");
-        setActiveContext(inventoryContext);
-    }
-
-    public void closeInventory() {
-        System.out.println("Closing Inventory");
-        setActiveContext(gameContext);
     }
 
 

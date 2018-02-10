@@ -1,25 +1,19 @@
 package Controller.Contexts;
 
-import Controller.Controller.MainController;
+import Controller.Controller.MenuController;
 
 import java.awt.event.KeyEvent;
 
 public class MenuContext extends Context{
 
-    public MenuContext(MainController mainController){
-        super(mainController);
+    private MenuController menuController;
+
+    public MenuContext(MenuController menuController){
+        this.menuController = menuController;
     }
 
+    @Override
     public void processKeyEvent(KeyEvent event) {
-        int keyCode = event.getKeyCode();
-        MainController mainController = getMainController();
 
-        switch(keyCode){
-
-            case KeyEvent.VK_ESCAPE:
-                mainController.closeMenu();
-                break;
-
-        }
     }
 }

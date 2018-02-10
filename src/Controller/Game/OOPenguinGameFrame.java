@@ -2,9 +2,9 @@ package Controller.Game;
 
 import javax.swing.JFrame;
 
-public class OOPenguinGame extends JFrame {
+public class OOPenguinGameFrame extends JFrame {
 
-    public OOPenguinGame() {
+    public OOPenguinGameFrame() {
         setTitle("OOPPenguin");
         setSize(300, 300);
         setVisible(true);

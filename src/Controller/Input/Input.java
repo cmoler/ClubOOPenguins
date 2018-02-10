@@ -9,7 +9,7 @@ public class Input implements KeyListener {
 
     private Context activeContext;
 
-    Input(Context activeContext) {
+    public Input(Context activeContext) {
         this.activeContext = activeContext;
     }
 
