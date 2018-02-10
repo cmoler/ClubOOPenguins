@@ -1,10 +1,23 @@
 package Controller.Contexts;
 
-import Controller.MainControl.Input;
+import Controller.Controller.Controller;
+import Controller.Controller.GameController;
+
+import java.awt.event.KeyEvent;
 
 public class GameContext extends Context{
-    @Override
-    public void processInput(Input input) {
+
+    private GameController gameController;
+
+    public GameContext(GameController gameController){
+        this.gameController = gameController;
+    }
+
+    public Controller getController() {
+        return gameController;
+    }
+
+    public void processKeyEvent(KeyEvent event) {
 
     }
 }
