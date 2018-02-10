@@ -19,7 +19,7 @@ public class SaveGameView extends Viewport {
     @Override
     public void draw(Graphics2D graphics2D) {
         graphics2D.drawRect(x, y, TextBoxInfo.TEXTBOX_WIDTH, TextBoxInfo.TEXTBOX_HEIGHT);
-        graphics2D.drawString("Save Game", (x+TextBoxInfo.TEXTBOX_WIDTH)/2, (y+TextBoxInfo.TEXTBOX_HEIGHT)/2);
+        graphics2D.drawString("Save Game", (x), (y+TextBoxInfo.TEXTBOX_HEIGHT/4));
     }
 
     @Override

@@ -6,14 +6,9 @@ import java.awt.event.KeyEvent;
 
 public class MenuContext extends Context{
 
-    private MenuController menuController;
-
     public MenuContext(MenuController menuController){
-        this.menuController = menuController;
+        super(menuController);
+        //this.menuController = menuController;
     }
 
-    @Override
-    public void processKeyEvent(KeyEvent event) {
-
-    }
 }
