@@ -49,7 +49,7 @@ public class View extends JFrame {
         viewport.add(statusView);
 
 
-        MenuViewPort menuViewPort = new MenuViewPort(Commons.SCREEN_WIDTH/2,Commons.SCREEN_HEIGHT/4);
+        MenuViewPort menuViewPort = new MenuViewPort();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT);
         setLocationRelativeTo(null);
