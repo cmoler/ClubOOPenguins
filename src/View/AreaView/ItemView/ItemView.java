@@ -22,8 +22,8 @@ public class ItemView extends Viewport {
     }
 
     @Override
-    public void draw(Graphics2D graphics2D) {
-        graphics2D.drawImage(itemImage, (parent.getLocationX()*SpriteSizes.TERRAIN_WIDTH)+(SpriteSizes.TERRAIN_WIDTH/4), (parent.getLocationY()*SpriteSizes.TERRAIN_HEIGHT)+(SpriteSizes.TERRAIN_HEIGHT/4),
+    public void draw(Graphics2D graphics2D, int x, int y) {
+        graphics2D.drawImage(itemImage, (x*SpriteSizes.TERRAIN_WIDTH)+(SpriteSizes.TERRAIN_WIDTH/4), (y*SpriteSizes.TERRAIN_HEIGHT)+(SpriteSizes.TERRAIN_HEIGHT/4),
                 SpriteSizes.ITEM_WIDTH, SpriteSizes.ITEM_HEIGHT,this );
     }
 
