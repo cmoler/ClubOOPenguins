@@ -14,7 +14,9 @@ public interface ImagesInfo {
     public static final String ITEM_ONESHOT_FILELOCATION = "resources/images/Fishburger.png";
     public static final String ITEM_TAKEABLE_FILELOCATION= "resources/images/Blue_Bunny_Ears.png";
     public static final String ITEM_TELEPORTER_FILELOCATION = "resources/images/Portal_box.png";
-    public static final String RUNESCAPE_GUI_FILELCOATION = "resources/images/Interface.png";
+    public static final String RUNESCAPE_GUI_FILELOCATION = "resources/images/Interface.png";
+
+    public static final Image RUNESCAPE_GUI = SpriteParser.getSpriteParser().getRunescapeGUI();
 
     public static final Image ICE_IMAGE = SpriteParser.getSpriteParser().getIceImage();
     public static final Image WATER_IMAGE = SpriteParser.getSpriteParser().getWaterImage();

@@ -81,7 +81,7 @@ public class SpriteParser {
     }
 
     public Image getRunescapeGUI(){
-        ImageIcon imageIcon = new ImageIcon(ImagesInfo.RUNESCAPE_GUI_FILELCOATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.RUNESCAPE_GUI_FILELOCATION);
         return imageIcon.getImage();
     }
 
