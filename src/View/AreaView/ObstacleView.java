@@ -18,8 +18,8 @@ public class ObstacleView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        graphics2D.drawImage(obstacleImage, parent.getLocationY()* SpriteSizes.TERRAIN_WIDTH, parent.getLocationY()*SpriteSizes.TERRAIN_WIDTH,
-                parent.getWidth(), parent.getHeight(),this );
+        graphics2D.drawImage(obstacleImage, (parent.getLocationY()* SpriteSizes.TERRAIN_WIDTH), (parent.getLocationY()*SpriteSizes.TERRAIN_HEIGHT),
+                SpriteSizes.OBSTACLE_WIDTH, SpriteSizes.OBSTACLE_HEIGHT,this );
     }
 
     @Override

@@ -2,11 +2,10 @@ package Configs;
 
 import java.awt.*;
 
-public class Commons {
+public interface Commons {
     public static final int SCREEN_WIDTH  = 1920;
     public static final int SCREEN_HEIGHT = 1080;
-    public static final int TILE_WIDTH = 200;
-    public static final int TILE_HEIGHT = 200;
+
     public static final String TILE_SHEET = "resources/images/terrain.png";
     public static final String AREAEFFECT_DAMAGE_FILELOCATION = "resources/images/Red_AOE.png";
     public static final String AREAEFFECT_HEAL_FILELOCATION = "resources/images/Green_AOE.png";

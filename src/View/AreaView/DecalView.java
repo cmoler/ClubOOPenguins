@@ -21,8 +21,8 @@ public class DecalView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        graphics2D.drawImage(decalImage, parent.getLocationX()* SpriteSizes.TERRAIN_WIDTH, parent.getLocationY()*SpriteSizes.TERRAIN_WIDTH,
-                Commons.TILE_WIDTH, Commons.TILE_HEIGHT,this );
+        graphics2D.drawImage(decalImage, parent.getLocationX()* SpriteSizes.TERRAIN_WIDTH, parent.getLocationY()*SpriteSizes.TERRAIN_HEIGHT,
+                SpriteSizes.TERRAIN_WIDTH, SpriteSizes.TERRAIN_HEIGHT,this );
     }
 
     @Override

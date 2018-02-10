@@ -32,6 +32,10 @@ public class World {
         notifyView();
     }
 
+    public Map getCurrentMap(){
+        return currentMap;
+    }
+
     public void addMap(String mapID, Map map){
         maps.put(mapID, map);
     }

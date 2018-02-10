@@ -38,11 +38,6 @@ public class AvatarView extends Viewport {
     }
 
     @Override
-    public void update(){
-        repaint();
-    }
-
-    @Override
     public void moveUpdate(Direction direction){
         switch(direction){
             case N:
