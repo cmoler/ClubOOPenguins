@@ -2,6 +2,7 @@ package View.StatusView;
 
 
 import Configs.Commons;
+import Configs.ImagesInfo;
 import Configs.TextBoxInfo;
 import Model.Entity.Entity;
 import View.Viewport;
@@ -51,7 +52,7 @@ public class StatsView extends Viewport {
 
 
         //Load Interfrace
-        graphics2D.drawImage(Commons.RUNESCAPE_GUI,0,0, Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT, this);
+        graphics2D.drawImage(ImagesInfo.RUNESCAPE_GUI,0,0, Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT, this);
 
         //HPBAR
         graphics2D.setColor(new Color(233, 3, 3));

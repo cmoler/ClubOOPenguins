@@ -1,5 +1,6 @@
 package View;
 
+import Configs.Commons;
 import Configs.ImagesInfo;
 import Model.Map.MapBuilder.MapBuilder;
 
@@ -25,7 +26,7 @@ public class View extends JFrame {
         Viewport viewport = mapBuilder.getViewport();
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(ImagesInfo.SCREEN_WIDTH, ImagesInfo.SCREEN_HEIGHT);
+        setSize(Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT);
         setLocationRelativeTo(null);
         setResizable(false);
 
