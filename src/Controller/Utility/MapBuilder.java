@@ -1,4 +1,4 @@
-package Controller.MainMenuControl;
+package Controller.Utility;
 
 import Model.Map.Map;
 
