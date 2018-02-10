@@ -33,10 +33,6 @@ public class InventoryView extends Viewport {
                 graphics2D.drawImage(itemImage, i, j, this);
             }
         }
-        for(inventoryIterator.reset(); inventoryIterator.hasNext(); inventoryIterator.next()){
-
-            i++;
-        }
     }
 
     @Override
