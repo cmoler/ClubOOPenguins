@@ -77,17 +77,9 @@ public class StatsView extends Viewport {
     public List<Viewport> getChildren(){
         return null;
     }
-<<<<<<< Updated upstream
 
-=======
-    
->>>>>>> Stashed changes
     @Override
     public void update(){
         repaint();
     }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 }
