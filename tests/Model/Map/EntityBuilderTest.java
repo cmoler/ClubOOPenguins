@@ -1,10 +1,9 @@
 package Model.Map;
 
+import Controller.Utility.EntityBuilder;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class EntityBuilderTest {
 

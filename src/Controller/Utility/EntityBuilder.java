@@ -1,12 +1,15 @@
-package Model.Map;
+package Controller.Utility;
 
+import Configs.ImagesInfo;
 import Model.Entity.Entity;
 import Model.Entity.EntityType;
 import Model.Entity.Inventory;
 import Model.Item.*;
 import Model.Map.AreaEffect.DamageAreaEffect;
+import Model.Map.Location;
 import Model.Map.Terrain.Ice;
 import Model.Map.Terrain.Water;
+import Model.Map.World;
 import View.AreaView.AvatarView;
 import View.AreaView.ItemView.ItemView;
 import View.AreaView.TerrainView;
@@ -20,7 +23,9 @@ import java.util.Scanner;
 
 public class EntityBuilder {
 
-    private Viewport viewport;
+    private Viewport avatarView;
+    private Viewport inventoryView;
+    private Viewport equipmentView;
 
     public EntityBuilder(){}
 
@@ -92,7 +97,7 @@ public class EntityBuilder {
         else
             System.out.println("ERROR: no maps have been loaded, so Entity default location is not right");
         e = new Entity(entityType, initialLocation);
-
+        avatarView = new AvatarView(e, xCoord, yCoord);
         e.takeDamage(100-health);
         e.gainExperience(experience);
         Inventory i = e.getInventory();
