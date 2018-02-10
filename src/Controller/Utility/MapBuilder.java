@@ -9,6 +9,7 @@ import Model.Map.Terrain.Glacier;
 import Model.Map.Terrain.Ice;
 import Model.Map.Terrain.Terrain;
 import Model.Map.Terrain.Water;
+import Model.Map.World;
 import View.AreaView.*;
 import View.AreaView.ItemView.ItemView;
 import View.Viewport;
@@ -141,6 +142,8 @@ public class MapBuilder {
                         break;
                 }
                 lineIndex++;
+                if(lineIndex >= mapData.size())
+                    break;
             }
 
             locations[yChord][xCoord] = new Location(terrain, obstacleBool, areaEffect, items);
@@ -153,6 +156,8 @@ public class MapBuilder {
             }
             this.viewport.add(locationView);
 
+            if(lineIndex >= mapData.size())
+                break;
         }
 
         // if we ever want to include Entities
@@ -176,8 +181,10 @@ public class MapBuilder {
 //            }
 //            Entity e = new Entity(locations[entityX][entityY]);
 //        }
-
-        return new Map(locations, locations[defaultX][defaultY]);
+        map = new Map(locations, locations[defaultX][defaultY]);
+        World world = World.getWorld();
+        world.addMap(mapID, map);
+        return map;
     }
 
 }

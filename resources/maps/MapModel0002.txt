@@ -26,7 +26,7 @@ MAP
 			FALSE
 			NONE
 			ITEMS
-				INTERACTIVE
+				TAKEABLE
 		0,4
 			ICE
 			FALSE
@@ -53,7 +53,6 @@ MAP
 			FALSE
 			NONE
 			ITEMS
-				INTERACTIVE
 		1,4
 			ICE
 			FALSE
@@ -102,10 +101,9 @@ MAP
 			ITEMS
 		3,2
 			ICE
-			FALSE
+			TRUE
 			NONE
 			ITEMS
-				INTERACTIVE
 		3,3
 			ICE
 			FALSE
@@ -144,6 +142,3 @@ MAP
 			NONE
 			ITEMS
 				INTERACTIVE
-	ENTITIES
-		2,0
-		WATER
