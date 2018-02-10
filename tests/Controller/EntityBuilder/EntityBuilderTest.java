@@ -1,4 +1,4 @@
-package Model.Map;
+package Controller.EntityBuilder;
 
 import Controller.Utility.EntityBuilder;
 import org.junit.jupiter.api.Test;

@@ -13,6 +13,7 @@ import Model.Map.World;
 import View.AreaView.AvatarView;
 import View.AreaView.ItemView.ItemView;
 import View.AreaView.TerrainView;
+import View.StatusView.StatusViewPort;
 import View.Viewport;
 
 import java.io.File;
@@ -23,15 +24,14 @@ import java.util.Scanner;
 
 public class EntityBuilder {
 
-    private Viewport avatarView;
-    private Viewport inventoryView;
-    private Viewport equipmentView;
+    private AvatarView avatarView;
+    private StatusViewPort statusViewport;
 
     public EntityBuilder(){}
 
     public Entity buildEntity(String entityID) throws FileNotFoundException {
 
-        String filename = "tests/Model/Map/EntityBuilder/EntityModel" + entityID + ".txt";
+        String filename = "resources/entities/EntityModel" + entityID + ".txt";
 
         Scanner s = new Scanner(new File(filename));
         List<String> entityData = new ArrayList<String>();
@@ -97,7 +97,9 @@ public class EntityBuilder {
         else
             System.out.println("ERROR: no maps have been loaded, so Entity default location is not right");
         e = new Entity(entityType, initialLocation);
+
         avatarView = new AvatarView(e, xCoord, yCoord);
+
         e.takeDamage(100-health);
         e.gainExperience(experience);
         Inventory i = e.getInventory();
@@ -108,6 +110,16 @@ public class EntityBuilder {
             i.equip(t);
         }
 
+        statusViewport = new StatusViewPort(e, i.getEquipment(), i);
+
         return e;
+    }
+
+    public AvatarView getAvatarView() {
+        return avatarView;
+    }
+
+    public StatusViewPort getStatusViewport() {
+        return statusViewport;
     }
 }

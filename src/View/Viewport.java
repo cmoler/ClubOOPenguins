@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TimerTask;
 
-public abstract class Viewport extends JPanel {
+public class Viewport extends JPanel {
 
     Timer timer;
 
@@ -66,10 +66,14 @@ public abstract class Viewport extends JPanel {
         Toolkit.getDefaultToolkit().sync();
     }
 
-    public void draw(Graphics2D graphics2D){
-        for(Viewport child: children){
+    public void draw(Graphics2D graphics2D) {
+        for (Viewport child : children) {
             child.draw(graphics2D);
         }
+    }
+
+    public void draw(Graphics2D graphics2D, int i, int j){
+
     }
 
     public void add(Viewport viewport){

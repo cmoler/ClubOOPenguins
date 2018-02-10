@@ -24,8 +24,8 @@ public class StatsView extends Viewport {
 
     private final int ENTITY_LEVEL_X =    (int) (Commons.SCREEN_WIDTH * 540.0/765.0);
     private final int ENTITY_LEVEL_Y =    (int) (Commons.SCREEN_HEIGHT * 176.0/501.0);
-    private final int ENTITY_LEVEL_WIDTH = 10;
-    private final int ENTITY_LEVEL_HEIGHT = 10;
+    private final int ENTITY_LEVEL_WIDTH = 40;
+    private final int ENTITY_LEVEL_HEIGHT = 40;
 
     private Entity entity;
 
@@ -56,17 +56,20 @@ public class StatsView extends Viewport {
 
         //HPBAR
         graphics2D.setColor(new Color(233, 3, 3));
-        graphics2D.drawRect(ENTITY_HEALTH_X, ENTITY_HEALTH_Y, ENTITY_HEALTH_WIDTH, ENTITY_HEALTH_HEIGHT);
+        graphics2D.fillRect(ENTITY_HEALTH_X, ENTITY_HEALTH_Y, ENTITY_HEALTH_WIDTH, ENTITY_HEALTH_HEIGHT);
         graphics2D.setColor(new Color(0, 0, 0));
-        graphics2D.drawRect(ENTITY_HEALTH_X + (ENTITY_HEALTH_WIDTH-hprectSize), ENTITY_HEALTH_Y, hprectSize, ENTITY_HEALTH_HEIGHT);
+        graphics2D.fillRect(ENTITY_HEALTH_X + (ENTITY_HEALTH_WIDTH-hprectSize), ENTITY_HEALTH_Y, hprectSize, ENTITY_HEALTH_HEIGHT);
 
         //EXPBAR
         graphics2D.setColor(new Color(3, 3, 233));
-        graphics2D.drawRect(ENTITY_EXP_X, ENTITY_EXP_Y, ENTITY_EXP_WIDTH, ENTITY_EXP_HEIGHT);
+        graphics2D.fillRect(ENTITY_EXP_X, ENTITY_EXP_Y, ENTITY_EXP_WIDTH, ENTITY_EXP_HEIGHT);
         graphics2D.setColor(new Color(0, 0, 0));
-        graphics2D.drawRect(ENTITY_EXP_X + (ENTITY_EXP_WIDTH-xprectsize), ENTITY_EXP_Y, xprectsize, ENTITY_EXP_HEIGHT);
+        graphics2D.fillRect(ENTITY_EXP_X + (ENTITY_EXP_WIDTH-xprectsize), ENTITY_EXP_Y, xprectsize, ENTITY_EXP_HEIGHT);
 
+        //level indicator
+        graphics2D.setColor(new Color(200, 200, 200));
         graphics2D.drawOval(ENTITY_LEVEL_X, ENTITY_LEVEL_Y, ENTITY_LEVEL_WIDTH, ENTITY_LEVEL_HEIGHT);
+        graphics2D.setColor(new Color(0, 0, 0));
         graphics2D.drawString("" + getLevel,  ENTITY_LEVEL_X + ENTITY_LEVEL_WIDTH/2, ENTITY_LEVEL_Y + ENTITY_LEVEL_HEIGHT/2);
 //      graphics2D.drawString("entity.getHealth()", (ENTITY_HEALTH_X + ENTITY_HEALTH_HEIGHT)/2, (ENTITY_HEALTH_Y + ENTITY_HEALTH_WIDTH)/2);
 //      graphics2D.drawString("entity.getEXP()", (ENTITY_EXP_X + ENTITY_EXP_HEIGHT)/2, (ENTITY_EXP_Y + ENTITY_EXP_WIDTH)/2);

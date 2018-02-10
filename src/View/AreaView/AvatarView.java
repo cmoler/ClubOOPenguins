@@ -1,6 +1,7 @@
 package View.AreaView;
 
 
+import Configs.ImagesInfo;
 import Model.Map.Direction;
 import Model.Entity.Entity;
 import View.Viewport;
@@ -18,10 +19,15 @@ public class AvatarView extends Viewport {
     private int velocity = 10;
 
     public AvatarView(Entity entity, int x, int y){
+        avatarImage = ImagesInfo.AVATAR_IMAGE;
         this.entity = entity;
         entity.attach(this);
         this.x = x;
-         this.y = y;
+        this.y = y;
+    }
+
+    public Entity getEntity() {
+        return entity;
     }
 
     @Override

@@ -1,25 +1,23 @@
 package Model.Map;
 
-public class MapIterator<T> implements Iter{
+public class MapIterator{
 
-    private T[][] map = null;
+    private Map map = null;
     private int i = 0;
     private int j = 0;
     private int numRows = 0;
     private int numCols = 0;
 
-    public MapIterator(T[][] map){
+    public MapIterator(Map map){
         this.map = map;
-        numRows = map.length;
-        numCols = map[0].length;
+        numRows = map.getRows();
+        numCols = map.getCols();
     }
 
-    @Override
-    public T currentItem() {
-        return map[i][j];
+    public Location currentItem() {
+        return map.getLocation(i,j);
     }
 
-    @Override
     public boolean isValid() {
         if (i >= numRows || j >= numCols) {
             return false;
@@ -27,7 +25,6 @@ public class MapIterator<T> implements Iter{
         return true;
     }
 
-    @Override
     public void next() {
         if (j == numCols-1)
         {
@@ -40,11 +37,18 @@ public class MapIterator<T> implements Iter{
         }
     }
 
-    @Override
     public void reset() {
         i = 0;
         j = 0;
     }
+
+    public int getI() {
+        return i;
+    }
+    public int getJ(){
+        return j;
+    }
+
 }
 
 

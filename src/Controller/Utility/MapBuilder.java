@@ -23,15 +23,15 @@ public class MapBuilder {
 
     public MapBuilder(){}
 
-    private Viewport viewport = new MapView();
+    private MapView viewport = new MapView();
 
-    public Viewport getViewport() {
+    public MapView getViewport() {
         return viewport;
     }
 
     public Map buildMap(String mapID) throws FileNotFoundException {
         // will change file location after testing
-        String filename = "tests/Model/Map/MapBuilder/MapModel" + mapID + ".txt";
+        String filename = "resources/maps/MapModel" + mapID + ".txt";
 
         Scanner s = new Scanner(new File(filename));
         List<String> mapData = new ArrayList<String>();

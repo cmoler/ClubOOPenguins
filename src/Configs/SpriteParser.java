@@ -24,6 +24,8 @@ public class SpriteParser {
 
     private BufferedImage[] tileSprites;
 
+    private BufferedImage[] avatarSprites;
+
     public Image getIceImage(){
         return tileSprites[11*12];
     }
@@ -85,7 +87,16 @@ public class SpriteParser {
         return imageIcon.getImage();
     }
 
+    public Image getAvatarImage(){
+        return tileSprites[0];
+    }
+
     private void getSprites(){
+        getTileSprites();
+        getAvatarSprites();
+    }
+
+    private void getTileSprites(){
         BufferedImage bigImg = null;
         try {
             bigImg = ImageIO.read(new File(ImagesInfo.TILE_SHEET));
@@ -104,6 +115,34 @@ public class SpriteParser {
             for (int j = 0; j < cols; j++)
             {
                 tileSprites[(i * cols) + j] = bigImg.getSubimage(
+                        j * width,
+                        i * height,
+                        width,
+                        height
+                );
+            }
+        }
+    }
+
+    private void getAvatarSprites(){
+        BufferedImage bigImg = null;
+        try {
+            bigImg = ImageIO.read(new File(ImagesInfo.AVATAR_SHEET));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        final int width = 32;
+        final int height = 32;
+        final int rows = 7;
+        final int cols = 7;
+        avatarSprites = new BufferedImage[rows * cols];
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                avatarSprites[(i * cols) + j] = bigImg.getSubimage(
                         j * width,
                         i * height,
                         width,
