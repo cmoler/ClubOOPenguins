@@ -38,9 +38,4 @@ public class StatsView extends Viewport {
         return null;
     }
 
-    @Override
-    public void update(){
-
-    }
-
 }
