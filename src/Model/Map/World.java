@@ -3,13 +3,15 @@ package Model.Map;
 import Controller.MainMenuControl.MapBuilder;
 import View.Viewport;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class World {
 
-    public static World instance = null;
+    private List<Viewport> observers = new ArrayList<Viewport>();
 
+    public static World instance = null;
     private Map currentMap;
     private HashMap<String,Map> maps = new HashMap<String,Map>();
 
@@ -27,6 +29,7 @@ public class World {
 
     public void changeCurrentMapTo(Map map){
         currentMap = map;
+        notifyView();
     }
 
     public void addMap(String mapID, Map map){
@@ -42,14 +45,16 @@ public class World {
     }
 
     public void attach(Viewport viewport){
-
+        observers.add(viewport);
     }
 
     public void detach(Viewport viewport){
-
+        observers.remove(viewport);
     }
 
     public void notifyView(){
-
+        for (Viewport viewport : observers){
+            viewport.update();
+        }
     }
 }

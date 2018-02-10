@@ -4,13 +4,15 @@ import Model.Map.Terrain.Ice;
 import View.Viewport;
 import Model.Map.Location;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import static Model.Map.Direction.*;
 
 public class Map {
 
-    // TODO add map iterator
+    private List<Viewport> observers = new ArrayList<Viewport>();
 
     private Location[][] locations;
     private Location defaultLocation;
@@ -151,14 +153,16 @@ public class Map {
     public void setLocation(int x, int y, Location location) {locations[x][y] = location;}
 
     public void attach(Viewport viewport) {
-
+        observers.add(viewport);
     }
 
     public void detach(Viewport viewport) {
-
+        observers.remove(viewport);
     }
 
     public void notifyView() {
-
+        for (Viewport viewport : observers){
+            viewport.update();
+        }
     }
 }

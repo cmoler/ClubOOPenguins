@@ -6,8 +6,11 @@ import Model.Map.AreaEffect.AreaEffect;
 import Model.Map.Terrain.Terrain;
 import View.Viewport;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+
 
 public class Location {
 
@@ -16,7 +19,7 @@ public class Location {
     private HashMap<Direction, Location> adjacentLocations;
     private AreaEffect areaEffect;
     private List<Item> items;
-
+    private List<Viewport> observers = new ArrayList<Viewport>();
 
     public Location(Terrain terrain, boolean obstacle, AreaEffect areaEffect, List<Item> items){
         this.terrain = terrain;
@@ -57,14 +60,16 @@ public class Location {
     }
 
     public void attach(Viewport viewport){
-
+        observers.add(viewport);
     }
 
     public void detach(Viewport viewport){
-
+        observers.remove(viewport);
     }
 
     public void notifyView(){
-
+        for (Viewport viewport : observers){
+            viewport.update();
+        }
     }
 }
