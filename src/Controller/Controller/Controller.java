@@ -1,19 +1,13 @@
 package Controller.Controller;
 
-import View.Viewport;
+import Model.Map.Direction;
 
-public abstract class Controller {
+public interface Controller {
 
-    private Viewport view;
+    void handleEscape();
+    void handleI();
+    void handleE();
+    void handleNumpad(Direction direction);
 
-    public abstract void handleEscape();
-    public abstract void handleNorth();
-    public abstract void handleSouth();
-    public abstract void handleWest();
-    public abstract void handleEast();
-    public abstract void handleNorthEast();
-    public abstract void handleNorthWest();
-    public abstract void handleSouthEast();
-    public abstract void handleSouthWest();
 
 }

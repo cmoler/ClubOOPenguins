@@ -3,8 +3,10 @@ package Controller.Controller;
 import Controller.Utility.GameLoader;
 import Controller.Utility.GameSaver;
 import Model.Entity.Entity;
+import Controller.Contexts.GameContext;
+import Model.Map.Direction;
 
-public class MenuController extends Controller {
+public class MenuController implements Controller {
 
     private MainController mainController;
     private GameLoader gameLoader;
@@ -14,11 +16,31 @@ public class MenuController extends Controller {
         this.mainController = mainController;
     }
 
-    public void saveGame(String filepath, Entity entity){
+    @Override
+    public void handleEscape() {
+        System.out.println("Command: close menu");
+        mainController.setActiveContext(GameContext.AREA);
+    }
+
+    @Override
+    public void handleI() {
 
     }
 
-    public void loadGame(String filepath){
+    @Override
+    public void handleE() {
+
+    }
+
+    public void handleNumpad(Direction direction) {
+
+    }
+
+    public void saveGame(String filepath, Entity entity) {
+
+    }
+
+    public void loadGame(String filepath) {
 
     }
 
@@ -26,48 +48,4 @@ public class MenuController extends Controller {
 
     }
 
-    @Override
-    public void handleEscape() {
-
-    }
-
-    @Override
-    public void handleNorth() {
-
-    }
-
-    @Override
-    public void handleSouth() {
-
-    }
-
-    @Override
-    public void handleWest() {
-
-    }
-
-    @Override
-    public void handleEast() {
-
-    }
-
-    @Override
-    public void handleNorthEast() {
-
-    }
-
-    @Override
-    public void handleNorthWest() {
-
-    }
-
-    @Override
-    public void handleSouthEast() {
-
-    }
-
-    @Override
-    public void handleSouthWest() {
-
-    }
 }

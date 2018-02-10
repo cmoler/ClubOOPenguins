@@ -1,6 +1,8 @@
 package Controller.Controller;
 
-public class EquipmentController extends Controller {
+import Model.Map.Direction;
+
+public class EquipmentController implements Controller {
 
     private MainController mainController;
 
@@ -8,49 +10,24 @@ public class EquipmentController extends Controller {
         this.mainController = mainController;
     }
 
-
     @Override
     public void handleEscape() {
+        System.out.println("PRESSED ESCAPE while in EQUIpment");
+    }
+
+    @Override
+    public void handleI() {
 
     }
 
     @Override
-    public void handleNorth() {
+    public void handleE() {
 
     }
 
     @Override
-    public void handleSouth() {
+    public void handleNumpad(Direction direction) {
 
     }
 
-    @Override
-    public void handleWest() {
-
-    }
-
-    @Override
-    public void handleEast() {
-
-    }
-
-    @Override
-    public void handleNorthEast() {
-
-    }
-
-    @Override
-    public void handleNorthWest() {
-
-    }
-
-    @Override
-    public void handleSouthEast() {
-
-    }
-
-    @Override
-    public void handleSouthWest() {
-
-    }
 }

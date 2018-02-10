@@ -7,15 +7,9 @@ import java.awt.event.KeyEvent;
 
 public class InventoryContext extends Context{
 
-    private InventoryController inventoryController;
 
     public InventoryContext(InventoryController inventoryController){
-        this.inventoryController = inventoryController;
-    }
-
-    @Override
-    public void processKeyEvent(KeyEvent event) {
-
+        super(inventoryController);
     }
 
 }
