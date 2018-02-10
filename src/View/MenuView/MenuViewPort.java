@@ -12,13 +12,11 @@ public class MenuViewPort extends Viewport {
 
     private Image selected = ImagesInfo.AREAEFFECT_LEVELUP_IMAGE;
     private int selectedX = Configs.Commons.SCREEN_WIDTH/2;
-    private int selectedY;
+    private int selectedY = Commons.SCREEN_HEIGHT/4;
 
     public MenuViewPort(){
         int startX = Configs.Commons.SCREEN_WIDTH/2;
         int startY = Commons.SCREEN_HEIGHT/4;
-
-        this.selectedY = startY;
 
         add(new SaveGameView(startX, startY));
         add(new LoadGameView(startX, startY+ TextBoxInfo.TEXTBOX_HEIGHT));
@@ -35,14 +33,11 @@ public class MenuViewPort extends Viewport {
     @Override
     public void setSelectedMenuView(int selectedMenuView){
         switch (selectedMenuView){
+            case -1:
+                this.selectedY -= TextBoxInfo.TEXTBOX_HEIGHT;
+                break;
             case 1:
-                this.selectedY = Commons.SCREEN_HEIGHT/4;
-                break;
-            case 2:
-                this.selectedY = Commons.SCREEN_HEIGHT/4 + TextBoxInfo.TEXTBOX_HEIGHT;
-                break;
-            case 3:
-                this.selectedY = Commons.SCREEN_HEIGHT/4 + 2*TextBoxInfo.TEXTBOX_HEIGHT;
+                this.selectedY += TextBoxInfo.TEXTBOX_HEIGHT;
                 break;
         }
     }

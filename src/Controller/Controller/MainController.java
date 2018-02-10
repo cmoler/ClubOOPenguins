@@ -30,8 +30,10 @@ public class MainController {
 
     private Viewport viewport;
 
+    private MenuViewPort menuViewPort;
+
     public MainController() {
-        MenuViewPort menuViewPort = new MenuViewPort();
+        menuViewPort = new MenuViewPort();
         game = new OOPenguinGameFrame();
         game.add(menuViewPort);
         menuViewPort.setVisible(true);
@@ -90,7 +92,9 @@ public class MainController {
         return viewport.getChildren().get(2).getChildren().get(0);
     }
 
-
+    public void setSelectedMenuView(int i) {
+        menuViewPort.setSelectedMenuView(i);
+    }
 
     public void gameLoop() {
 

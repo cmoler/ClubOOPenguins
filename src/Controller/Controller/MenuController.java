@@ -14,6 +14,8 @@ import View.Viewport;
 
 import java.io.FileNotFoundException;
 
+import static Model.Map.Direction.S;
+
 public class MenuController implements Controller {
 
     private MainController mainController;
@@ -77,6 +79,15 @@ public class MenuController implements Controller {
     }
 
     public void handleNumpad(Direction direction) {
+        switch (direction){
+        case N:
+            mainController.setSelectedMenuView(1);
+        break;
+
+        case S:
+            mainController.setSelectedMenuView(-1);
+        break;
+        }
     }
 
     public void saveGame(String filepath, Entity entity) {
