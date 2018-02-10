@@ -82,5 +82,4 @@ public class StatsView extends Viewport {
     public void update(){
         repaint();
     }
-
 }
