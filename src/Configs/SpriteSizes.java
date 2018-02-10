@@ -11,4 +11,7 @@ public interface SpriteSizes {
     public static final int AREA_EFFECT_WIDTH = 128;
     public static final int AREA_EFFECT_HEIGHT = 128;
 
+    public static final int OBSTACLE_WIDTH = 125;
+    public static final int OBSTACLE_HEIGHT = 125;
+
 }
