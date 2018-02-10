@@ -38,7 +38,7 @@ public class GameSaver {
                 mapData += "\t\t\t" + map.getLocation(j, i).getAreaEffect().toString().toUpperCase() + System.getProperty("line.separator");
                 mapData += "\t\t\tITEMS" + System.getProperty("line.separator");
 
-                //Converts Item list to string array
+                //Converts Item list to strings
                 String[] items = new String[map.getLocation(j, i).getItems().size()];
                 for(Object value : map.getLocation(j, i).getItems()) {
                     mapData += "\t\t\t\t" + value.toString() + System.getProperty("line.separator");
