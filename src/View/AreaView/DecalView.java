@@ -1,9 +1,7 @@
 package View.AreaView;
 
 
-import Configs.Commons;
 import Configs.SpriteSizes;
-import Model.Map.Location;
 import View.Viewport;
 
 import javax.swing.*;

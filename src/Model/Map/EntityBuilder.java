@@ -1,11 +1,7 @@
 package Model.Map;
 
-import Configs.Commons;
 import Model.Entity.Entity;
 import Model.Entity.EntityType;
-import Model.Map.Terrain.Ice;
-import Model.Map.Terrain.Water;
-import View.AreaView.TerrainView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -35,11 +31,11 @@ public class EntityBuilder {
         switch (entityTypeString){
             case "ICE":
                 entityType = EntityType.ICE;
-//                terrainView = new TerrainView(Commons.ICE_IMAGE);
+//                terrainView = new TerrainView(ImagesInfo.ICE_IMAGE);
                 break;
             case "WATER":
                 entityType = EntityType.WATER;
-//                terrainView = new TerrainView(Commons.WATER_IMAGE);
+//                terrainView = new TerrainView(ImagesInfo.WATER_IMAGE);
                 break;
         }
         int width = Integer.parseInt(mapData.get(lineIndex++).split("\t")[1]);

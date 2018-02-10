@@ -37,42 +37,42 @@ public class SpriteParser {
     }
 
     public Image getAreaEffectDamageImage(){
-        ImageIcon imageIcon = new ImageIcon(Commons.AREAEFFECT_DAMAGE_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.AREAEFFECT_DAMAGE_FILELOCATION);
         return imageIcon.getImage();
     }
 
     public Image getAreaEffectHealImage(){
-        ImageIcon imageIcon = new ImageIcon(Commons.AREAEFFECT_HEAL_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.AREAEFFECT_HEAL_FILELOCATION);
         return imageIcon.getImage();
     }
 
     public Image getAreaEffectKillImage(){
-        ImageIcon imageIcon = new ImageIcon(Commons.AREAEFFECT_KILL_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.AREAEFFECT_KILL_FILELOCATION);
         return imageIcon.getImage();
     }
 
     public Image getAreaEffectLevelUpImage(){
-        ImageIcon imageIcon = new ImageIcon(Commons.AREAEFFECT_LEVELUP_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.AREAEFFECT_LEVELUP_FILELOCATION);
         return imageIcon.getImage();
     }
 
     public Image getInteractiveItemImage(){
-        ImageIcon imageIcon = new ImageIcon(Commons.ITEM_ITERACTIVE_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_ITERACTIVE_FILELOCATION);
         return imageIcon.getImage();
     }
 
     public Image getOneShotItemImage(){
-        ImageIcon imageIcon = new ImageIcon(Commons.ITEM_ONESHOT_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_ONESHOT_FILELOCATION);
         return imageIcon.getImage();
     }
 
     public Image getTakeAbleItemImage(){
-        ImageIcon imageIcon = new ImageIcon(Commons.ITEM_TAKEABLE_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_TAKEABLE_FILELOCATION);
         return imageIcon.getImage();
     }
 
     public Image getTeleporterItemImage(){
-        ImageIcon imageIcon = new ImageIcon(Commons.ITEM_TELEPORTER_FILELOCATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_TELEPORTER_FILELOCATION);
         return imageIcon.getImage();
     }
 
@@ -81,14 +81,14 @@ public class SpriteParser {
     }
 
     public Image getRunescapeGUI(){
-        ImageIcon imageIcon = new ImageIcon(Commons.RUNESCAPE_GUI_FILELCOATION);
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.RUNESCAPE_GUI_FILELCOATION);
         return imageIcon.getImage();
     }
 
     private void getSprites(){
         BufferedImage bigImg = null;
         try {
-            bigImg = ImageIO.read(new File(Commons.TILE_SHEET));
+            bigImg = ImageIO.read(new File(ImagesInfo.TILE_SHEET));
         } catch (IOException e) {
             e.printStackTrace();
         }

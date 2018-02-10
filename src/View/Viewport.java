@@ -1,12 +1,9 @@
 package View;
 
-import Configs.Commons;
 import Model.Map.Direction;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.util.Timer;
 import java.util.ArrayList;
 import java.util.List;
