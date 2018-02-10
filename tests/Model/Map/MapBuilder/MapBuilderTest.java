@@ -1,12 +1,10 @@
 package Model.Map.MapBuilder;
 
-import Model.Item.Item;
+import Controller.Utility.MapBuilder;
 import Model.Map.Map;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class MapBuilderTest {
 

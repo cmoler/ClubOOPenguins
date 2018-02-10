@@ -2,7 +2,6 @@ package Controller.Utility;
 
 import Model.Entity.Entity;
 import Model.Map.World;
-import Model.Map.MapBuilder;
 
 public class GameLoader {
 
@@ -11,7 +10,7 @@ public class GameLoader {
     private Entity entity;
 
     public void loadGame(String saveFileLocation){
-        
+
     }
 
     public Entity getEntity(){

@@ -1,8 +1,7 @@
 package View;
 
 import Configs.Commons;
-import Configs.ImagesInfo;
-import Model.Map.MapBuilder.MapBuilder;
+import Controller.Utility.MapBuilder;
 
 import javax.swing.*;
 import java.io.FileNotFoundException;

@@ -1,11 +1,8 @@
 package Model.Entity;
 
 
-import Model.Item.Item;
-import Model.Item.Teleporter;
-import Model.Map.Direction;
 import Model.Map.Map;
-import Model.Map.MapBuilder.MapBuilder;
+import Controller.Utility.MapBuilder;
 import Model.Map.World;
 import org.junit.jupiter.api.Test;
 
