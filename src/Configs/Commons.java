@@ -15,7 +15,7 @@ public class Commons {
     public static final String ITEM_ITERACTIVE_FILELOCATION = "resources/images/Moss_Key_Pin.png";
     public static final String ITEM_ONESHOT_FILELOCATION = "resources/images/Fishburger.png";
     public static final String ITEM_TAKEABLE_FILELOCATION= "resources/images/Blue_Bunny_Ears.png";
-    public static final String ITEM_TELEPORTER_FILELOCATION = "resources/images/Portal_box.pngComm";
+    public static final String ITEM_TELEPORTER_FILELOCATION = "resources/images/Portal_box.png";
     public static final String RUNESCAPE_GUI_FILELCOATION = "resources/images/Interface.png";
 
     public static final Image ICE_IMAGE = SpriteParser.getSpriteParser().getIceImage();

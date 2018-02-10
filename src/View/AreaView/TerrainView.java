@@ -18,7 +18,7 @@ public class TerrainView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        graphics2D.drawImage(terrainImage, parent.getX(), parent.getY(),
+        graphics2D.drawImage(terrainImage, parent.getLocationX()*SpriteSizes.TERRAIN_WIDTH, parent.getLocationY()*SpriteSizes.TERRAIN_WIDTH,
                 SpriteSizes.TERRAIN_WIDTH, SpriteSizes.TERRAIN_HEIGHT,this );
     }
 

@@ -1,5 +1,6 @@
 package View.AreaView;
 
+import Configs.SpriteSizes;
 import Model.Map.Location;
 import View.Viewport;
 
@@ -17,7 +18,7 @@ public class ObstacleView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        graphics2D.drawImage(obstacleImage, parent.getX(), parent.getY(),
+        graphics2D.drawImage(obstacleImage, parent.getLocationY()* SpriteSizes.TERRAIN_WIDTH, parent.getLocationY()*SpriteSizes.TERRAIN_WIDTH,
                 parent.getWidth(), parent.getHeight(),this );
     }
 

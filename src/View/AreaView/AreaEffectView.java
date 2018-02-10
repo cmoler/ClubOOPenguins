@@ -19,7 +19,7 @@ public class AreaEffectView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        graphics2D.drawImage(areaEffectImage, parent.getX(), parent.getY(),
+        graphics2D.drawImage(areaEffectImage, parent.getLocationX()*SpriteSizes.TERRAIN_WIDTH, parent.getLocationY()*SpriteSizes.TERRAIN_WIDTH,
                 SpriteSizes.AREA_EFFECT_WIDTH, SpriteSizes.AREA_EFFECT_HEIGHT,this );
     }
 
