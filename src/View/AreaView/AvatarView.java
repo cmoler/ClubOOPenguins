@@ -23,7 +23,11 @@ public class AvatarView extends Viewport {
         this.entity = entity;
         entity.attach(this);
         this.x = x;
-         this.y = y;
+        this.y = y;
+    }
+
+    public Entity getEntity() {
+        return entity;
     }
 
     @Override

@@ -29,4 +29,7 @@ public class LocationView extends Viewport {
         return locationY;
     }
 
+    public Location getTerrainLocation() {
+        return location;
+    }
 }

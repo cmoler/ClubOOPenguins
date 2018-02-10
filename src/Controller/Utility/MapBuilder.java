@@ -23,9 +23,9 @@ public class MapBuilder {
 
     public MapBuilder(){}
 
-    private Viewport viewport = new MapView();
+    private MapView viewport = new MapView();
 
-    public Viewport getViewport() {
+    public MapView getViewport() {
         return viewport;
     }
 

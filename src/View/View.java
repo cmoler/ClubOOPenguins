@@ -3,6 +3,8 @@ package View;
 import Configs.Commons;
 import Controller.Utility.EntityBuilder;
 import Controller.Utility.MapBuilder;
+import View.AreaView.AvatarView;
+import View.AreaView.MapView;
 import View.StatusView.StatusViewPort;
 
 import javax.swing.*;
@@ -24,7 +26,7 @@ public class View extends JFrame {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        Viewport mapView = mapBuilder.getViewport();
+        MapView mapView = mapBuilder.getViewport();
 
         EntityBuilder entityBuilder = new EntityBuilder();
         try {
@@ -32,13 +34,15 @@ public class View extends JFrame {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        Viewport avatarView = entityBuilder.getAvatarView();
+        AvatarView avatarView = entityBuilder.getAvatarView();
         StatusViewPort statusView = entityBuilder.getStatusViewport();
         statusView.setRenderOption(StatusViewPort.RenderOption.INVENTORY);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT);
         setLocationRelativeTo(null);
         setResizable(false);
+
+        mapView.setEntity(avatarView.getEntity());
 
         Viewport viewport = new Viewport();
         viewport.add(mapView);

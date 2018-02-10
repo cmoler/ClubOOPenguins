@@ -24,7 +24,7 @@ import java.util.Scanner;
 
 public class EntityBuilder {
 
-    private Viewport avatarView;
+    private AvatarView avatarView;
     private StatusViewPort statusViewport;
 
     public EntityBuilder(){}
@@ -115,7 +115,7 @@ public class EntityBuilder {
         return e;
     }
 
-    public Viewport getAvatarView() {
+    public AvatarView getAvatarView() {
         return avatarView;
     }
 
