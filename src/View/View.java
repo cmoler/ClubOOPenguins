@@ -1,6 +1,7 @@
 package View;
 
 import Configs.Commons;
+import Controller.Utility.EntityBuilder;
 import Controller.Utility.MapBuilder;
 
 import javax.swing.*;
@@ -24,12 +25,19 @@ public class View extends JFrame {
         }
         Viewport viewport = mapBuilder.getViewport();
 
+        EntityBuilder entityBuilder = new EntityBuilder();
+
+        Viewport avatarView = entityBuilder.getAvatarView();
+        Viewport statusView = entityBuilder.getStatusViewport();
+
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT);
         setLocationRelativeTo(null);
         setResizable(false);
 
         add(viewport);
+        add(avatarView);
+        add(statusView);
         //add(decalView);
         setTitle("CLUBOOP");
 
