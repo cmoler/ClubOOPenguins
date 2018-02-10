@@ -116,34 +116,36 @@ public class MapBuilder {
             lineIndex++; // line is "ITEMS"
             List<Item> items = new ArrayList<Item>();
             List<ItemView> itemViews = new ArrayList<ItemView>();
-            while (mapData.get(lineIndex).substring(0, 4).equals("\t\t\t\t")) {
-                String itemType = mapData.get(lineIndex).split("\t\t\t\t")[1];
-                switch (itemType) {
-                    case "INTERACTIVE":
-                        items.add(new InteractiveItem());
-                        itemViews.add(new ItemView(ImagesInfo.ITEM_ITERACTIVE_IMAGE));
-                        break;
-                    case "ONESHOT":
-                        items.add(new OneShotItem());
-                        itemViews.add(new ItemView(ImagesInfo.ITEM_ONESHOT_IMAGE));
-                        break;
-                    case "TAKEABLE":
-                        items.add(new TakeableItem());
-                        itemViews.add(new ItemView(ImagesInfo.ITEM_TAKEABLE_IMAGE));
-                        break;
-                    case "TELEPORTER":
-                        lineIndex++;
-                        String teleporterMapID = mapData.get(lineIndex++).split("\t\t\t\t\t")[1];
-                        String[] teleporterLocationXAndY = mapData.get(lineIndex).split("\t\t\t\t\t")[1].split(",");
-                        int teleportLocationX = Integer.parseInt(teleporterLocationXAndY[0]);
-                        int teleportLocationY = Integer.parseInt(teleporterLocationXAndY[1]);
-                        items.add(new Teleporter(teleporterMapID,teleportLocationX,teleportLocationY));
-                        itemViews.add(new ItemView(ImagesInfo.ITEM_TELEPORTER_IMAGE));
+            if(lineIndex < mapData.size()) {
+                while (mapData.get(lineIndex).substring(0, 4).equals("\t\t\t\t")) {
+                    String itemType = mapData.get(lineIndex).split("\t\t\t\t")[1];
+                    switch (itemType) {
+                        case "INTERACTIVE":
+                            items.add(new InteractiveItem());
+                            itemViews.add(new ItemView(ImagesInfo.ITEM_ITERACTIVE_IMAGE));
+                            break;
+                        case "ONESHOT":
+                            items.add(new OneShotItem());
+                            itemViews.add(new ItemView(ImagesInfo.ITEM_ONESHOT_IMAGE));
+                            break;
+                        case "TAKEABLE":
+                            items.add(new TakeableItem());
+                            itemViews.add(new ItemView(ImagesInfo.ITEM_TAKEABLE_IMAGE));
+                            break;
+                        case "TELEPORTER":
+                            lineIndex++;
+                            String teleporterMapID = mapData.get(lineIndex++).split("\t\t\t\t\t")[1];
+                            String[] teleporterLocationXAndY = mapData.get(lineIndex).split("\t\t\t\t\t")[1].split(",");
+                            int teleportLocationX = Integer.parseInt(teleporterLocationXAndY[0]);
+                            int teleportLocationY = Integer.parseInt(teleporterLocationXAndY[1]);
+                            items.add(new Teleporter(teleporterMapID, teleportLocationX, teleportLocationY));
+                            itemViews.add(new ItemView(ImagesInfo.ITEM_TELEPORTER_IMAGE));
+                            break;
+                    }
+                    lineIndex++;
+                    if (lineIndex >= mapData.size())
                         break;
                 }
-                lineIndex++;
-                if(lineIndex >= mapData.size())
-                    break;
             }
 
             locations[yChord][xCoord] = new Location(terrain, obstacleBool, areaEffect, items);

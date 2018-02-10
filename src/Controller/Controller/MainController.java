@@ -4,12 +4,19 @@ import Controller.Contexts.*;
 import Controller.Input.Input;
 import Controller.Game.OOPenguinGameFrame;
 import View.MenuView.MenuViewPort;
+import Controller.Utility.EntityBuilder;
+import View.AreaView.AvatarView;
+import View.AreaView.MapView;
+import View.StatusView.StatusViewPort;
+import View.Viewport;
 
 
 public class MainController {
 
     private OOPenguinGameFrame game;
     private Input input;
+
+    private EntityBuilder entityBuilder;
 
     private Context areaContext;
     private Context menuContext;
@@ -20,6 +27,8 @@ public class MainController {
     private MenuController menuController;
     private InventoryController inventoryController;
     private EquipmentController equipmentController;
+
+    private Viewport viewport;
 
     public MainController() {
         MenuViewPort menuViewPort = new MenuViewPort();
@@ -64,6 +73,23 @@ public class MainController {
                 break;
         }
     }
+
+    private void initGame(){
+
+    }
+
+    public void setViewPort(Viewport viewPort){
+        this.viewport = viewPort;
+    }
+
+    public Viewport getViewPort(){
+        return this.viewport;
+    }
+
+    public Viewport getStatusViewPort(){
+        return viewport.getChildren().get(2).getChildren().get(0);
+    }
+
 
 
     public void gameLoop() {

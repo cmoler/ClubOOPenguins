@@ -112,6 +112,8 @@ public class Viewport extends JPanel {
         repaint();
     }
 
+    public void moveCursor(int index){}
+
     public void moveUpdate(Direction direction){
 
     }

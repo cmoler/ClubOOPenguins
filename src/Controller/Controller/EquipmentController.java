@@ -13,6 +13,7 @@ public class EquipmentController implements Controller {
     @Override
     public void handleEscape() {
         System.out.println("PRESSED ESCAPE while in EQUIpment");
+
     }
 
     @Override
@@ -27,7 +28,7 @@ public class EquipmentController implements Controller {
 
     @Override
     public void handleNumpad(Direction direction) {
-
+        //does nothing now
     }
 
 }

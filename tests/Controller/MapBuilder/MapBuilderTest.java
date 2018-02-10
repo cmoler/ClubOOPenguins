@@ -13,5 +13,6 @@ class MapBuilderTest {
         MapBuilder b = new MapBuilder();
         Map m = b.buildMap("0001");
         m = b.buildMap("0002");
+        m = b.buildMap("0003");
     }
 }
