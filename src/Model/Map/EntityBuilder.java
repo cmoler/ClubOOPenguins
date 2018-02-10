@@ -1,6 +1,5 @@
 package Model.Map;
 
-import Configs.Commons;
 import Model.Entity.Entity;
 import Model.Entity.EntityType;
 import Model.Entity.Inventory;

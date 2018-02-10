@@ -1,18 +1,10 @@
 package View;
 
-import Configs.Commons;
-import Model.Item.Item;
-import Model.Map.AreaEffect.DamageAreaEffect;
-import Model.Map.Location;
+import Configs.ImagesInfo;
 import Model.Map.MapBuilder.MapBuilder;
-import Model.Map.Terrain.Glacier;
-import View.AreaView.DecalView;
-import View.AreaView.LocationView;
 
 import javax.swing.*;
-import java.awt.*;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 public class View extends JFrame {
 
@@ -33,7 +25,7 @@ public class View extends JFrame {
         Viewport viewport = mapBuilder.getViewport();
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT);
+        setSize(ImagesInfo.SCREEN_WIDTH, ImagesInfo.SCREEN_HEIGHT);
         setLocationRelativeTo(null);
         setResizable(false);
 

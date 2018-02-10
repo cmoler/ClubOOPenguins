@@ -1,8 +1,6 @@
 package Model.Map.MapBuilder;
 
-import Configs.Commons;
-import Model.Entity.Entity;
-import Model.Entity.EntityType;
+import Configs.ImagesInfo;
 import Model.Item.*;
 import Model.Map.AreaEffect.*;
 import Model.Map.Location;
@@ -20,8 +18,6 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import static Configs.Commons.AREAEFFECT_DAMAGE_IMAGE;
 
 public class MapBuilder {
 
@@ -69,15 +65,15 @@ public class MapBuilder {
             switch (terrainType){
                 case "ICE":
                     terrain = new Ice();
-                    terrainView = new TerrainView(Commons.ICE_IMAGE);
+                    terrainView = new TerrainView(ImagesInfo.ICE_IMAGE);
                     break;
                 case "WATER":
                     terrain = new Water();
-                    terrainView = new TerrainView(Commons.WATER_IMAGE);
+                    terrainView = new TerrainView(ImagesInfo.WATER_IMAGE);
                     break;
                 case "GLACIER":
                     terrain = new Glacier();
-                    terrainView = new TerrainView(Commons.GLACIER_IMAGE);
+                    terrainView = new TerrainView(ImagesInfo.GLACIER_IMAGE);
                     break;
             }
 
@@ -87,7 +83,7 @@ public class MapBuilder {
             ObstacleView obstacleView = null;
             if(obstacle.equals("TRUE")){
                 obstacleBool = true;
-                obstacleView = new ObstacleView(Commons.OBSTACLE_IMAGE);
+                obstacleView = new ObstacleView(ImagesInfo.OBSTACLE_IMAGE);
             }
 
             // Getting AreaEffect
@@ -97,19 +93,19 @@ public class MapBuilder {
             switch (areaEffectType){
                 case "DAMAGE":
                     areaEffect = new DamageAreaEffect();
-                    areaEffectView = new AreaEffectView(Commons.AREAEFFECT_DAMAGE_IMAGE);
+                    areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_DAMAGE_IMAGE);
                     break;
                 case "HEAL":
                     areaEffect = new HealAreaEffect();
-                    areaEffectView = new AreaEffectView(Commons.AREAEFFECT_HEAL_IMAGE);
+                    areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_HEAL_IMAGE);
                     break;
                 case "KILL":
                     areaEffect = new KillAreaEffect();
-                    areaEffectView = new AreaEffectView(Commons.AREAEFFECT_KILL_IMAGE);
+                    areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_KILL_IMAGE);
                     break;
                 case "LEVELUP":
                     areaEffect = new LevelUpAreaEffect();
-                    areaEffectView = new AreaEffectView(Commons.AREAEFFECT_LEVELUP_IMAGE);
+                    areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_LEVELUP_IMAGE);
                     break;
                 default:
                     areaEffect = null;
@@ -124,15 +120,15 @@ public class MapBuilder {
                 switch (itemType) {
                     case "INTERACTIVE":
                         items.add(new InteractiveItem());
-                        itemViews.add(new ItemView(Commons.ITEM_ITERACTIVE_IMAGE));
+                        itemViews.add(new ItemView(ImagesInfo.ITEM_ITERACTIVE_IMAGE));
                         break;
                     case "ONESHOT":
                         items.add(new OneShotItem());
-                        itemViews.add(new ItemView(Commons.ITEM_ONESHOT_IMAGE));
+                        itemViews.add(new ItemView(ImagesInfo.ITEM_ONESHOT_IMAGE));
                         break;
                     case "TAKEABLE":
                         items.add(new TakeableItem());
-                        itemViews.add(new ItemView(Commons.ITEM_TAKEABLE_IMAGE));
+                        itemViews.add(new ItemView(ImagesInfo.ITEM_TAKEABLE_IMAGE));
                         break;
                     case "TELEPORTER":
                         lineIndex++;
@@ -141,7 +137,7 @@ public class MapBuilder {
                         int teleportLocationX = Integer.parseInt(teleporterLocationXAndY[0]);
                         int teleportLocationY = Integer.parseInt(teleporterLocationXAndY[1]);
                         items.add(new Teleporter(teleporterMapID,teleportLocationX,teleportLocationY));
-                        itemViews.add(new ItemView(Commons.ITEM_TELEPORTER_IMAGE));
+                        itemViews.add(new ItemView(ImagesInfo.ITEM_TELEPORTER_IMAGE));
                         break;
                 }
                 lineIndex++;

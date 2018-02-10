@@ -11,6 +11,18 @@ public class Teleporter extends InteractiveItem{
     private int locationX;
     private int locationY;
 
+    public String getMapID() {
+      return mapID;
+    }
+
+    public int getX() {
+      return locationX;
+    }
+
+    public int getY() {
+      return locationY;
+    }
+
     public Teleporter(String mapID, int locationX, int locationY){
         this.mapID = mapID;
         this.locationX = locationX;
