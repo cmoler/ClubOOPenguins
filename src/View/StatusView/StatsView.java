@@ -12,7 +12,7 @@ import java.util.List;
 public class StatsView extends Viewport {
 
     private final int ENTITY_HEALTH_X = (int) (Commons.SCREEN_WIDTH * 20.0/765.0);
-    private final int ENTITY_HEALTH_Y = (int) (Commons.SCREEN_HEIGTH * 360.0/501.0);
+    private final int ENTITY_HEALTH_Y = (int) (Commons.SCREEN_HEIGHT * 360.0/501.0);
     private final int ENTITY_HEALTH_HEIGHT = 5;
     private final int ENTITY_HEALTH_WIDTH = 100;
 
@@ -51,7 +51,7 @@ public class StatsView extends Viewport {
 
 
         //Load Interfrace
-        graphics2D.drawImage(Commons.RUNESCAPE_GUI,0,0, Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT);
+        graphics2D.drawImage(Commons.RUNESCAPE_GUI,0,0, Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT, this);
 
         //HPBAR
         graphics2D.setColor(new Color(233, 3, 3));
@@ -77,12 +77,9 @@ public class StatsView extends Viewport {
         return null;
     }
 
-<<<<<<< HEAD
-=======
     @Override
     public void update(){
         repaint();
     }
 
->>>>>>> master
 }

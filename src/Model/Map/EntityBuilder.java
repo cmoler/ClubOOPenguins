@@ -7,8 +7,10 @@ import Model.Item.*;
 import Model.Map.AreaEffect.DamageAreaEffect;
 import Model.Map.Terrain.Ice;
 import Model.Map.Terrain.Water;
+import View.AreaView.AvatarView;
 import View.AreaView.ItemView.ItemView;
 import View.AreaView.TerrainView;
+import View.Viewport;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,6 +19,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class EntityBuilder {
+
+    private Viewport viewport;
 
     public EntityBuilder(){}
 

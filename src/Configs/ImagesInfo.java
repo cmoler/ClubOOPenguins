@@ -3,8 +3,7 @@ package Configs;
 import java.awt.*;
 
 public interface ImagesInfo {
-    public static final int SCREEN_WIDTH  = 1920;
-    public static final int SCREEN_HEIGHT = 1080;
+
 
     public static final String TILE_SHEET = "resources/images/terrain.png";
     public static final String AREAEFFECT_DAMAGE_FILELOCATION = "resources/images/Red_AOE.png";
