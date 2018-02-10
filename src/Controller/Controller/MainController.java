@@ -66,11 +66,4 @@ public class MainController {
     public void gameLoop() {
 
     }
-
-
-    public static void main(String[] args) {
-        MainController mainController = new MainController();
-
-        mainController.gameLoop();
-    }
 }
