@@ -38,7 +38,7 @@ public class MapView extends Viewport {
         for(Viewport child: children){
             if(child.getLocationX() <= j + 2 && child.getLocationX() >= j - 2&&
                     child.getLocationY() <= i + 2 && child.getLocationY() >= i - 2 ){
-                child.draw(graphics2D);
+                child.draw(graphics2D, i ,j);
             }
         }
     }
