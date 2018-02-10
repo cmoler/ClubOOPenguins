@@ -76,7 +76,6 @@ public class MenuController implements Controller {
     }
 
     public void handleNumpad(Direction direction) {
-
     }
 
     public void saveGame(String filepath, Entity entity) {

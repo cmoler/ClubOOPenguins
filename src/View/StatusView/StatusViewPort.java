@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class StatusViewPort extends Viewport {
 
-    public enum RenderOption{ EQUIPMENT, INVENTORY}
+    public enum RenderOption { EQUIPMENT, INVENTORY}
 
     private RenderOption renderOption;
 

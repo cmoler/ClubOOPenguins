@@ -83,6 +83,10 @@ public class MainController {
         return this.viewport;
     }
 
+    public Viewport getStatusViewPort(){
+        return viewport.getChildren().get(2).getChildren().get(0);
+    }
+
 
 
     public void gameLoop() {

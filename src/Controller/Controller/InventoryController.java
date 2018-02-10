@@ -39,24 +39,28 @@ public class InventoryController implements Controller {
                 if(itemIndex < 0){
                     itemIndex = 0;
                 }
+                mainController.getStatusViewPort().moveCursor(itemIndex);
                 break;
             case W:
                 itemIndex += 1;
                 if(itemIndex > (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
                     itemIndex = (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS);
                 }
+                mainController.getStatusViewPort().moveCursor(itemIndex);
                 break;
             case E:
                 itemIndex -= 1;
                 if(itemIndex < 0){
                     itemIndex = 0;
                 }
+                mainController.getStatusViewPort().moveCursor(itemIndex);
                 break;
             case S:
                 itemIndex += InventorySizes.INVENTORY_COLUMNS;
                 if(itemIndex > (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
                     itemIndex = (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS);
                 }
+                mainController.getStatusViewPort().moveCursor(itemIndex);
                 break;
         }
     }
