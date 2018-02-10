@@ -10,12 +10,12 @@ public class MainController {
     private OOPenguinGameFrame game;
     private Input input;
 
-    private Context gameContext;
+    private Context areaContext;
     private Context menuContext;
     private Context inventoryContext;
     private Context equipmentContext;
 
-    private GameController gameController;
+    private AreaController areaController;
     private MenuController menuController;
     private InventoryController inventoryController;
     private EquipmentController equipmentController;
@@ -23,13 +23,12 @@ public class MainController {
     public MainController() {
         game = new OOPenguinGameFrame();
 
-
-        gameController = new GameController(this);
+        areaController = new AreaController(this);
         menuController = new MenuController(this);
         inventoryController = new InventoryController(this);
         equipmentController = new EquipmentController(this);
 
-        gameContext = new GameContext(gameController);
+        areaContext = new AreaContext(areaController);
         menuContext = new MenuContext(menuController);
         inventoryContext = new InventoryContext(inventoryController);
         equipmentContext = new EquipmentContext(equipmentController);
@@ -38,20 +37,33 @@ public class MainController {
         game.addKeyListener(input);
     }
 
-    private void setActiveContext(Context context) {
-        input.setActiveContext(context);
+    public void setActiveContext(GameContext context) {
 
+        switch (context){
+            case AREA:
+                input.setActiveContext(areaContext);
+                break;
+
+            case INVENTORY:
+                input.setActiveContext(inventoryContext);
+                break;
+
+            case EQUIPMENT:
+                input.setActiveContext(equipmentContext);
+                break;
+
+            case MENU:
+                input.setActiveContext(menuContext);
+                break;
+
+            default:
+                input.setActiveContext(menuContext);
+                break;
+        }
     }
 
 
     public void gameLoop() {
 
-    }
-
-
-    public static void main(String[] args) {
-        MainController mainController = new MainController();
-
-        mainController.gameLoop();
     }
 }
