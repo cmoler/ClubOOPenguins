@@ -21,6 +21,7 @@ public class StatusViewPort extends Viewport {
         add(new InventoryView(inventory));
     }
 
+    @Override
     public void setRenderOption(RenderOption renderOption) {
         this.renderOption = renderOption;
     }

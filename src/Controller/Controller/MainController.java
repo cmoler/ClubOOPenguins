@@ -3,12 +3,19 @@ package Controller.Controller;
 import Controller.Contexts.*;
 import Controller.Input.Input;
 import Controller.Game.OOPenguinGameFrame;
+import Controller.Utility.EntityBuilder;
+import View.AreaView.AvatarView;
+import View.AreaView.MapView;
+import View.StatusView.StatusViewPort;
+import View.Viewport;
 
 
 public class MainController {
 
     private OOPenguinGameFrame game;
     private Input input;
+
+    private EntityBuilder entityBuilder;
 
     private Context areaContext;
     private Context menuContext;
@@ -19,6 +26,8 @@ public class MainController {
     private MenuController menuController;
     private InventoryController inventoryController;
     private EquipmentController equipmentController;
+
+    private Viewport viewport;
 
     public MainController() {
         game = new OOPenguinGameFrame();
@@ -61,6 +70,19 @@ public class MainController {
                 break;
         }
     }
+
+    private void initGame(){
+
+    }
+
+    public void setViewPort(Viewport viewPort){
+        this.viewport = viewPort;
+    }
+
+    public Viewport getViewPort(){
+        return this.viewport;
+    }
+
 
 
     public void gameLoop() {
