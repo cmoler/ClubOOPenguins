@@ -20,7 +20,7 @@ public class View extends JFrame {
 
     private void initUI() {
 
-        /*
+
         // TODO: this location constructor is just to get rid of errors
         MapBuilder mapBuilder = new MapBuilder();
         try {
@@ -47,7 +47,7 @@ public class View extends JFrame {
         viewport.add(mapView);
         viewport.add(avatarView);
         viewport.add(statusView);
-        */
+
 
         MenuViewPort menuViewPort = new MenuViewPort(Commons.SCREEN_WIDTH/2,Commons.SCREEN_HEIGHT/4);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

@@ -1,6 +1,7 @@
 package View;
 
 import Model.Map.Direction;
+import View.StatusView.StatusViewPort;
 
 import javax.swing.*;
 import java.awt.*;
@@ -74,6 +75,12 @@ public class Viewport extends JPanel {
 
     public void draw(Graphics2D graphics2D, int i, int j){
 
+    }
+
+    public void setRenderOption(StatusViewPort.RenderOption renderOption){
+        for(Viewport child: children){
+            child.setRenderOption(renderOption);
+        }
     }
 
     public void add(Viewport viewport){
