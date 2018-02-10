@@ -56,8 +56,8 @@ public class Map {
         numCols = this.locations[0].length;
 
         // for testing: Locations need to be initialized to test Entity movement
-        for (int i = 0; i < numRows - 1; i++) {
-            for (int j = 0; j < numCols - 1; j++) {
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < numCols; j++) {
                 locations[i][j] = new Location(new Ice(), false, null, null);
             }
         }
@@ -67,8 +67,8 @@ public class Map {
     }
 
     public void setAdjacencyList() {
-        for (int i = 0; i < numRows - 1; i++) {
-            for (int j = 0; j < numCols - 1; j++) {
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j < numCols; j++) {
                 HashMap AdjacentLocations = new HashMap<Direction, Location>();
 
                 //Add NW
