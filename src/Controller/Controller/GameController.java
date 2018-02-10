@@ -1,26 +1,64 @@
 package Controller.Controller;
 
-import Model.Entity.Direction;
 import Model.Entity.Entity;
-import Model.Item.Item;
-import Model.Map.Map;
 import Model.Map.World;
+import View.Viewport;
 
-public class GameController {
+public class GameController extends Controller {
 
+    private MainController mainController;
     private Entity entity;
     private World world;
+    private Viewport areaView;
 
-    public GameController() {
+
+    public GameController(MainController mainController) {
+        this.mainController = mainController;
+    }
+
+
+    @Override
+    public void handleEscape() {
 
     }
 
-    public void move(Direction direction){
+    @Override
+    public void handleNorth() {
 
     }
 
-    public void useItem(Item item){
+    @Override
+    public void handleSouth() {
 
     }
 
+    @Override
+    public void handleWest() {
+
+    }
+
+    @Override
+    public void handleEast() {
+
+    }
+
+    @Override
+    public void handleNorthEast() {
+
+    }
+
+    @Override
+    public void handleNorthWest() {
+
+    }
+
+    @Override
+    public void handleSouthEast() {
+
+    }
+
+    @Override
+    public void handleSouthWest() {
+
+    }
 }

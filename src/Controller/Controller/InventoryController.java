@@ -1,46 +1,55 @@
 package Controller.Controller;
 
-import Controller.Controller.MainController;
-import com.sun.tools.javac.Main;
-
 public class InventoryController extends Controller {
 
-    public InventoryController() {
-        MainController mainController = getMainController();
+    private MainController mainController;
+
+    public InventoryController(MainController mainController) {
+        this.mainController = mainController;
     }
 
-    public void escape() {
-        mainController.closeInventory();
+
+    @Override
+    public void handleEscape() {
+
     }
 
+    @Override
     public void handleNorth() {
 
     }
 
+    @Override
     public void handleSouth() {
 
     }
 
+    @Override
     public void handleWest() {
 
     }
 
+    @Override
     public void handleEast() {
 
     }
 
+    @Override
     public void handleNorthEast() {
 
     }
 
+    @Override
     public void handleNorthWest() {
 
     }
 
+    @Override
     public void handleSouthEast() {
 
     }
 
+    @Override
     public void handleSouthWest() {
 
     }

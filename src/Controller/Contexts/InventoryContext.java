@@ -1,26 +1,21 @@
 package Controller.Contexts;
 
-import Controller.Controller.MainController;
+import Controller.Controller.Controller;
+import Controller.Controller.InventoryController;
 
 import java.awt.event.KeyEvent;
 
-public class InventoryContext extends Context {
+public class InventoryContext extends Context{
 
-    public InventoryContext(MainController mainController){
-        super(mainController);
+    private InventoryController inventoryController;
+
+    public InventoryContext(InventoryController inventoryController){
+        this.inventoryController = inventoryController;
     }
 
+    @Override
     public void processKeyEvent(KeyEvent event) {
-        int keyCode = event.getKeyCode();
-        MainController mainController = getMainController();
 
-        switch(keyCode){
-
-            case KeyEvent.VK_ESCAPE:
-                mainController.closeInventory();
-                break;
-
-        }
     }
 
 }
