@@ -11,6 +11,7 @@ public class MenuController implements Controller {
     private MainController mainController;
     private GameLoader gameLoader;
     private GameSaver gameSaver;
+    private int currentlySelected;
 
     public MenuController(MainController mainController){
         this.mainController = mainController;

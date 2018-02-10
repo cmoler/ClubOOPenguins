@@ -3,6 +3,7 @@ package Controller.Controller;
 import Controller.Contexts.*;
 import Controller.Input.Input;
 import Controller.Game.OOPenguinGameFrame;
+import View.MenuView.MenuViewPort;
 
 
 public class MainController {
@@ -21,8 +22,10 @@ public class MainController {
     private EquipmentController equipmentController;
 
     public MainController() {
+        MenuViewPort menuViewPort = new MenuViewPort();
         game = new OOPenguinGameFrame();
-
+        game.add(menuViewPort);
+        menuViewPort.setVisible(true);
         areaController = new AreaController(this);
         menuController = new MenuController(this);
         inventoryController = new InventoryController(this);

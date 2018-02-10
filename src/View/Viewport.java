@@ -74,7 +74,15 @@ public class Viewport extends JPanel {
     }
 
     public void draw(Graphics2D graphics2D, int i, int j){
+        for(Viewport child: children){
+            child.draw(graphics2D, i, j);
+        }
+    }
 
+    public void setSelectedMenuView(int selectedMenuView){
+        for(Viewport child: children){
+            child.setSelectedMenuView(selectedMenuView);
+        }
     }
 
     public void setRenderOption(StatusViewPort.RenderOption renderOption){
