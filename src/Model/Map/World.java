@@ -1,8 +1,6 @@
 package Model.Map;
 
-import Controller.Utility.MapBuilder;
 import View.AreaView.MapView;
-import View.View;
 import View.Viewport;
 
 import java.util.ArrayList;

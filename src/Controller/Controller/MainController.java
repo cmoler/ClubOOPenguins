@@ -10,6 +10,9 @@ import View.MenuView.MenuViewPort;
 import Controller.Utility.EntityBuilder;
 import View.Viewport;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class MainController {
 
     private OOPenguinGameFrame game;
@@ -30,6 +33,8 @@ public class MainController {
     private Viewport areaViewport;
     private MenuViewPort menuViewPort;
 
+    private Timer timer;
+
     public MainController() {
         menuViewPort = new MenuViewPort();
         game = new OOPenguinGameFrame();
@@ -49,6 +54,9 @@ public class MainController {
 
         menuViewPort.addKeyListener(input);
         game.addKeyListener(input);
+
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new ScheduleTask(), 1000, 10);
     }
 
     public void setActiveContext(GameContext context) {
@@ -106,7 +114,17 @@ public class MainController {
         menuViewPort.setSelectedMenuView(i);
     }
 
-    public void gameLoop() {
+    public void gameLoop(){
+
+    }
+
+    private class ScheduleTask extends TimerTask {
+
+        @Override
+        public void run() {
+            if(areaViewport != null) areaViewport.repaint();
+            if(menuViewPort != null) menuViewPort.repaint();
+        }
     }
 
     public void setMenuRender() {

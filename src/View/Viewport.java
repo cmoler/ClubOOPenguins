@@ -13,8 +13,6 @@ import java.util.TimerTask;
 
 public class Viewport extends JPanel {
 
-    Timer timer;
-
     protected Viewport parent;
     protected List<Viewport> children = new ArrayList<Viewport>();
 
@@ -22,9 +20,6 @@ public class Viewport extends JPanel {
 
         setFocusable(true);
         setDoubleBuffered(true);
-
-        timer = new Timer();
-        timer.scheduleAtFixedRate(new ScheduleTask(), 1000, 10);
     }
 
     public int getLocationX() {
@@ -33,15 +28,6 @@ public class Viewport extends JPanel {
 
     public int getLocationY() {
         return -1;
-    }
-
-    private class ScheduleTask extends TimerTask {
-
-        @Override
-        public void run() {
-
-            repaint();
-        }
     }
 
     @Override
