@@ -16,6 +16,7 @@ public class EquipmentView extends Viewport {
     private final int EQUIPMENT_Y = (int) (Commons.SCREEN_HEIGHT * 250.0/501.0);
 
     private Equipment equipment;
+    private boolean selected = false;
 
     public EquipmentView(Equipment equipment){
         equipment.attach(this);
@@ -27,6 +28,7 @@ public class EquipmentView extends Viewport {
         Image imageIcon = SpriteParser.getSpriteParser().getTakeAbleItemImage();
         if(equipment.getEquipped() != null)
         graphics2D.drawImage(imageIcon, EQUIPMENT_X, EQUIPMENT_Y, EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT, this);
+        if(selected) graphics2D.fillRect(EQUIPMENT_X, EQUIPMENT_Y, EquipmentSizes.EQUIPMENT_WIDTH, EquipmentSizes.EQUIPMENT_HEIGHT);
     }
 
     @Override
@@ -34,4 +36,8 @@ public class EquipmentView extends Viewport {
         return null;
     }
 
+    @Override
+    public void setRenderEquipmentSelection(boolean flag){
+        selected = flag;
+    }
 }
