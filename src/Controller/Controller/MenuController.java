@@ -46,6 +46,11 @@ public class MenuController implements Controller {
     }
 
     @Override
+    public void handleT() {
+
+    }
+
+    @Override
     public void handleEnter() {
         switch (currentlySelected){
             case 0:
