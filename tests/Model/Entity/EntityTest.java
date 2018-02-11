@@ -1,6 +1,7 @@
 package Model.Entity;
 
 
+import Model.Map.Direction;
 import Model.Map.Map;
 import Controller.Utility.MapBuilder;
 import Model.Map.World;
@@ -73,7 +74,14 @@ class EntityTest {
     }
 
     @Test
-    void move(){}
+    void move() throws FileNotFoundException {
+        World world = World.getWorld();
+        MapBuilder mb = new MapBuilder();
+        Map m = mb.buildMap("Default","0001");
+        world.changeCurrentMapTo(m);
+        Entity e = new Entity(m.getDefaultLocation());
+        e.move(Direction.N);
+    }
 
     @Test
     void moveNormallyWithNoObstacles(){
