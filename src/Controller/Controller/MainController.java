@@ -53,7 +53,7 @@ public class MainController {
 
     public void setActiveContext(GameContext context) {
         areaViewport.setRenderInventorySelection(false);
-        areaViewport.setRenderEuipmentSelection(false);
+        areaViewport.setRenderEquipmentSelection(false);
 
         switch (context){
             case AREA:
@@ -69,7 +69,7 @@ public class MainController {
                 break;
 
             case EQUIPMENT:
-                areaViewport.setRenderEuipmentSelection(false);
+                areaViewport.setRenderEquipmentSelection(true);
                 setAreaRender();
                 input.setActiveContext(equipmentContext);
                 break;
