@@ -1,49 +1,78 @@
 package Controller.Utility;
 
 import Model.Entity.Entity;
+import Model.Item.Teleporter;
 import Model.Map.World;
 import Model.Map.Map;
 import Model.Entity.Inventory;
 import Model.Entity.Equipment;
 import Model.Item.Item;
-import java.io.PrintWriter;
+import Model.Map.MapIterator;
+
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class GameSaver {
 
     private String saveFileLocation;
 
-    public void SaveMap(String saveFileLocation, Entity entity, World world, Map map) {
+    public void OutFile(String saveData) {
+        try(PrintWriter entitySave = new PrintWriter(new FileOutputStream(saveFileLocation + ".txt", false))) {
+            entitySave.println(saveData);
+            entitySave.close();
+        }
+        catch (Exception e) {
+            System.out.println("Exception when writing to file");
+        }
+    }
+
+    public void SaveMap(String mapID, Entity entity, Map map) {
         String mapData = "";
 
-        //Placeholder until I can get actual MapID
-        mapData += "0001" + System.getProperty("line.separator");
+        System.out.println("Saving map");
 
-        mapData += "MAP" + System.getProperty("line.separator");
-        mapData += "\t" + Integer.toString(map.getRows()) + System.getProperty("line.separator");
-        mapData += "\t" + Integer.toString(map.getCols()) + System.getProperty("line.separator");
+        mapData += mapID + System.lineSeparator();
+        mapData += "MAP" + System.lineSeparator();
 
-        //Needs to be replaced with a function to return actual starting point
-        mapData += "\t" + Integer.toString(map.getRows() / 2) + "," + Integer.toString(map.getCols() / 2) + System.getProperty("line.separator");
+        mapData += "\t" + Integer.toString(map.getCols()) + System.lineSeparator();
+        mapData += "\t" + Integer.toString(map.getRows()) + System.lineSeparator();
 
-        mapData += "\tLOCATIONS";
+        MapIterator mi = new MapIterator(World.getWorld().getMap(mapID));
+
+        for(mi.reset(); mi.isValid(); mi.next()) {
+            if(mi.currentItem() == World.getWorld().getMap(mapID).getDefaultLocation()) {
+                mapData += "\t" + Integer.toString(mi.getJ()) + "," + Integer.toString(mi.getI()) + System.lineSeparator();
+            }
+        }
+
+        mapData += "\tLOCATIONS" + System.lineSeparator();
 
         for(int i = 0; i < map.getRows(); i++) {
             for(int j = 0; j < map.getCols(); j++) {
-                mapData += "\t\t" + Integer.toString(j) + "," + Integer.toString(i) + System.getProperty("line.separator");
-                mapData += "\t\t\t" + map.getLocationIJ(i, j).getTerrain().toString().toUpperCase();
+                mapData += "\t\t" + Integer.toString(i) + "," + Integer.toString(j) + System.lineSeparator();
+                mapData += "\t\t\t" + map.getLocationIJ(i, j).getTerrain().toString().toUpperCase() + System.lineSeparator();
 
-                if(map.getLocationIJ(i, j).moveAllowed(entity)) mapData += "\t\t\tFALSE" + System.getProperty("line.separator");
-                else mapData += "\t\t\tTRUE" + System.getProperty("line.separator");
+                if(map.getLocationIJ(i, j).moveAllowed(entity)) mapData += "\t\t\tFALSE" + System.lineSeparator();
+                else mapData += "\t\t\tTRUE" + System.lineSeparator();
 
-                mapData += "\t\t\t" + map.getLocationIJ(i, j).getAreaEffect().toString().toUpperCase() + System.getProperty("line.separator");
-                mapData += "\t\t\tITEMS" + System.getProperty("line.separator");
+                if(map.getLocationIJ(i, j).getAreaEffect() != null) {
+                    mapData += "\t\t\t" + map.getLocationIJ(i, j).getAreaEffect().toString().toUpperCase() + System.lineSeparator();
+                }
+                else
+                    mapData += "\t\t\tNONE" + System.lineSeparator();
+
+                mapData += "\t\t\tITEMS" + System.lineSeparator();
 
                 //Converts Item list to strings
                 String[] items = new String[map.getLocationIJ(i, j).getItems().size()];
-                for(Object value : map.getLocationIJ(i, j).getItems()) {
-                    mapData += "\t\t\t\t" + value.toString() + System.getProperty("line.separator");
-                    if(value.toString().equals("TELEPORTER")) {
+                for(Item value : map.getLocationIJ(i, j).getItems()) {
+                    mapData += "\t\t\t\t" + value.getItemType().toString().toUpperCase() + System.lineSeparator();
+
+                    if(value.getItemType().toString().toUpperCase().equals("TELEPORTER")) {
                         //Get teleporter info
+                        mapData += "\t\t\t\t\t" + ((Teleporter)value).getMapID() + System.lineSeparator();
+                        mapData += "\t\t\t\t\t" + Integer.toString(((Teleporter)value).getX()) + "," + Integer.toString(((Teleporter)value).getY()) + System.lineSeparator();
                     }
                     else {
                         //Get item details
@@ -52,44 +81,58 @@ public class GameSaver {
             }
         }
 
-        try(PrintWriter mapSave = new PrintWriter(saveFileLocation + "Map_Save.txt")) {
-            mapSave.println(mapData);
-            mapSave.close();
+        try(PrintWriter entitySave = new PrintWriter(new FileOutputStream("./resources/saves/" + "MapModel" + mapID + ".txt", false))) {
+            entitySave.println(mapData);
+            entitySave.close();
         }
         catch (Exception e) {
             System.out.println("Exception when writing to file");
         }
     }
 
-    public void SaveEntity(String saveFileLocation, Entity entity, World world, Map map, Inventory inventory, Equipment equipment) {
+
+    public void SaveEntity(Entity entity, String entityID, Inventory inventory) {
         String entityData = "";
 
-        //Placeholder until I can get actual EntityID
-        entityData += "0001" + System.getProperty("line.separator");
+        System.out.println("Entity ID: " + entityID);
 
-        entityData += "ENTITY" + System.getProperty("line.separator");
+        entityData += entityID + System.lineSeparator();
 
-        entityData += "\t" + entity.getEntityType().toString().toUpperCase() + System.getProperty("line.separator");
+        entityData += "ENTITY" + System.lineSeparator();
 
-        entityData += "\t" + entity.getLocation().toString();
+        entityData += "\t" + entity.getEntityType().toString().toUpperCase() + System.lineSeparator();
 
-        entityData += "\t" + Integer.toString(entity.getHealth()) + System.getProperty("line.separator");
+        MapIterator mi = new MapIterator(World.getWorld().getCurrentMap());
 
-        entityData += "\t" + Integer.toString(entity.getExperience()) + System.getProperty("line.separator");
-
-        entityData += "\t" + "INVENTORY" + System.getProperty("line.separator");
-        Inventory.InventoryIterator invIter = inventory.getIterator();
-        invIter.reset();
-
-        while(invIter.hasNext()) {
-            entityData += "\t\t" + invIter.getCurrent().toString() + System.getProperty("line.separator");
-            invIter.next();
+        for(mi.reset(); mi.isValid(); mi.next()) {
+            if(mi.currentItem() == World.getWorld().getCurrentMap().getDefaultLocation())
+                entityData += "\t" + Integer.toString(mi.getJ()) + "," + Integer.toString(mi.getI()) + System.lineSeparator();
         }
 
-        entityData += "\t\t" + "EQUIPMENT" + System.getProperty("line.separator");
-        entityData += "\t\t\t" + equipment.getEquipped().toString() + System.getProperty("line.separator");
 
-        try(PrintWriter entitySave = new PrintWriter(saveFileLocation + "Entity_Save.txt")) {
+        entityData += "\t" + Integer.toString(entity.getHealth()) + System.lineSeparator();
+
+        entityData += "\t" + Integer.toString(entity.getExperience()) + System.lineSeparator();
+
+        entityData += "\t" + "INVENTORY" + System.lineSeparator();
+
+        Inventory.InventoryIterator invIter = inventory.getIterator();
+
+        for(invIter.reset(); invIter.hasNext(); invIter.next()) {
+            System.out.println("Checking for inventory");
+            entityData += "\t\t" + invIter.getCurrent().getItemType().toString() + System.lineSeparator();
+        }
+
+        if(inventory.getEquipment().getEquipped() != null) {
+            entityData += "\t\t" + "EQUIPMENT" + System.lineSeparator();
+            entityData += "\t\t\t" + inventory.getEquipment().getEquipped().toString() + System.lineSeparator();
+        }
+        else
+//            entityData += "\t\t\tNONE" + System.lineSeparator();
+
+//        OutFile(entityData);
+
+        try(PrintWriter entitySave = new PrintWriter(new FileOutputStream("./resources/saves/" + "EntityModel" + entityID + ".txt", false))) {
             entitySave.println(entityData);
             entitySave.close();
         }
@@ -99,11 +142,16 @@ public class GameSaver {
 
     }
 
-    public void SaveGame(String saveFileLocation, Entity entity, World world, Map map, Inventory inventory, Equipment equipment){
+    public void SaveGame(Entity entity, Map map, Inventory inventory, Equipment equipment){
+//        Date date = new Date() ;
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMddHHmmss");
+//
+//        saveFileLocation = saveFileLocation += "/" + dateFormat.format(date);
 
-        SaveMap(saveFileLocation, entity, world, map);
+        for(int i = 1; World.getWorld().getMap("000" + Integer.toString(i)) != null; i++)
+            SaveMap("000" + Integer.toString(i), entity, map);
 
-        SaveEntity(saveFileLocation, entity, world, map, inventory, equipment);
+        SaveEntity(entity, "0001", inventory);
 
     }
 }
