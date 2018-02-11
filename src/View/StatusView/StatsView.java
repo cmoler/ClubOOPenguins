@@ -37,7 +37,8 @@ public class StatsView extends Viewport {
     @Override
     public void draw(Graphics2D graphics2D) {
         //Portion of HP
-        double percentHP = entity.getHealth()/100;
+        System.out.println("entity gethealth =  " + entity.getHealth());
+        double percentHP = 1 - entity.getHealth()/100.0;
         int hprectSize = (int) (percentHP * ENTITY_HEALTH_WIDTH);
 
         //Needed XP vars
