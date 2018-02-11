@@ -43,8 +43,8 @@ public class InventoryView extends Viewport {
             }
         }
 
-        graphics2D.setColor(new Color(200,200,50,40));
-        graphics2D.drawRect(highlighterX, highlighterY, ITEM_WIDTH, InventorySizes.ITEM_HEIGHT);
+        graphics2D.setColor(new Color(200,200,50,90));
+        graphics2D.fillRect(highlighterX, highlighterY, ITEM_WIDTH, InventorySizes.ITEM_HEIGHT);
     }
 
     @Override
@@ -55,8 +55,8 @@ public class InventoryView extends Viewport {
     @Override
     public void moveCursor(int index){
         //offset + index * itemwidth * modulo so you dont go over
-        highlighterX = ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)) + ITEM_WIDTH*(index%InventorySizes.INVENTORY_COLUMNS);
-        highlighterY = ((int) (Commons.SCREEN_WIDTH  * 221.0/765.0)) + ITEM_WIDTH*(index%InventorySizes.INVENTORY_ROWS);
+        highlighterX = ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)) + ITEM_WIDTH * (index % InventorySizes.INVENTORY_COLUMNS);
+        highlighterY = ((int) (Commons.SCREEN_HEIGHT  * 221.0/765.0)) + ITEM_WIDTH * (index / InventorySizes.INVENTORY_ROWS);
     }
 
 }
