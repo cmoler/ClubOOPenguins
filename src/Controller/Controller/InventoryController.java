@@ -45,8 +45,11 @@ public class InventoryController implements Controller {
     @Override
     public void handleEnter() {
         TakeableItem currentItem = inventoryIterator.getCurrent();
-        equipment.equip(currentItem);
-        System.out.println("Equipment has a " + equipment.getEquipped().getItemType());
+        if(currentItem != null){
+            equipment.equip(currentItem);
+            System.out.println("Equipment has a " + equipment.getEquipped().getItemType());
+        }
+
         //mainController.getAreaViewPort().setRenderOption(StatusViewPort.RenderOption.EQUIPMENT);
     }
 
@@ -65,42 +68,48 @@ public class InventoryController implements Controller {
 
                 if(viewItemIndex < 0){
                     viewItemIndex = 0;
+                    inventoryIterator.reset();
                 }
                 mainController.getAreaViewPort().moveCursor(viewItemIndex);
                 break;
             case E:
                 viewItemIndex += 1;
-                if(inventoryIterator.hasNext()){
-                    inventoryIterator.next();
-                }
-                if(viewItemIndex > (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
+                inventoryIterator.next();
+                if(viewItemIndex >= (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
                     viewItemIndex = (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS);
+                    inventoryIterator.prev();
                 }
                 mainController.getAreaViewPort().moveCursor(viewItemIndex);
                 break;
             case W:
                 viewItemIndex -= 1;
-                if(inventoryIterator.hasPrev()){
-                    inventoryIterator.prev();
-                }
+                inventoryIterator.prev();
+
 
                 if(viewItemIndex < 0){
                     viewItemIndex = 0;
                 }
+
                 mainController.getAreaViewPort().moveCursor(viewItemIndex);
                 break;
             case S:
                 viewItemIndex += InventorySizes.INVENTORY_COLUMNS;
                 for(int shiftIndex = 0; shiftIndex < InventorySizes.INVENTORY_COLUMNS; shiftIndex++){
-                    if(inventoryIterator.hasNext()) {
+                    inventoryIterator.next();
+                }
+                if(viewItemIndex >= (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
+
+                    viewItemIndex = (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS);
+                    inventoryIterator.reset();
+
+                    for(int shiftIndex = 0; shiftIndex < InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS; shiftIndex++){
                         inventoryIterator.next();
                     }
-                }
-                if(viewItemIndex > (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
-                    viewItemIndex = (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS);
                 }
                 mainController.getAreaViewPort().moveCursor(viewItemIndex);
                 break;
         }
+
+        System.out.println(inventoryIterator.index);
     }
 }
