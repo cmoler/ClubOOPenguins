@@ -33,7 +33,6 @@ public class InventoryView extends Viewport {
         for(int i = 0; i < InventorySizes.INVENTORY_ROWS && inventoryIterator.hasNext(); ++i, inventoryIterator.next()){
             for(int j = 0; j < InventorySizes.INVENTORY_COLUMNS && inventoryIterator.hasNext(); ++j, inventoryIterator.next()){
 
-                //TODO add images from inventory
                 ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_TAKEABLE_FILELOCATION);
                 Image itemImage = imageIcon.getImage();
                 int x = ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)) + ITEM_WIDTH*j;
