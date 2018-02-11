@@ -14,6 +14,9 @@ public class MapView extends Viewport {
     private final int VIEW_SIZE_X = 20;
     private final int VIEW_SIZE_Y = 20;
 
+    private int initialI;
+    private int initialJ;
+
     private Entity entity;
 
     public MapView() {
@@ -22,23 +25,30 @@ public class MapView extends Viewport {
 
     public void setEntity(Entity entity){
         this.entity = entity;
+        MapIterator mapIterator = new MapIterator(World.getWorld().getCurrentMap());
+        for(mapIterator.reset(); mapIterator.isValid(); mapIterator.next()){
+            if(mapIterator.currentItem() == entity.getLocation()){
+                initialI = mapIterator.getI();
+                initialJ = mapIterator.getJ();
+            }
+        }
     }
 
     @Override
     public void draw(Graphics2D graphics2D){
-        int i = 0;
-        int j = 0;
+        int offsetI = 0;
+        int offsetJ = 0;
         MapIterator mapIterator = new MapIterator(World.getWorld().getCurrentMap());
         for(mapIterator.reset(); mapIterator.isValid(); mapIterator.next()){
             if(mapIterator.currentItem() == entity.getLocation()){
-                i = mapIterator.getI();
-                j = mapIterator.getJ();
+                offsetI = mapIterator.getI() - initialI;
+                offsetJ = mapIterator.getJ() - initialJ;
             }
         }
         for(Viewport child: children){
-            if(child.getLocationX() <= j + 3 && child.getLocationX() >= j - 2&&
-                    child.getLocationY() <= i + 10 && child.getLocationY() >= i - 2 ){
-                child.draw(graphics2D, child.getLocationX()- (j),child.getLocationY()- (i));
+            if(child.getLocationX() <= offsetJ + 3 && child.getLocationX() >= offsetJ - 2&&
+                    child.getLocationY() <= offsetJ + 10 && child.getLocationY() >= offsetJ - 2 ){
+                child.draw(graphics2D, child.getLocationX() - offsetJ, child.getLocationY() - offsetI);
             }
         }
     }
