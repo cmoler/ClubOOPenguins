@@ -57,6 +57,7 @@ public class MainController {
             case AREA:
                 setAreaRender();
                 input.setActiveContext(areaContext);
+                areaViewport.requestFocus();
                 break;
 
             case INVENTORY:
@@ -72,6 +73,7 @@ public class MainController {
             case MENU:
                 setMenuRender();
                 input.setActiveContext(menuContext);
+                menuViewPort.requestFocus();
                 break;
 
             default:
