@@ -26,7 +26,7 @@ public class AreaController implements Controller {
     }
 
     @Override
-    public void handleE() {
+    public void handleEnter() {
 
     }
 

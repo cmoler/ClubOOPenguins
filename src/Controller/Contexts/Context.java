@@ -32,7 +32,6 @@ public abstract class Context {
         switch(keyCode){
 
             case KeyEvent.VK_ESCAPE:
-                System.out.println("ABC");
                 controller.handleEscape();
                 break;
 
@@ -40,8 +39,8 @@ public abstract class Context {
                 controller.handleI();
                 break;
 
-            case KeyEvent.VK_E:
-                controller.handleE();
+            case KeyEvent.VK_ENTER:
+                controller.handleEnter();
                 break;
 
 

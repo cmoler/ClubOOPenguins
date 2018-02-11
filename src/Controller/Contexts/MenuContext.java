@@ -8,7 +8,6 @@ public class MenuContext extends Context{
 
     public MenuContext(MenuController menuController){
         super(menuController);
-        //this.menuController = menuController;
     }
 
 }

@@ -47,7 +47,7 @@ public class MenuController implements Controller {
     }
 
     @Override
-    public void handleE() {
+    public void handleEnter() {
         switch (currentlySelected){
             case 0:
                 exitGame();
