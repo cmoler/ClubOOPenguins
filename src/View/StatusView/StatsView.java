@@ -37,8 +37,9 @@ public class StatsView extends Viewport {
     @Override
     public void draw(Graphics2D graphics2D) {
         //Portion of HP
-        double percentHP = 1 - entity.getHealth()/100.0;
-        int hprectSize = (int) (percentHP * ENTITY_HEALTH_WIDTH);
+        int dynamicHealthWidth = (ENTITY_HEALTH_WIDTH * entity.getMaxHealth()) / 100;
+        double percentHP = 1 - entity.getHealth()/(double) entity.getMaxHealth();
+        int hprectSize = (int) (percentHP * dynamicHealthWidth);
 
         //Needed XP vars
         double expNeeded = (double) entity.getExperienceForNextLevel();
@@ -69,12 +70,12 @@ public class StatsView extends Viewport {
         graphics2D.drawImage(ImagesInfo.RUNESCAPE_GUI,0,0, Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT, this);
 
         //HPBAR
-        graphics2D.setColor(new Color(233, 3, 3));
-        graphics2D.fillRect(ENTITY_HEALTH_X, ENTITY_HEALTH_Y, ENTITY_HEALTH_WIDTH * (entity.getMaxHealth()/100), ENTITY_HEALTH_HEIGHT );
-        graphics2D.setColor(new Color(255, 255, 255));
-        graphics2D.drawString("" + entity.getHealth() + " / " + entity.getMaxHealth(), ENTITY_HEALTH_X + (ENTITY_HEALTH_WIDTH/2), ENTITY_HEALTH_Y + ENTITY_HEALTH_HEIGHT);
         graphics2D.setColor(new Color(0, 0, 0));
-        graphics2D.fillRect(ENTITY_HEALTH_X + (ENTITY_HEALTH_WIDTH-hprectSize), ENTITY_HEALTH_Y, hprectSize, ENTITY_HEALTH_HEIGHT);
+        graphics2D.fillRect(ENTITY_HEALTH_X, ENTITY_HEALTH_Y, dynamicHealthWidth, ENTITY_HEALTH_HEIGHT);
+        graphics2D.setColor(new Color(233, 3, 3));
+        graphics2D.fillRect(ENTITY_HEALTH_X, ENTITY_HEALTH_Y, dynamicHealthWidth - hprectSize, ENTITY_HEALTH_HEIGHT );
+        graphics2D.setColor(new Color(255, 255, 255));
+        graphics2D.drawString("" + entity.getHealth() + " / " + entity.getMaxHealth(), ENTITY_HEALTH_X + (ENTITY_HEALTH_WIDTH/2), ENTITY_HEALTH_Y +( ENTITY_HEALTH_HEIGHT/2));
 
         //level indicator
         //graphics2D.setColor(new Color(200, 200, 200));
