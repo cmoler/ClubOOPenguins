@@ -32,13 +32,9 @@ public class MenuViewPort extends Viewport {
 
     @Override
     public void setSelectedMenuView(int selectedMenuView){
-        switch (selectedMenuView){
-            case -1:
+        if(selectedMenuView == -1 && selectedY < Commons.SCREEN_HEIGHT/4 + 2*TextBoxInfo.TEXTBOX_HEIGHT)
+            this.selectedY += TextBoxInfo.TEXTBOX_HEIGHT;
+        else if(selectedMenuView == 1 && selectedY > Commons.SCREEN_HEIGHT/4)
                 this.selectedY -= TextBoxInfo.TEXTBOX_HEIGHT;
-                break;
-            case 1:
-                this.selectedY += TextBoxInfo.TEXTBOX_HEIGHT;
-                break;
-        }
     }
 }

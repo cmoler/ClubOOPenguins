@@ -48,6 +48,8 @@ public class MainController {
         equipmentContext = new EquipmentContext(equipmentController);
 
         input = new Input(menuContext);
+
+        menuViewPort.addKeyListener(input);
         game.addKeyListener(input);
     }
 
