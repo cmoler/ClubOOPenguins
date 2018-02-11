@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
+import static Configs.InventorySizes.ITEM_HEIGHT;
 import static Configs.InventorySizes.ITEM_WIDTH;
 
 public class InventoryView extends Viewport {
@@ -36,7 +37,7 @@ public class InventoryView extends Viewport {
                 ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_TAKEABLE_FILELOCATION);
                 Image itemImage = imageIcon.getImage();
                 int x = ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)) + ITEM_WIDTH*j;
-                int y = ((int) (Commons.SCREEN_WIDTH  * 221.0/765.0)) + ITEM_WIDTH*i;
+                int y = ((int) (Commons.SCREEN_WIDTH  * 221.0/765.0)) + ITEM_HEIGHT*i;
                 graphics2D.drawImage(itemImage, x, y, ITEM_WIDTH, ITEM_WIDTH, this);
 
             }
