@@ -13,8 +13,7 @@ public class TakeableItem extends Item{
         return true; // always true?
     }
     public ItemType getItemType() {
-        return ItemType.TAKEABLE
-                ;
+        return ItemType.TAKEABLE;
     }
 
 }

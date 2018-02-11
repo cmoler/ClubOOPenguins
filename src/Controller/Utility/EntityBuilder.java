@@ -44,7 +44,7 @@ public class EntityBuilder {
         int lineIndex = 2;
         EntityType entityType = EntityType.ICE;
         String entityTypeString = entityData.get(lineIndex++).split("\t")[1];
-        switch (entityTypeString){
+        switch (entityTypeString) {
             case "ICE":
                 entityType = EntityType.ICE;
                 break;
@@ -65,29 +65,32 @@ public class EntityBuilder {
         List<TakeableItem> inventoryItems = new ArrayList<TakeableItem>();
         List<TakeableItem> equipmentItems = new ArrayList<TakeableItem>();
         List<ItemView> itemViews = new ArrayList<ItemView>();
-        while (entityData.get(lineIndex).substring(0, 2).equals("\t\t")) {
-            String itemType = entityData.get(lineIndex).split("\t\t")[1];
-            switch (itemType) {
-                case "TAKEABLE":
-                    inventoryItems.add(new TakeableItem());
-//                    itemViews.add(new ItemView(Commons.ITEM_TAKEABLE_IMAGE));
-                    break;
-                case "EQUIPMENT":
-                    lineIndex++;
-                    while (entityData.get(lineIndex).substring(0, 3).equals("\t\t\t")){
-                        itemType = entityData.get(lineIndex++).split("\t\t\t")[1];
-                        switch (itemType) {
-                            case "TAKEABLE":
-                                equipmentItems.add(new TakeableItem());
+        lineIndex++;
+        if (lineIndex < entityData.size()){
+            while (entityData.get(lineIndex).substring(0, 2).equals("\t\t")) {
+                String itemType = entityData.get(lineIndex).split("\t\t")[1];
+                switch (itemType) {
+                    case "TAKEABLE":
+                        inventoryItems.add(new TakeableItem());
+                        //                    itemViews.add(new ItemView(Commons.ITEM_TAKEABLE_IMAGE));
+                        break;
+                    case "EQUIPMENT":
+                        lineIndex++;
+                        while (entityData.get(lineIndex).substring(0, 3).equals("\t\t\t")) {
+                            itemType = entityData.get(lineIndex++).split("\t\t\t")[1];
+                            switch (itemType) {
+                                case "TAKEABLE":
+                                    equipmentItems.add(new TakeableItem());
+                                    break;
+                            }
+                            if (lineIndex >= entityData.size())
                                 break;
                         }
-                        if (lineIndex >=entityData.size())
-                            break;
-                    }
+                }
+                lineIndex++;
+                if (lineIndex >= entityData.size())
+                    break;
             }
-            lineIndex++;
-            if (lineIndex >=entityData.size())
-                break;
         }
 
         World world = World.getWorld();
