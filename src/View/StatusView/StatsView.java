@@ -17,9 +17,9 @@ public class StatsView extends Viewport {
     private final int ENTITY_HEALTH_HEIGHT = 20;
     private final int ENTITY_HEALTH_WIDTH = 500;
 
-    private final int ENTITY_EXP_X = (int) (Commons.SCREEN_WIDTH * 550/765.0);
+    private final int ENTITY_EXP_X = (int) (Commons.SCREEN_WIDTH * 560/765.0);
     private final int ENTITY_EXP_Y = (int) (Commons.SCREEN_HEIGHT * 0/765.0);
-    private final int ENTITY_EXP_HEIGHT = 300;
+    private final int ENTITY_EXP_HEIGHT = 250;
     private final int ENTITY_EXP_WIDTH = 300;
 
     private final int ENTITY_LEVEL_X =    (int) (Commons.SCREEN_WIDTH * 625.0/765.0);
@@ -41,21 +41,31 @@ public class StatsView extends Viewport {
         int hprectSize = (int) (percentHP * ENTITY_HEALTH_WIDTH);
 
         //Needed XP vars
-        int expNeeded = entity.getExperienceForNextLevel();
-        int prevExp = entity.getExperienceForCurrentLevel();
-        int exp = entity.getExperience();
+        double expNeeded = (double) entity.getExperienceForNextLevel();
+        double prevExp = (double) entity.getExperienceForCurrentLevel();
+        double exp = (double) entity.getExperience();
         int getLevel = entity.getLevel();
 
         //Portion of XP
-        double percentEXP = 1 - (expNeeded-prevExp)/(exp-prevExp);
-        int xprectsize = (int) (percentEXP * ENTITY_EXP_WIDTH);
+        System.out.println("exp needed = " + expNeeded + " and previous experience = " + prevExp + " and exp = " + exp);
+
+        double percentEXP;
+        if(exp-prevExp > 0.1){
+             percentEXP = 1 - (exp-prevExp)/(expNeeded-prevExp);
+        }
+        else {
+            percentEXP = 1;
+        }
+
+        int xprectsize = (int) (percentEXP * (double) ENTITY_EXP_HEIGHT);
 
 
         //EXPBAR
         graphics2D.setColor(Color.YELLOW);
         graphics2D.fillRect(ENTITY_EXP_X, ENTITY_EXP_Y, ENTITY_EXP_WIDTH, ENTITY_EXP_HEIGHT);
-        graphics2D.setColor(new Color(0, 0, 0));
-        graphics2D.fillRect(ENTITY_EXP_X + (ENTITY_EXP_WIDTH-xprectsize), ENTITY_EXP_Y, xprectsize, ENTITY_EXP_HEIGHT);
+        graphics2D.setColor(Color.WHITE);
+        graphics2D.fillRect(ENTITY_EXP_X, ENTITY_EXP_Y, ENTITY_EXP_WIDTH, xprectsize);
+//        graphics2D.fillRect(ENTITY_EXP_X + (ENTITY_EXP_WIDTH-xprectsize), ENTITY_EXP_Y, xprectsize, ENTITY_EXP_HEIGHT);
 
         //Load Interfrace
         graphics2D.drawImage(ImagesInfo.RUNESCAPE_GUI,0,0, Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT, this);
