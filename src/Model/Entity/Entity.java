@@ -92,7 +92,7 @@ public class Entity{
                         this.location.getItems().remove(item);
                 }
             }
-            notifyView();
+            notifyView(direction);
         }
     }
 
@@ -144,6 +144,13 @@ public class Entity{
         for (Viewport viewport : observers){
             viewport.update();
         }
+    }
+
+    public void notifyView(Direction direction){
+        for (Viewport viewport : observers){
+            viewport.moveUpdate(direction);
+        }
+        notifyView();
     }
 
     private static final int finalLevel = 100;

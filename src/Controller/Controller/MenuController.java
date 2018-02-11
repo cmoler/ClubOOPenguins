@@ -19,7 +19,7 @@ public class MenuController implements Controller {
     private MainController mainController;
     private GameLoader gameLoader;
     private GameSaver gameSaver;
-    private int currentlySelected = 0;
+    private int currentlySelected = 3;
     private MapBuilder mapBuilder;
     private EntityBuilder entityBuilder;
 
@@ -48,16 +48,16 @@ public class MenuController implements Controller {
     public void handleE() {
         switch (currentlySelected){
             case 0:
-                startGame();
+                exitGame();
                 break;
             case 1:
-                saveGame();
-                break;
-            case 2:
                 loadGame();
                 break;
+            case 2:
+                saveGame();
+                break;
             case 3:
-                exitGame();
+                startGame();
                 break;
         }
     }
@@ -120,6 +120,8 @@ public class MenuController implements Controller {
         mainController.setAreaViewPort(viewport);
 
         mainController.setAreaRender();
+        mainController.setActiveContext(GameContext.AREA);
+
     }
 
 }
