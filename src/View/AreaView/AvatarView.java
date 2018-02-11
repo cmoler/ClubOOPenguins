@@ -17,7 +17,7 @@ public class AvatarView extends Viewport {
     private Entity entity;
     private int x;
     private int y;
-    private int velocity = 10;
+    private int velocity = 1;
 
     public AvatarView(Entity entity, int x, int y){
         avatarImage = ImagesInfo.AVATAR_IMAGE;
@@ -46,32 +46,32 @@ public class AvatarView extends Viewport {
     public void moveUpdate(Direction direction){
         switch(direction){
             case N:
-                y += velocity;
+                y -= velocity;
                 break;
             case NE:
-                y += velocity/2;
-                x += velocity/2;
+                y -= velocity;
+                x += velocity;
                 break;
             case E:
                 x += velocity;
                 break;
             case SE:
-                y -= velocity/2;
+                y += velocity;
                 x += velocity;
                 break;
             case S:
-                y -= velocity;
+                y += velocity;
                 break;
             case SW:
-                y -= velocity/2;
-                x -= velocity/2;
+                y += velocity;
+                x -= velocity;
                 break;
             case W:
                 x -= velocity;
                 break;
             case NW:
-                y += velocity/2;
-                x -= velocity/2;
+                y -= velocity;
+                x -= velocity;
                 break;
         }
     }
