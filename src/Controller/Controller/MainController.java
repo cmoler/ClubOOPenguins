@@ -3,6 +3,7 @@ package Controller.Controller;
 import Controller.Contexts.*;
 import Controller.Input.Input;
 import Controller.Game.OOPenguinGameFrame;
+import Model.Entity.Entity;
 import View.MenuView.MenuViewPort;
 import Controller.Utility.EntityBuilder;
 import View.Viewport;
@@ -13,7 +14,7 @@ public class MainController {
     private OOPenguinGameFrame game;
     private Input input;
 
-    private EntityBuilder entityBuilder;
+    private Entity entity;
 
     private Context areaContext;
     private Context menuContext;
@@ -109,5 +110,13 @@ public class MainController {
     public void setAreaRender(){
         menuViewPort.setVisible(false);
         areaViewport.setVisible(true);
+    }
+
+    public void setEntity(Entity entity){
+        this.entity = entity;
+    }
+
+    public Entity getEntity() {
+        return entity;
     }
 }

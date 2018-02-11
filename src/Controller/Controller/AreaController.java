@@ -37,6 +37,6 @@ public class AreaController implements Controller {
     @Override
     public void handleNumpad(Direction direction){
         System.out.println("Moving" + direction + " ");
-        //entity.move(direction);
+        mainController.getEntity().move(direction);
     }
 }

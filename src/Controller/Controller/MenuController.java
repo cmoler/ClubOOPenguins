@@ -91,7 +91,7 @@ public class MenuController implements Controller {
     public void startGame(){
         mapBuilder = new MapBuilder();
         try {
-            World.getWorld().changeCurrentMapTo(mapBuilder.buildMap("0001"));
+            World.getWorld().changeCurrentMapTo(mapBuilder.buildMap("Default","0001"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -100,7 +100,7 @@ public class MenuController implements Controller {
 
         entityBuilder = new EntityBuilder();
         try {
-            entityBuilder.buildEntity("Default", "0001");
+            mainController.setEntity(entityBuilder.buildEntity("Default", "0001"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
