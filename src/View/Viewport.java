@@ -112,7 +112,11 @@ public class Viewport extends JPanel {
         repaint();
     }
 
-    public void moveCursor(int index){}
+    public void moveCursor(int index){
+        for(Viewport child: children){
+            child.moveCursor(index);
+        }
+    }
 
     public void moveUpdate(Direction direction){
         for(Viewport child: children){
