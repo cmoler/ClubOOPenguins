@@ -47,8 +47,6 @@ public class StatsView extends Viewport {
         int getLevel = entity.getLevel();
 
         //Portion of XP
-        System.out.println("exp needed = " + expNeeded + " and previous experience = " + prevExp + " and exp = " + exp);
-
         double percentEXP;
         if(exp-prevExp > 0.1){
              percentEXP = 1 - (exp-prevExp)/(expNeeded-prevExp);
