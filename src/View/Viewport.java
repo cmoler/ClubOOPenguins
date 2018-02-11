@@ -1,6 +1,7 @@
 package View;
 
 import Model.Map.Direction;
+import View.AreaView.MapView;
 import View.StatusView.StatusViewPort;
 
 import javax.swing.*;
@@ -122,5 +123,10 @@ public class Viewport extends JPanel {
         for(Viewport child: children){
             child.moveUpdate(direction);
         }
+    }
+
+    public void updateMap(MapView lastMapView, MapView currentMapView){
+        this.remove(lastMapView);
+        this.add(currentMapView);
     }
 }

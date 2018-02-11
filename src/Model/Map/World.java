@@ -1,6 +1,7 @@
 package Model.Map;
 
 import Controller.Utility.MapBuilder;
+import View.AreaView.MapView;
 import View.Viewport;
 
 import java.util.ArrayList;
@@ -13,7 +14,9 @@ public class World {
 
     public static World instance = null;
     private Map currentMap;
+    private MapView currentMapView;
     private HashMap<String,Map> maps = new HashMap<String,Map>();
+    private HashMap<Map,MapView> mapViews = new HashMap<Map,MapView>();
 
     protected World(){
         // Can't instantiate
@@ -29,23 +32,26 @@ public class World {
 
     public void changeCurrentMapTo(Map map){
         currentMap = map;
-        notifyView();
+        MapView lastMapView = currentMapView;
+        currentMapView = mapViews.get(map);
+        notifyView(lastMapView, currentMapView);
     }
 
     public Map getCurrentMap(){
         return currentMap;
     }
 
-    public void addMap(String mapID, Map map){
+    public MapView getCurrentMapView(){
+        return currentMapView;
+    }
+
+    public void addMap(String mapID, Map map, MapView mapView){
         maps.put(mapID, map);
+        mapViews.put(map, mapView);
     }
 
     public Map getMap(String mapID){
         return maps.get(mapID);
-    }
-
-    public void buildMap(MapBuilder mapBuilder){
-
     }
 
     public void attach(Viewport viewport){
@@ -56,9 +62,9 @@ public class World {
         observers.remove(viewport);
     }
 
-    public void notifyView(){
+    public void notifyView(MapView last, MapView current){
         for (Viewport viewport : observers){
-            viewport.update();
+            viewport.updateMap(last, current);
         }
     }
 }
