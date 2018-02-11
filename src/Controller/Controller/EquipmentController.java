@@ -15,12 +15,12 @@ public class EquipmentController implements Controller {
 
     @Override
     public void handleEscape() {
-
+        mainController.setActiveContext(GameContext.MENU);
     }
 
     @Override
     public void handleI() {
-
+        mainController.setActiveContext(GameContext.INVENTORY);
     }
 
     @Override
