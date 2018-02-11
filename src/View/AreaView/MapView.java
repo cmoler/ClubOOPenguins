@@ -1,7 +1,7 @@
 package View.AreaView;
 
 import Configs.Commons;
-import Configs.SpriteSizes;
+import Configs.AreaSizes;
 import Model.Entity.Entity;
 import Model.Map.MapIterator;
 import Model.Map.World;
@@ -32,8 +32,8 @@ public class MapView extends Viewport {
         double DESIRED_PLAYER_X = DESIRED_PLAYER_X_RATIO * Commons.SCREEN_WIDTH;
         double DESIRED_PLAYER_Y = DESIRED_PLAYER_Y_RATIO * Commons.SCREEN_HEIGHT;
 
-        int desiredPlayerXTile = (int)(DESIRED_PLAYER_X / SpriteSizes.TERRAIN_WIDTH);
-        int desiredPlayerYTile = (int)(DESIRED_PLAYER_Y / SpriteSizes.TERRAIN_HEIGHT);
+        int desiredPlayerXTile = (int)(DESIRED_PLAYER_X / AreaSizes.TERRAIN_WIDTH);
+        int desiredPlayerYTile = (int)(DESIRED_PLAYER_Y / AreaSizes.TERRAIN_HEIGHT);
 
         desiredPlayerXTileOffset = desiredPlayerXTile - initialJ;
         desiredPlayerYTileOffset = desiredPlayerYTile - initialI;

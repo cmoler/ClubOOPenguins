@@ -3,7 +3,7 @@ package View.AreaView;
 
 import Configs.Commons;
 import Configs.ImagesInfo;
-import Configs.SpriteSizes;
+import Configs.AreaSizes;
 import Model.Map.Direction;
 import Model.Entity.Entity;
 import View.Viewport;
@@ -40,8 +40,8 @@ public class AvatarView extends Viewport {
         double DESIRED_PLAYER_X = DESIRED_PLAYER_X_RATIO * Commons.SCREEN_WIDTH;
         double DESIRED_PLAYER_Y = DESIRED_PLAYER_Y_RATIO * Commons.SCREEN_HEIGHT;
 
-        int DESIRED_PLAYER_X_TILE = (int)(DESIRED_PLAYER_X / SpriteSizes.TERRAIN_WIDTH);
-        int DESIRED_PLAYER_Y_TILE = (int)(DESIRED_PLAYER_Y / SpriteSizes.TERRAIN_HEIGHT);
+        int DESIRED_PLAYER_X_TILE = (int)(DESIRED_PLAYER_X / AreaSizes.TERRAIN_WIDTH);
+        int DESIRED_PLAYER_Y_TILE = (int)(DESIRED_PLAYER_Y / AreaSizes.TERRAIN_HEIGHT);
 
         this.x = DESIRED_PLAYER_X_TILE;
         this.y = DESIRED_PLAYER_Y_TILE;
@@ -49,10 +49,10 @@ public class AvatarView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        int renderX = (x) * SpriteSizes.TERRAIN_WIDTH + SpriteSizes.TERRAIN_WIDTH/4;
-        int renderY = (y) * SpriteSizes.TERRAIN_HEIGHT + SpriteSizes.TERRAIN_HEIGHT/4;
+        int renderX = (x) * AreaSizes.TERRAIN_WIDTH + AreaSizes.TERRAIN_WIDTH/4;
+        int renderY = (y) * AreaSizes.TERRAIN_HEIGHT + AreaSizes.TERRAIN_HEIGHT/4;
        graphics2D.drawImage(avatarImage, renderX, renderY,
-               SpriteSizes.AVATAR_WIDTH, SpriteSizes.AVATAR_HEIGHT,this );
+               AreaSizes.AVATAR_WIDTH, AreaSizes.AVATAR_HEIGHT,this );
     }
 
     @Override

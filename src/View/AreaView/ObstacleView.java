@@ -1,10 +1,8 @@
 package View.AreaView;
 
-import Configs.SpriteSizes;
-import Model.Map.Location;
+import Configs.AreaSizes;
 import View.Viewport;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
@@ -18,8 +16,8 @@ public class ObstacleView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D, int x, int y) {
-        graphics2D.drawImage(obstacleImage, (x* SpriteSizes.TERRAIN_WIDTH), (y*SpriteSizes.TERRAIN_HEIGHT),
-                SpriteSizes.OBSTACLE_WIDTH, SpriteSizes.OBSTACLE_HEIGHT,this );
+        graphics2D.drawImage(obstacleImage, (x* AreaSizes.TERRAIN_WIDTH), (y* AreaSizes.TERRAIN_HEIGHT),
+                AreaSizes.OBSTACLE_WIDTH, AreaSizes.OBSTACLE_HEIGHT,this );
     }
 
     @Override

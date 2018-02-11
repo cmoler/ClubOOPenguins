@@ -1,11 +1,9 @@
 package View.AreaView.ItemView;
 
 
-import Configs.SpriteSizes;
-import Model.Map.Location;
+import Configs.AreaSizes;
 import View.Viewport;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
@@ -23,8 +21,8 @@ public class ItemView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D, int x, int y) {
-        graphics2D.drawImage(itemImage, (x*SpriteSizes.TERRAIN_WIDTH)+(SpriteSizes.TERRAIN_WIDTH/4), (y*SpriteSizes.TERRAIN_HEIGHT)+(SpriteSizes.TERRAIN_HEIGHT/4),
-                SpriteSizes.ITEM_WIDTH, SpriteSizes.ITEM_HEIGHT,this );
+        graphics2D.drawImage(itemImage, (x* AreaSizes.TERRAIN_WIDTH)+(AreaSizes.TERRAIN_WIDTH/4), (y* AreaSizes.TERRAIN_HEIGHT)+(AreaSizes.TERRAIN_HEIGHT/4),
+                AreaSizes.ITEM_WIDTH, AreaSizes.ITEM_HEIGHT,this );
     }
 
     @Override
