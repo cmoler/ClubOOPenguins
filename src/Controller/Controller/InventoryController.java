@@ -12,6 +12,7 @@ public class InventoryController implements Controller {
 
     public InventoryController(MainController mainController) {
         this.mainController = mainController;
+        itemIndex = 0;
     }
 
     @Override
@@ -23,7 +24,7 @@ public class InventoryController implements Controller {
     @Override
     public void handleI() {
         mainController.getAreaViewPort().setRenderOption(StatusViewPort.RenderOption.INVENTORY);
-
+        itemIndex = 0;
     }
 
     @Override
