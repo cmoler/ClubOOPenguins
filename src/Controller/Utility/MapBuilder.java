@@ -31,6 +31,7 @@ public class MapBuilder {
     }
 
     public Map buildMap(String gameName, String mapID) throws FileNotFoundException {
+        viewport = new MapView();
         // will change file location after testing
         String filename = "resources/maps/" + gameName + "MapModel" + mapID + ".txt";
 

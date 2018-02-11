@@ -4,6 +4,7 @@ import Controller.Contexts.*;
 import Controller.Input.Input;
 import Controller.Game.OOPenguinGameFrame;
 import Model.Entity.Entity;
+import Model.Map.Direction;
 import View.MenuView.MenuViewPort;
 import Controller.Utility.EntityBuilder;
 import View.Viewport;
@@ -141,6 +142,10 @@ public class MainController {
     public void setAreaRender(){
         menuViewPort.setVisible(false);
         areaViewport.setVisible(true);
+    }
+
+    public void moveEntity(Direction direction){
+        entity.move(direction);
     }
 
     public void setEntity(Entity entity){

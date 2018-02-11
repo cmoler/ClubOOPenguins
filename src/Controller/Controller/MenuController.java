@@ -94,10 +94,24 @@ public class MenuController implements Controller {
         mapBuilder = new MapBuilder();
         entityBuilder = new EntityBuilder();
 
+        MapView mapView1 = null;
+        MapView mapView2 = null;
+        MapView mapView3 = null;
+
+        AvatarView avatarView1 = null;
+        AvatarView avatarView2 = null;
+        AvatarView avatarView3 = null;
+
         try {
             Map m1 = mapBuilder.buildMap("Default","0001");
+            mapView1 = mapBuilder.getViewport();
+
             Map m2 = mapBuilder.buildMap("Default","0002");
+            mapView2 = mapBuilder.getViewport();
+
             Map m3 = mapBuilder.buildMap("Default","0003");
+            mapView3 = mapBuilder.getViewport();
+
 
             World.getWorld().addMap("0001", m1);
             World.getWorld().addMap("0002", m2);
@@ -105,23 +119,21 @@ public class MenuController implements Controller {
             World.getWorld().changeCurrentMapTo(m1);
 
             Entity e = entityBuilder.buildEntity("Default", "0001");
+            avatarView1 = entityBuilder.getAvatarView();
             mainController.setEntity(e);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
-        MapView mapView = mapBuilder.getViewport();
-        AvatarView avatarView = entityBuilder.getAvatarView();
-
         StatusViewPort statusViewPort = entityBuilder.getStatusViewport();
         statusViewPort.setRenderOption(StatusViewPort.RenderOption.INVENTORY);
 
-        mapView.setEntity(avatarView.getEntity());
+        mapView1.setEntity(avatarView1.getEntity());
 
         Viewport viewport = new Viewport();
-        viewport.add(mapView);
+        viewport.add(mapView1);
         viewport.add(statusViewPort);
-        viewport.add(avatarView);
+        viewport.add(avatarView1);
 
         mainController.setAreaViewPort(viewport);
 

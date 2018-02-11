@@ -9,10 +9,6 @@ import View.Viewport;
 public class AreaController implements Controller {
 
     private MainController mainController;
-    private Entity entity;
-    private World world;
-    private Viewport areaView;
-
 
     public AreaController(MainController mainController) {
         this.mainController = mainController;
@@ -37,6 +33,6 @@ public class AreaController implements Controller {
     @Override
     public void handleNumpad(Direction direction){
         System.out.println("Moving" + direction + " ");
-        mainController.getEntity().move(direction);
+        mainController.moveEntity(direction);
     }
 }
