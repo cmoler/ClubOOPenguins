@@ -27,7 +27,6 @@ public class MainController {
     private EquipmentController equipmentController;
 
     private Viewport areaViewport;
-
     private MenuViewPort menuViewPort;
 
     public MainController() {

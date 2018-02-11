@@ -4,6 +4,7 @@ import Controller.Contexts.GameContext;
 import Model.Entity.Entity;
 import Model.Map.Direction;
 import Model.Map.World;
+import View.StatusView.StatusViewPort;
 import View.Viewport;
 
 public class AreaController implements Controller {
@@ -22,7 +23,8 @@ public class AreaController implements Controller {
 
     @Override
     public void handleI() {
-
+        mainController.setActiveContext(GameContext.INVENTORY);
+        mainController.getAreaViewPort().setRenderOption(StatusViewPort.RenderOption.INVENTORY);
     }
 
     @Override
