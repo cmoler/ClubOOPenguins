@@ -55,22 +55,27 @@ public class MainController {
 
         switch (context){
             case AREA:
+                setAreaRender();
                 input.setActiveContext(areaContext);
                 break;
 
             case INVENTORY:
+                setAreaRender();
                 input.setActiveContext(inventoryContext);
                 break;
 
             case EQUIPMENT:
+                setAreaRender();
                 input.setActiveContext(equipmentContext);
                 break;
 
             case MENU:
+                setMenuRender();
                 input.setActiveContext(menuContext);
                 break;
 
             default:
+                setMenuRender();
                 input.setActiveContext(menuContext);
                 break;
         }
