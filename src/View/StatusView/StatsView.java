@@ -14,18 +14,18 @@ public class StatsView extends Viewport {
 
     private final int ENTITY_HEALTH_X = (int) (Commons.SCREEN_WIDTH * 20.0/765.0);
     private final int ENTITY_HEALTH_Y = (int) (Commons.SCREEN_HEIGHT * 360.0/501.0);
-    private final int ENTITY_HEALTH_HEIGHT = 5;
-    private final int ENTITY_HEALTH_WIDTH = 100;
+    private final int ENTITY_HEALTH_HEIGHT = 20;
+    private final int ENTITY_HEALTH_WIDTH = 500;
 
     private final int ENTITY_EXP_X = ENTITY_HEALTH_X;
-    private final int ENTITY_EXP_Y = ENTITY_HEALTH_Y + ENTITY_HEALTH_HEIGHT;
+    private final int ENTITY_EXP_Y = ENTITY_HEALTH_Y + 2 * ENTITY_HEALTH_HEIGHT;
     private final int ENTITY_EXP_HEIGHT = ENTITY_HEALTH_HEIGHT;
     private final int ENTITY_EXP_WIDTH = ENTITY_HEALTH_WIDTH;
 
-    private final int ENTITY_LEVEL_X =    (int) (Commons.SCREEN_WIDTH * 540.0/765.0);
-    private final int ENTITY_LEVEL_Y =    (int) (Commons.SCREEN_HEIGHT * 176.0/501.0);
-    private final int ENTITY_LEVEL_WIDTH = 40;
-    private final int ENTITY_LEVEL_HEIGHT = 40;
+    private final int ENTITY_LEVEL_X =    (int) (Commons.SCREEN_WIDTH * 625.0/765.0);
+    private final int ENTITY_LEVEL_Y =    (int) (Commons.SCREEN_HEIGHT * 80.0/501.0);
+    private final int ENTITY_LEVEL_WIDTH = 60;
+    private final int ENTITY_LEVEL_HEIGHT = 60;
 
     private Entity entity;
 
