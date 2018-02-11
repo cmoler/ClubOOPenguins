@@ -35,7 +35,8 @@ public class SpriteParser {
     }
 
     public Image getGlacierImage(){
-        return tileSprites[17*12];
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.GLACIER_FILELOCATION);
+        return imageIcon.getImage();
     }
 
     public Image getAreaEffectDamageImage(){

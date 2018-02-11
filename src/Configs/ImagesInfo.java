@@ -22,6 +22,8 @@ public interface ImagesInfo {
     public static final String SKULL_CROSS_BONES_FILELOCATION = "resources/images/SkullCrossBone.png";
     public static final String GOLD_STAR_FILELOCATION = "resources/images/goldstar.png";
 
+    public static final String GLACIER_FILELOCATION = "resources/images/glacier.png";
+
     public static final Image RUNESCAPE_GUI = SpriteParser.getSpriteParser().getRunescapeGUI();
 
     public static final Image ICE_IMAGE = SpriteParser.getSpriteParser().getIceImage();
