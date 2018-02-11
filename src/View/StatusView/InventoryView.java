@@ -56,7 +56,7 @@ public class InventoryView extends Viewport {
     public void moveCursor(int index){
         //offset + index * itemwidth * modulo so you dont go over
         highlighterX = ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)) + ITEM_WIDTH * (index % InventorySizes.INVENTORY_COLUMNS);
-        highlighterY = ((int) (Commons.SCREEN_HEIGHT  * 221.0/765.0)) + ITEM_WIDTH * (index / InventorySizes.INVENTORY_ROWS);
+        highlighterY = ((int) (Commons.SCREEN_HEIGHT  * 221.0/765.0)+170) + ITEM_WIDTH * (index / InventorySizes.INVENTORY_ROWS);
     }
 
 }
