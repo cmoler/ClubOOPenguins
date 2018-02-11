@@ -147,7 +147,7 @@ public class Map {
     }
 
     public Location getLocation(int x, int y) {
-        return locations[x][y];
+        return locations[y][x];
     }
 
     public void setLocation(int x, int y, Location location) {locations[x][y] = location;}

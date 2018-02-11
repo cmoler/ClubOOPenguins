@@ -183,7 +183,7 @@ public class MapBuilder {
 //            }
 //            Entity e = new Entity(locations[entityX][entityY]);
 //        }
-        map = new Map(locations, locations[defaultX][defaultY]);
+        map = new Map(locations, locations[defaultY][defaultX]);
         World world = World.getWorld();
         world.addMap(mapID, map);
         return map;
