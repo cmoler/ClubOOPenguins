@@ -23,7 +23,7 @@ public class InventoryController implements Controller {
 
     @Override
     public void handleI() {
-        mainController.getAreaViewPort().setRenderOption(StatusViewPort.RenderOption.INVENTORY);
+        mainController.setActiveContext(GameContext.AREA);
         itemIndex = 0;
     }
 
