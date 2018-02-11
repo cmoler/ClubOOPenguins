@@ -1,6 +1,7 @@
 package View.StatusView;
 
 import Configs.Commons;
+import Configs.ImagesInfo;
 import Configs.InventorySizes;
 import Model.Entity.Inventory;
 import View.Viewport;
@@ -32,11 +33,12 @@ public class InventoryView extends Viewport {
             for(int j = 0; j < InventorySizes.INVENTORY_COLUMNS && inventoryIterator.hasNext(); ++j, inventoryIterator.next()){
 
                 //TODO add images from inventory
-                ImageIcon imageIcon = new ImageIcon("takeableItem.png");
+                ImageIcon imageIcon = new ImageIcon(ImagesInfo.ITEM_TAKEABLE_FILELOCATION);
                 Image itemImage = imageIcon.getImage();
-                int x = ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)) * ITEM_WIDTH*i;
-                int y = ((int) (Commons.SCREEN_WIDTH  * 221.0/765.0)) * ITEM_WIDTH*j;
-                graphics2D.drawImage(itemImage, x, y, this);
+                int x = ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)) + ITEM_WIDTH*j;
+                int y = ((int) (Commons.SCREEN_WIDTH  * 221.0/765.0)) + ITEM_WIDTH*i;
+                graphics2D.drawImage(itemImage, x, y, ITEM_WIDTH, ITEM_WIDTH, this);
+
             }
         }
 
