@@ -7,7 +7,6 @@ import Model.Map.Direction;
 
 public abstract class Context {
 
-    private KeyEvent lastEvent;
     private Controller controller;
 
     Context(Controller controller){
@@ -16,14 +15,6 @@ public abstract class Context {
 
     public final void processNumpadEvent(Direction direction){
         controller.handleNumpad(direction);
-    }
-
-    public final void setLastEvent(KeyEvent keyEvent){
-        this.lastEvent = keyEvent;
-    }
-
-    public final KeyEvent getLastEvent(){
-        return lastEvent;
     }
 
     public final void processKeyEvent(KeyEvent event) {
