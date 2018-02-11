@@ -43,6 +43,9 @@ public abstract class Context {
                 controller.handleEnter();
                 break;
 
+            case KeyEvent.VK_T:
+                controller.handleT();
+
         }
     }
 }
