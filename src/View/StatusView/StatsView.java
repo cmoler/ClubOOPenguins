@@ -75,6 +75,13 @@ public class StatsView extends Viewport {
 //      graphics2D.drawString("entity.getHealth()", (ENTITY_HEALTH_X + ENTITY_HEALTH_HEIGHT)/2, (ENTITY_HEALTH_Y + ENTITY_HEALTH_WIDTH)/2);
 //      graphics2D.drawString("entity.getEXP()", (ENTITY_EXP_X + ENTITY_EXP_HEIGHT)/2, (ENTITY_EXP_Y + ENTITY_EXP_WIDTH)/2);
 
+
+        if(entity.getHealth() == 0){
+            graphics2D.setColor(new Color(233, 3, 3));
+            graphics2D.setFont(new Font("Calibri",2,150));
+            graphics2D.drawString("Game Over Dude", (int)(Commons.SCREEN_WIDTH * 100.0/765.0), (int) (Commons.SCREEN_HEIGHT * 250.0/501.0));
+
+        }
     }
 
     @Override
