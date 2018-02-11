@@ -52,6 +52,8 @@ public class MainController {
     }
 
     public void setActiveContext(GameContext context) {
+        areaViewport.setRenderInventorySelection(false);
+        areaViewport.setRenderEuipmentSelection(false);
 
         switch (context){
             case AREA:
@@ -61,11 +63,13 @@ public class MainController {
                 break;
 
             case INVENTORY:
+                areaViewport.setRenderInventorySelection(true);
                 setAreaRender();
                 input.setActiveContext(inventoryContext);
                 break;
 
             case EQUIPMENT:
+                areaViewport.setRenderEuipmentSelection(false);
                 setAreaRender();
                 input.setActiveContext(equipmentContext);
                 break;

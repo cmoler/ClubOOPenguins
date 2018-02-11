@@ -44,7 +44,6 @@ MAP
 			FALSE
 			DAMAGE
 			ITEMS
-				INTERACTIVE
 		0,7
 			ICE
 			FALSE
@@ -75,7 +74,6 @@ MAP
 			FALSE
 			NONE
 			ITEMS
-				INTERACTIVE
 		1,3
 			ICE
 			FALSE
@@ -97,7 +95,6 @@ MAP
 			FALSE
 			DAMAGE
 			ITEMS
-				INTERACTIVE
 		1,7
 			ICE
 			FALSE
@@ -113,6 +110,7 @@ MAP
 			TRUE
 			NONE
 			ITEMS
+				TAKEABLE
 		2,0
 			ICE
 			FALSE
@@ -129,7 +127,6 @@ MAP
 			FALSE
 			NONE
 			ITEMS
-				INTERACTIVE
 		2,3
 			ICE
 			FALSE
@@ -143,7 +140,7 @@ MAP
 			ITEMS
 				ONESHOT
 		2,5
-			ICE
+			WATER
 			FALSE
 			NONE
 			ITEMS
@@ -152,7 +149,6 @@ MAP
 			FALSE
 			DAMAGE
 			ITEMS
-				INTERACTIVE
 		2,7
 			ICE
 			FALSE
@@ -168,12 +164,12 @@ MAP
 			FALSE
 			NONE
 			ITEMS
+				TAKEABLE
 		3,0
 			ICE
 			FALSE
 			DAMAGE
 			ITEMS
-				INTERACTIVE
 		3,1
 			ICE
 			FALSE
@@ -184,7 +180,6 @@ MAP
 			FALSE
 			NONE
 			ITEMS
-				INTERACTIVE
 		3,3
 			ICE
 			FALSE
@@ -223,12 +218,12 @@ MAP
 			FALSE
 			NONE
 			ITEMS
+				TAKEABLE
 		4,0
 			ICE
 			FALSE
 			DAMAGE
 			ITEMS
-				INTERACTIVE
 		4,1
 			ICE
 			FALSE
@@ -259,12 +254,14 @@ MAP
 			FALSE
 			NONE
 			ITEMS
+				TELEPORTER
+					0002
+					0,0
 		4,6
 			ICE
 			FALSE
 			DAMAGE
 			ITEMS
-				INTERACTIVE
 		4,7
 			ICE
 			FALSE
@@ -280,6 +277,7 @@ MAP
 			FALSE
 			NONE
 			ITEMS
+				TAKEABLE
 		5,0
 			ICE
 			FALSE
@@ -296,7 +294,6 @@ MAP
 			FALSE
 			NONE
 			ITEMS
-				INTERACTIVE
 		5,3
 			ICE
 			FALSE
@@ -335,6 +332,7 @@ MAP
 			FALSE
 			NONE
 			ITEMS
+				TAKEABLE
 		6,0
 			ICE
 			FALSE
@@ -351,7 +349,6 @@ MAP
 			FALSE
 			NONE
 			ITEMS
-				INTERACTIVE
 		6,3
 			ICE
 			FALSE
@@ -374,14 +371,13 @@ MAP
 			FALSE
 			DAMAGE
 			ITEMS
-				INTERACTIVE
 		6,7
 			ICE
 			FALSE
 			DAMAGE
 			ITEMS
 		6,8
-			ICE
+			GLACIER
 			FALSE
 			DAMAGE
 			ITEMS
@@ -390,6 +386,7 @@ MAP
 			FALSE
 			NONE
 			ITEMS
+				TAKEABLE
 		7,0
 			ICE
 			FALSE
@@ -406,7 +403,6 @@ MAP
 			FALSE
 			NONE
 			ITEMS
-				INTERACTIVE
 		7,3
 			ICE
 			FALSE
@@ -429,14 +425,13 @@ MAP
 			FALSE
 			DAMAGE
 			ITEMS
-				INTERACTIVE
 		7,7
 			ICE
 			FALSE
 			DAMAGE
 			ITEMS
 		7,8
-			ICE
+			GLACIER
 			FALSE
 			DAMAGE
 			ITEMS
@@ -445,9 +440,7 @@ MAP
 			FALSE
 			NONE
 			ITEMS
-				TELEPORT
-					0001
-					0,3
+				TAKEABLE
 		8,0
 			ICE
 			FALSE
@@ -493,14 +486,14 @@ MAP
 			DAMAGE
 			ITEMS
 		8,8
-			ICE
+			GLACIER
 			FALSE
 			DAMAGE
 			ITEMS
 		8,9
 			ICE
 			FALSE
-			NONE
+			HEAL
 			ITEMS
 		9,0
 			ICE
@@ -546,12 +539,12 @@ MAP
 			DAMAGE
 			ITEMS
 		9,8
-			ICE
+			GLACIER
 			FALSE
 			DAMAGE
 			ITEMS
 		9,9
 			ICE
 			FALSE
-			NONE
+			LEVELUP
 			ITEMS
