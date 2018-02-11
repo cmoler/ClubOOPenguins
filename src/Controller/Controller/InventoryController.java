@@ -73,7 +73,7 @@ public class InventoryController implements Controller {
                 if(inventoryIterator.hasNext()){
                     inventoryIterator.next();
                 }
-                if(viewItemIndex > (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
+                if(viewItemIndex >= (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
                     viewItemIndex = (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS);
                 }
                 mainController.getAreaViewPort().moveCursor(viewItemIndex);
@@ -96,7 +96,7 @@ public class InventoryController implements Controller {
                         inventoryIterator.next();
                     }
                 }
-                if(viewItemIndex > (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
+                if(viewItemIndex >= (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
                     viewItemIndex = (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS);
                 }
                 mainController.getAreaViewPort().moveCursor(viewItemIndex);
