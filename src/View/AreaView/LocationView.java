@@ -21,10 +21,8 @@ public class LocationView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D, int i, int j){
-        int x = locationX ;
-        int y = locationY;
         for(Viewport child: children){
-            child.draw(graphics2D, x, y);
+            child.draw(graphics2D, i, j);
         }
     }
 
