@@ -186,7 +186,7 @@ public class MapBuilder {
 //        }
         map = new Map(locations, locations[defaultY][defaultX]);
         World world = World.getWorld();
-        world.addMap(mapID, map);
+        world.addMap(mapID, map, viewport);
         return map;
     }
 

@@ -113,9 +113,9 @@ public class MenuController implements Controller {
             mapView3 = mapBuilder.getViewport();
 
 
-            World.getWorld().addMap("0001", m1);
-            World.getWorld().addMap("0002", m2);
-            World.getWorld().addMap("0003", m3);
+            World.getWorld().addMap("0001", m1, mapView1);
+            World.getWorld().addMap("0002", m2, mapView2);
+            World.getWorld().addMap("0003", m3, mapView3);
             World.getWorld().changeCurrentMapTo(m1);
 
             Entity e = entityBuilder.buildEntity("Default", "0001");
