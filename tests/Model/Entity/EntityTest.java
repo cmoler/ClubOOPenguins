@@ -89,6 +89,6 @@ class EntityTest {
         World.getWorld().changeCurrentMapTo(m);
         Entity e = new Entity(m.getDefaultLocation());
         e.move(E);
-        assertEquals(m.getLocation(2,3),e.getLocation(),"e should have moved one location to the east");
+        assertEquals(m.getLocationIJ(2,3),e.getLocation(),"e should have moved one location to the east");
     }
 }

@@ -18,7 +18,7 @@ public class Location {
     private boolean obstacle;
     private HashMap<Direction, Location> adjacentLocations;
     private AreaEffect areaEffect;
-    private List<Item> items;
+    private List<Item> items = new ArrayList<>();
     private List<Viewport> observers = new ArrayList<Viewport>();
 
     public Location(Terrain terrain, boolean obstacle, AreaEffect areaEffect, List<Item> items){

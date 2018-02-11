@@ -30,17 +30,17 @@ public class GameSaver {
         for(int i = 0; i < map.getRows(); i++) {
             for(int j = 0; j < map.getCols(); j++) {
                 mapData += "\t\t" + Integer.toString(j) + "," + Integer.toString(i) + System.getProperty("line.separator");
-                mapData += "\t\t\t" + map.getLocation(j, i).getTerrain().toString().toUpperCase();
+                mapData += "\t\t\t" + map.getLocationIJ(i, j).getTerrain().toString().toUpperCase();
 
-                if(map.getLocation(j, i).moveAllowed(entity)) mapData += "\t\t\tFALSE" + System.getProperty("line.separator");
+                if(map.getLocationIJ(i, j).moveAllowed(entity)) mapData += "\t\t\tFALSE" + System.getProperty("line.separator");
                 else mapData += "\t\t\tTRUE" + System.getProperty("line.separator");
 
-                mapData += "\t\t\t" + map.getLocation(j, i).getAreaEffect().toString().toUpperCase() + System.getProperty("line.separator");
+                mapData += "\t\t\t" + map.getLocationIJ(i, j).getAreaEffect().toString().toUpperCase() + System.getProperty("line.separator");
                 mapData += "\t\t\tITEMS" + System.getProperty("line.separator");
 
                 //Converts Item list to strings
-                String[] items = new String[map.getLocation(j, i).getItems().size()];
-                for(Object value : map.getLocation(j, i).getItems()) {
+                String[] items = new String[map.getLocationIJ(i, j).getItems().size()];
+                for(Object value : map.getLocationIJ(i, j).getItems()) {
                     mapData += "\t\t\t\t" + value.toString() + System.getProperty("line.separator");
                     if(value.toString().equals("TELEPORTER")) {
                         //Get teleporter info

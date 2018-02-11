@@ -93,7 +93,7 @@ public class EntityBuilder {
         World world = World.getWorld();
         Location initialLocation = new Location(new Ice(), false, null, null);
         if(world.getCurrentMap() != null)
-            initialLocation = world.getCurrentMap().getLocation(xCoord,yCoord);
+            initialLocation = world.getCurrentMap().getLocationXY(xCoord,yCoord);
         else
             System.out.println("ERROR: no maps have been loaded, so Entity default location is not right");
         e = new Entity(entityType, initialLocation);
