@@ -20,9 +20,8 @@ public class View extends JFrame {
 
     private void initUI() {
 
-
-        // TODO: this location constructor is just to get rid of errors
-        MapBuilder mapBuilder = new MapBuilder();
+/*
+        mapBuilder = new MapBuilder();
         try {
             mapBuilder.buildMap("Default","0001");
         } catch (FileNotFoundException e) {
@@ -30,37 +29,27 @@ public class View extends JFrame {
         }
         MapView mapView = mapBuilder.getViewport();
 
-        EntityBuilder entityBuilder = new EntityBuilder();
+        entityBuilder = new EntityBuilder();
         try {
             entityBuilder.buildEntity("Default", "0001");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        AvatarView avatarView = entityBuilder.getAvatarView();
-        StatusViewPort statusView = entityBuilder.getStatusViewport();
-        statusView.setRenderOption(StatusViewPort.RenderOption.INVENTORY);
 
+        AvatarView avatarView = entityBuilder.getAvatarView();
+
+        StatusViewPort statusViewPort = entityBuilder.getStatusViewport();
+        statusViewPort.setRenderOption(StatusViewPort.RenderOption.INVENTORY);
 
         mapView.setEntity(avatarView.getEntity());
 
         Viewport viewport = new Viewport();
         viewport.add(mapView);
         viewport.add(avatarView);
-        viewport.add(statusView);
+        viewport.add(statusViewPort);
 
-
-        MenuViewPort menuViewPort = new MenuViewPort();
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(Commons.SCREEN_WIDTH, Commons.SCREEN_HEIGHT);
-        setLocationRelativeTo(null);
-        setResizable(false);
-
-        add(menuViewPort);
-        //add(decalView);
-        setTitle("CLUBOOP");
-
-        //setVisible(true);
-
+        mainController.setViewPort(viewport);
+*/
     }
 
 }

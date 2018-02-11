@@ -48,7 +48,7 @@ public class MenuController implements Controller {
 
     @Override
     public void handleE() {
-        mainController.getViewPort().setRenderOption(StatusViewPort.RenderOption.EQUIPMENT);
+
     }
 
     @Override

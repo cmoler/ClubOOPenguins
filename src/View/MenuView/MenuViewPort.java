@@ -18,9 +18,10 @@ public class MenuViewPort extends Viewport {
         int startX = Configs.Commons.SCREEN_WIDTH/2;
         int startY = Commons.SCREEN_HEIGHT/4;
 
-        add(new SaveGameView(startX, startY));
-        add(new LoadGameView(startX, startY+ TextBoxInfo.TEXTBOX_HEIGHT));
-        add(new ExitGameView(startX, startY + 2*TextBoxInfo.TEXTBOX_HEIGHT));
+        add(new NewGameView(startX, startY));
+        add(new SaveGameView(startX, startY + TextBoxInfo.TEXTBOX_HEIGHT));
+        add(new LoadGameView(startX, startY + 2*TextBoxInfo.TEXTBOX_HEIGHT));
+        add(new ExitGameView(startX, startY + 3*TextBoxInfo.TEXTBOX_HEIGHT));
     }
 
     @Override
@@ -32,7 +33,7 @@ public class MenuViewPort extends Viewport {
 
     @Override
     public void setSelectedMenuView(int selectedMenuView){
-        if(selectedMenuView == -1 && selectedY < Commons.SCREEN_HEIGHT/4 + 2*TextBoxInfo.TEXTBOX_HEIGHT)
+        if(selectedMenuView == -1 && selectedY < Commons.SCREEN_HEIGHT/4 + 3*TextBoxInfo.TEXTBOX_HEIGHT)
             this.selectedY += TextBoxInfo.TEXTBOX_HEIGHT;
         else if(selectedMenuView == 1 && selectedY > Commons.SCREEN_HEIGHT/4)
                 this.selectedY -= TextBoxInfo.TEXTBOX_HEIGHT;
