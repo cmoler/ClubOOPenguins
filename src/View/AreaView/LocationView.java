@@ -1,6 +1,7 @@
 package View.AreaView;
 
 
+import Model.Entity.Entity;
 import Model.Map.Location;
 import View.Viewport;
 
@@ -13,10 +14,11 @@ public class LocationView extends Viewport {
     private int locationX;
     private int locationY;
 
-    public LocationView(Location location, int x, int y){
+    public LocationView(Location location, int x, int y) {
         this.location = location;
         this.locationX = x;
         this.locationY = y;
+        location.attach(this);
     }
 
     @Override
@@ -25,6 +27,15 @@ public class LocationView extends Viewport {
             child.draw(graphics2D, x, y);
         }
     }
+
+
+    //Remove all itemViews?
+    public void reset(){
+        for(Viewport child: children){
+            getParent().remove(child);
+        }
+    }
+
 
     @Override
     public int getLocationX(){
@@ -39,4 +50,11 @@ public class LocationView extends Viewport {
     public Location getTerrainLocation() {
         return location;
     }
+
+    @Override
+    public void update(){
+       // reset();
+        repaint();
+    }
+
 }
