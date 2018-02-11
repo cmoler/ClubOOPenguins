@@ -1,16 +1,22 @@
 package Controller.Controller;
 
 import Controller.Contexts.GameContext;
+import Model.Entity.Equipment;
+import Model.Item.TakeableItem;
 import Model.Map.Direction;
-import View.StatusView.StatusViewPort;
 
 public class EquipmentController implements Controller {
 
     private MainController mainController;
-
+    private Equipment equipment;
 
     public EquipmentController(MainController mainController){
         this.mainController = mainController;
+    }
+
+
+    public void setEquipment(Equipment equipment){
+        this.equipment = equipment;
     }
 
     @Override
@@ -30,7 +36,8 @@ public class EquipmentController implements Controller {
 
     @Override
     public void handleEnter() {
-
+        TakeableItem equippedItem = equipment.getEquipped();
+        equipment.unEquip(equippedItem);
     }
 
     @Override

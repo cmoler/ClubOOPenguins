@@ -93,6 +93,7 @@ public class InventoryController implements Controller {
 
                 if(viewItemIndex < 0){
                     viewItemIndex = 0;
+                    inventoryIterator.reset();
                 }
 
                 mainController.getAreaViewPort().moveCursor(viewItemIndex);
