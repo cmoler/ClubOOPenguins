@@ -18,10 +18,10 @@ public class Inventory {
         return new InventoryIterator();
     }
 
-    public Inventory() {
+    public Inventory(Entity entity) {
         observers = new ArrayList<>();
         items = new ArrayList<>();
-        equipment = new Equipment();
+        equipment = new Equipment(entity);
     }
 
     public boolean addItem(TakeableItem item){

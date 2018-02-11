@@ -21,10 +21,16 @@ public class Entity{
     private int health = maxHealth; // default health?
     private int experience = 0;
     private int level = 1; // default level
-    private Inventory inventory = new Inventory();
+    private Inventory inventory = new Inventory(this);
     private EntityType entityType;
     private Location location;
     // map is in World
+
+    //Entity for testing purposes
+    public Entity(){
+        entityType = EntityType.ICE;
+        location = null;
+    }
 
     public Entity(Location initialLocation) {
         entityType = EntityType.ICE; // default EntityType
@@ -67,6 +73,11 @@ public class Entity{
 
     public void modifyMaxHealth(int health){
         maxHealth += health;
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+
     }
 
     // don't think this needs to be public

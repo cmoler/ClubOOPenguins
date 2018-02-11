@@ -9,14 +9,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class InventoryTest {
     @Test
     void addItem() {
-        Inventory i = new Inventory();
+        Entity e = new Entity();
+        Inventory i = new Inventory(e);
         TakeableItem takeable1 = new TakeableItem();
         assertEquals(true, i.addItem(takeable1));
     }
 
     @Test
     void removeItem() {
-        Inventory i = new Inventory();
+        Entity e = new Entity();
+        Inventory i = new Inventory(e);
         TakeableItem item1 = new TakeableItem();
         TakeableItem item2 = new TakeableItem();
         i.addItem(item1);
@@ -26,10 +28,11 @@ class InventoryTest {
 
     @Test
     void doesExist() {
+        Entity e = new Entity();
         TakeableItem item1 = new TakeableItem();
         TakeableItem item2 = new TakeableItem();
         TakeableItem item3 = new TakeableItem();
-        Inventory i = new Inventory();
+        Inventory i = new Inventory(e);
         i.addItem(item1);
         i.addItem(item2);
         assertEquals(true, i.doesExist(item1));
@@ -39,18 +42,20 @@ class InventoryTest {
 
     @Test
     void equip() {
+        Entity e = new Entity();
         TakeableItem item1 = new TakeableItem();
         TakeableItem item2 = new TakeableItem();
-        Inventory i = new Inventory();
+        Inventory i = new Inventory(e);
         assertEquals(true, i.equip(item1));
         assertEquals(item1, i.getEquipped());
     }
 
     @Test
     void unEquip() {
+        Entity e = new Entity();
         TakeableItem item1 = new TakeableItem();
         TakeableItem item2 = new TakeableItem();
-        Inventory i = new Inventory();
+        Inventory i = new Inventory(e);
         i.equip(item1);
         assertEquals(false, i.unEquip(item2));
         assertEquals(true, i.unEquip(item1));

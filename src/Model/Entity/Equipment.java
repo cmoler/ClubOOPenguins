@@ -10,14 +10,17 @@ public class Equipment {
 
     private List<Viewport> observers;
 
+    private Entity entity;
     private TakeableItem equipped;
 
-    public Equipment() {
+    public Equipment(Entity entity) {
+        this.entity = entity;
         observers = new ArrayList<>();
     }
 
     public boolean equip(TakeableItem item){
         equipped = item;
+        entity.modifyMaxHealth(50);
         notifyView();
         return true;
     }
@@ -25,6 +28,7 @@ public class Equipment {
     public boolean unEquip(TakeableItem item){
         if(equipped == item) {
             equipped = null;
+            entity.modifyMaxHealth(-50);
             notifyView();
             return true;
         }
