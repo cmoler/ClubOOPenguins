@@ -127,6 +127,6 @@ public class Viewport extends JPanel {
 
     public void updateMap(MapView lastMapView, MapView currentMapView){
         this.remove(lastMapView);
-        this.remove(currentMapView);
+        this.add(currentMapView);
     }
 }
