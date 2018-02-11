@@ -87,6 +87,21 @@ public class SpriteParser {
         return imageIcon.getImage();
     }
 
+    public Image getRedCrossImage(){
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.RED_CROSS_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getSkullAndCrossBonesImage(){
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.SKULL_CROSS_BONES_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
+    public Image getGoldStarImage(){
+        ImageIcon imageIcon = new ImageIcon(ImagesInfo.GOLD_STAR_FILELOCATION);
+        return imageIcon.getImage();
+    }
+
     public Image getAvatarImage(){
         return avatarSprites[0];
     }

@@ -17,4 +17,7 @@ public interface SpriteSizes {
     public static final int AVATAR_WIDTH = 30;
     public static final int AVATAR_HEIGHT = 30;
 
+    public static final int DECAL_WIDTH = 30;
+    public static final int DECAL_HEIGHT = 30;
+
 }

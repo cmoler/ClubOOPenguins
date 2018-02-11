@@ -17,8 +17,8 @@ public class InventoryView extends Viewport {
 
     private Inventory inventory;
     private Image highlighter;
-    private int highlighterX = 0;
-    private int highlighterY = 0;
+    private int highlighterX = ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0));
+    private int highlighterY = ((int) (Commons.SCREEN_HEIGHT  * 221.0/765.0) + 170);
 
     public InventoryView(Inventory inventory){
         inventory.attach(this);
@@ -57,6 +57,4 @@ public class InventoryView extends Viewport {
         highlighterX = ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)) + ITEM_WIDTH * (index % InventorySizes.INVENTORY_COLUMNS);
         highlighterY = ((int) (Commons.SCREEN_HEIGHT  * 221.0/765.0)+170) + ITEM_WIDTH * (index / InventorySizes.INVENTORY_ROWS);
     }
-
 }
-

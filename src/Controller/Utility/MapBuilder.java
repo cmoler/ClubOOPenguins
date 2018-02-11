@@ -92,6 +92,7 @@ public class MapBuilder {
             String areaEffectType = mapData.get(lineIndex++).split("\t\t\t")[1];
             AreaEffect areaEffect;
             AreaEffectView areaEffectView = null;
+            DecalView decalView = null;
             switch (areaEffectType){
                 case "DAMAGE":
                     areaEffect = new DamageAreaEffect();
@@ -100,14 +101,17 @@ public class MapBuilder {
                 case "HEAL":
                     areaEffect = new HealAreaEffect();
                     areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_HEAL_IMAGE);
+                    decalView = new DecalView(ImagesInfo.RED_CROSS_IMAGE);
                     break;
                 case "KILL":
                     areaEffect = new KillAreaEffect();
                     areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_KILL_IMAGE);
+                    decalView = new DecalView(ImagesInfo.SKULL_CROSS_BONES_IMAGE);
                     break;
                 case "LEVELUP":
                     areaEffect = new LevelUpAreaEffect();
                     areaEffectView = new AreaEffectView(ImagesInfo.AREAEFFECT_LEVELUP_IMAGE);
+                    decalView = new DecalView(ImagesInfo.GOLD_STAR_IMAGE);
                     break;
                 default:
                     areaEffect = null;
@@ -153,6 +157,7 @@ public class MapBuilder {
             LocationView locationView = new LocationView(locations[yChord][xCoord], xCoord, yChord);
             if(terrainView != null) locationView.add(terrainView);
             if(areaEffectView != null) locationView.add(areaEffectView);
+            if(decalView != null) locationView.add(decalView);
             if(obstacleView != null) locationView.add(obstacleView);
             for(ItemView itemView: itemViews){
                 locationView.add(itemView);
