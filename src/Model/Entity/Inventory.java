@@ -56,11 +56,19 @@ public class Inventory {
     }
 
     public boolean equip(TakeableItem item) {
-        return equipment.equip(item);
+        if(equipment.equip(item)) {
+            removeItem(item);
+            return true;
+        }
+        else { return false; }
     }
 
     public boolean unEquip(TakeableItem item) {
-        return equipment.unEquip(item);
+        if(equipment.unEquip(item)) {
+            addItem(item);
+            return true;
+        }
+        else { return false; }
     }
 
     public Equipment getEquipment() {

@@ -15,6 +15,9 @@ MAP
 			FALSE
 			NONE
 			ITEMS
+				TELEPORTER
+					0003
+					3,3
 		0,2
 			ICE
 			FALSE

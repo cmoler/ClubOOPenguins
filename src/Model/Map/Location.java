@@ -100,6 +100,6 @@ public class Location {
             items.get(index).touch(entity);
         }
 
-        public void removeCurrent() { items.remove(index); notifyView();}
+        public void removeCurrent() { items.remove(index); index--; notifyView();}
     }
 }

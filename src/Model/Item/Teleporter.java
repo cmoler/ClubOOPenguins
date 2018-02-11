@@ -40,4 +40,10 @@ public class Teleporter extends InteractiveItem{
     public boolean shouldBeRemoved(){
         return false;
     }
+
+    public ItemType getItemType() {
+        return ItemType.TELEPORTER;
+    }
+
+
 }
