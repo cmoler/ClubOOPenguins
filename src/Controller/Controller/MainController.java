@@ -83,6 +83,7 @@ public class MainController {
     public void setAreaViewPort(Viewport viewPort){
         this.areaViewport = viewPort;
         game.add(areaViewport);
+        viewPort.addKeyListener(input);
         areaViewport.setVisible(false);
     }
 
