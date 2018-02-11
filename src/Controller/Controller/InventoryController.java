@@ -45,7 +45,6 @@ public class InventoryController implements Controller {
     @Override
     public void handleT() {
         mainController.setActiveContext(GameContext.EQUIPMENT);
-        mainController.getAreaViewPort().setRenderOption(StatusViewPort.RenderOption.EQUIPMENT);
     }
 
     @Override

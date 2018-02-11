@@ -86,12 +86,6 @@ public class Viewport extends JPanel {
         }
     }
 
-    public void setRenderOption(StatusViewPort.RenderOption renderOption){
-        for(Viewport child: children){
-            child.setRenderOption(renderOption);
-        }
-    }
-
     public void addToFront(Viewport viewport){
         viewport.parent = this;
         children.add(0, viewport);
