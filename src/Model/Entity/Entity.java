@@ -122,6 +122,8 @@ public class Entity{
         return health;
     }
 
+    public int getMaxHealth() { return maxHealth; }
+
     public int getExperience(){
         return experience;
     }

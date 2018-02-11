@@ -70,7 +70,9 @@ public class StatsView extends Viewport {
 
         //HPBAR
         graphics2D.setColor(new Color(233, 3, 3));
-        graphics2D.fillRect(ENTITY_HEALTH_X, ENTITY_HEALTH_Y, ENTITY_HEALTH_WIDTH, ENTITY_HEALTH_HEIGHT);
+        graphics2D.fillRect(ENTITY_HEALTH_X, ENTITY_HEALTH_Y, ENTITY_HEALTH_WIDTH * (entity.getMaxHealth()/100), ENTITY_HEALTH_HEIGHT );
+        graphics2D.setColor(new Color(255, 255, 255));
+        graphics2D.drawString("" + entity.getHealth() + " / " + entity.getMaxHealth(), ENTITY_HEALTH_X + (ENTITY_HEALTH_WIDTH/2), ENTITY_HEALTH_Y + ENTITY_HEALTH_HEIGHT);
         graphics2D.setColor(new Color(0, 0, 0));
         graphics2D.fillRect(ENTITY_HEALTH_X + (ENTITY_HEALTH_WIDTH-hprectSize), ENTITY_HEALTH_Y, hprectSize, ENTITY_HEALTH_HEIGHT);
 
