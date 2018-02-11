@@ -36,7 +36,7 @@ public class World {
     }
 
     public void changeCurrentMapTo(Map map){
-        if(viewport!=null)viewport.add(mapViews.get(map));
+        if(viewport!=null)viewport.addToFront(mapViews.get(map));
         if(currentMap!=null)viewport.remove(mapViews.get(currentMap));
         currentMap = map;
     }

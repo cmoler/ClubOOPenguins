@@ -92,6 +92,11 @@ public class Viewport extends JPanel {
         }
     }
 
+    public void addToFront(Viewport viewport){
+        viewport.parent = this;
+        children.add(0, viewport);
+    }
+
     public void add(Viewport viewport){
         viewport.parent = this;
         children.add(viewport);
