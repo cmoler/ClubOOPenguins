@@ -8,6 +8,6 @@ public class LevelUpAreaEffect extends AreaEffect{
 
     public void affect(Entity entity) {
         int experienceToAdd = entity.getExperienceForNextLevel() - entity.getExperience();
-        entity.gainExperience(experienceToAdd);
+        entity.gainExperience(experienceToAdd+1);
     }
 }
