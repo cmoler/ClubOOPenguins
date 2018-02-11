@@ -34,7 +34,7 @@ public class AvatarView extends Viewport {
     @Override
     public void draw(Graphics2D graphics2D) {
        graphics2D.drawImage(avatarImage, x* SpriteSizes.TERRAIN_WIDTH + SpriteSizes.TERRAIN_WIDTH/4, y*SpriteSizes.TERRAIN_HEIGHT + SpriteSizes.TERRAIN_HEIGHT/4,
-               75, 75,this );
+               SpriteSizes.AVATAR_WIDTH, SpriteSizes.AVATAR_HEIGHT,this );
     }
 
     @Override
@@ -44,7 +44,7 @@ public class AvatarView extends Viewport {
 
     @Override
     public void moveUpdate(Direction direction){
-        switch(direction){
+        /*switch(direction){
             case N:
                 y -= velocity;
                 break;
@@ -73,6 +73,6 @@ public class AvatarView extends Viewport {
                 y -= velocity;
                 x -= velocity;
                 break;
-        }
+        }*/
     }
 }
