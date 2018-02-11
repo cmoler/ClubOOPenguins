@@ -54,10 +54,6 @@ public class World {
         return maps.get(mapID);
     }
 
-    public HashMap<String,Map> getIdMapping(){
-        return maps;
-    }
-
     public void attach(Viewport viewport){
         observers.add(viewport);
     }

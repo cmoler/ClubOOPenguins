@@ -122,6 +122,7 @@ public class MainController {
     public void setEntity(Entity entity){
         this.entity = entity;
         inventoryController.setInventory(entity.getInventory());
+        equipmentController.setEquipment(entity.getInventory().getEquipment());
     }
 
     public Entity getEntity() {
