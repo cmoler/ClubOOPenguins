@@ -41,7 +41,6 @@ public class MenuController implements Controller {
 
     @Override
     public void handleI() {
-        mainController.getAreaViewPort().setRenderOption(StatusViewPort.RenderOption.INVENTORY);
 
     }
 
@@ -131,7 +130,6 @@ public class MenuController implements Controller {
         }
 
         StatusViewPort statusViewPort = entityBuilder.getStatusViewport();
-        statusViewPort.setRenderOption(StatusViewPort.RenderOption.INVENTORY);
 
         mapView1.setEntity(avatarView1.getEntity());
         mapView2.setEntity(avatarView1.getEntity());

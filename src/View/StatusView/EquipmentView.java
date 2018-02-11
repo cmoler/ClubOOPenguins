@@ -23,9 +23,8 @@ public class EquipmentView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-        //TODO get item equipment
         Image imageIcon = SpriteParser.getSpriteParser().getTakeAbleItemImage();
-
+        if(equipment.getEquipped() != null)
         graphics2D.drawImage(imageIcon, EQUIPMENT_X, EQUIPMENT_Y, this);
     }
 

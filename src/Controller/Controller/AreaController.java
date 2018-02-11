@@ -24,13 +24,11 @@ public class AreaController implements Controller {
     @Override
     public void handleI() {
         mainController.setActiveContext(GameContext.INVENTORY);
-        mainController.getAreaViewPort().setRenderOption(StatusViewPort.RenderOption.INVENTORY);
     }
 
     @Override
     public void handleT() {
         mainController.setActiveContext(GameContext.EQUIPMENT);
-        mainController.getAreaViewPort().setRenderOption(StatusViewPort.RenderOption.EQUIPMENT);
     }
 
     @Override
