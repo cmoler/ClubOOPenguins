@@ -60,3 +60,4 @@ public class InventoryView extends Viewport {
     }
 
 }
+
