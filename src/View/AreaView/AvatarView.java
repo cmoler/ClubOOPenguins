@@ -2,6 +2,7 @@ package View.AreaView;
 
 
 import Configs.ImagesInfo;
+import Configs.SpriteSizes;
 import Model.Map.Direction;
 import Model.Entity.Entity;
 import View.Viewport;
@@ -32,8 +33,8 @@ public class AvatarView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D) {
-       graphics2D.drawImage(avatarImage, x, y,
-               10, 10,this );
+       graphics2D.drawImage(avatarImage, x* SpriteSizes.TERRAIN_WIDTH + SpriteSizes.TERRAIN_WIDTH/4, y*SpriteSizes.TERRAIN_HEIGHT + SpriteSizes.TERRAIN_HEIGHT/4,
+               75, 75,this );
     }
 
     @Override

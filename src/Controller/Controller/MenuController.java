@@ -114,8 +114,8 @@ public class MenuController implements Controller {
 
         Viewport viewport = new Viewport();
         viewport.add(mapView);
-        viewport.add(avatarView);
         viewport.add(statusViewPort);
+        viewport.add(avatarView);
 
         mainController.setAreaViewPort(viewport);
 

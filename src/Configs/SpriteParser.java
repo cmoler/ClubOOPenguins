@@ -88,7 +88,7 @@ public class SpriteParser {
     }
 
     public Image getAvatarImage(){
-        return tileSprites[0];
+        return avatarSprites[0];
     }
 
     private void getSprites(){
@@ -132,10 +132,10 @@ public class SpriteParser {
             e.printStackTrace();
         }
 
-        final int width = 32;
-        final int height = 32;
-        final int rows = 7;
-        final int cols = 7;
+        final int width = 40;
+        final int height = 40;
+        final int rows = 1;
+        final int cols = 1;
         avatarSprites = new BufferedImage[rows * cols];
 
         for (int i = 0; i < rows; i++)
