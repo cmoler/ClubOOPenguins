@@ -1,11 +1,9 @@
 package View.AreaView;
 
 
-import Configs.SpriteSizes;
-import Model.Map.Location;
+import Configs.AreaSizes;
 import View.Viewport;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
@@ -19,8 +17,8 @@ public class AreaEffectView extends Viewport {
 
     @Override
     public void draw(Graphics2D graphics2D, int x, int y) {
-        graphics2D.drawImage(areaEffectImage, x*SpriteSizes.TERRAIN_WIDTH, y*SpriteSizes.TERRAIN_HEIGHT,
-                SpriteSizes.AREA_EFFECT_WIDTH, SpriteSizes.AREA_EFFECT_HEIGHT,this );
+        graphics2D.drawImage(areaEffectImage, x* AreaSizes.TERRAIN_WIDTH, y* AreaSizes.TERRAIN_HEIGHT,
+                AreaSizes.AREA_EFFECT_WIDTH, AreaSizes.AREA_EFFECT_HEIGHT,this );
     }
 
     @Override
