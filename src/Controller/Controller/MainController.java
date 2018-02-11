@@ -5,9 +5,6 @@ import Controller.Input.Input;
 import Controller.Game.OOPenguinGameFrame;
 import View.MenuView.MenuViewPort;
 import Controller.Utility.EntityBuilder;
-import View.AreaView.AvatarView;
-import View.AreaView.MapView;
-import View.StatusView.StatusViewPort;
 import View.Viewport;
 
 
@@ -28,7 +25,7 @@ public class MainController {
     private InventoryController inventoryController;
     private EquipmentController equipmentController;
 
-    private Viewport viewport;
+    private Viewport areaViewport;
 
     private MenuViewPort menuViewPort;
 
@@ -82,16 +79,18 @@ public class MainController {
 
     }
 
-    public void setViewPort(Viewport viewPort){
-        this.viewport = viewPort;
+    public void setAreaViewPort(Viewport viewPort){
+        this.areaViewport = viewPort;
+        game.add(areaViewport);
+        areaViewport.setVisible(false);
     }
 
-    public Viewport getViewPort(){
-        return this.viewport;
+    public Viewport getAreaViewPort(){
+        return this.areaViewport;
     }
 
     public Viewport getStatusViewPort(){
-        return viewport.getChildren().get(2).getChildren().get(0);
+        return areaViewport.getChildren().get(2).getChildren().get(0);
     }
 
     public void setSelectedMenuView(int i) {
@@ -100,5 +99,15 @@ public class MainController {
 
     public void gameLoop() {
 
+    }
+
+    public void setMenuRender() {
+        areaViewport.setVisible(false);
+        menuViewPort.setVisible(true);
+    }
+
+    public void setAreaRender(){
+        menuViewPort.setVisible(false);
+        areaViewport.setVisible(true);
     }
 }

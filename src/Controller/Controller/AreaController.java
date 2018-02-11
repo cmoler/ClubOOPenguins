@@ -21,6 +21,7 @@ public class AreaController implements Controller {
     @Override
     public void handleEscape() {
         mainController.setActiveContext(GameContext.MENU);
+        mainController.setMenuRender();
     }
 
     @Override

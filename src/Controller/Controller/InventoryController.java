@@ -22,13 +22,13 @@ public class InventoryController implements Controller {
 
     @Override
     public void handleI() {
-        mainController.getViewPort().setRenderOption(StatusViewPort.RenderOption.INVENTORY);
+        mainController.getAreaViewPort().setRenderOption(StatusViewPort.RenderOption.INVENTORY);
 
     }
 
     @Override
     public void handleE() {
-        mainController.getViewPort().setRenderOption(StatusViewPort.RenderOption.EQUIPMENT);
+        mainController.getAreaViewPort().setRenderOption(StatusViewPort.RenderOption.EQUIPMENT);
     }
 
     @Override

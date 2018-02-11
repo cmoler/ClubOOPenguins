@@ -48,7 +48,7 @@ public class View extends JFrame {
         viewport.add(avatarView);
         viewport.add(statusViewPort);
 
-        mainController.setViewPort(viewport);
+        mainController.setAreaViewPort(viewport);
 */
     }
 
