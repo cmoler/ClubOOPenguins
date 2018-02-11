@@ -77,20 +77,22 @@ public class Entity{
     }
 
     public void move(Direction direction){
-        if(location.getAdjacentAt(direction) == null) // if trying to move off edge of map
-            return;
-        Location nextLocation = location.getAdjacentAt(direction);
-        if (nextLocation.moveAllowed(this)){
-            this.location = nextLocation;
-            if (this.location.getAreaEffect() != null){
-                this.location.getAreaEffect().activate(this);
+        if (isAlive()){
+            if(location.getAdjacentAt(direction) == null) // if trying to move off edge of map
+                return;
+            Location nextLocation = location.getAdjacentAt(direction);
+            if (nextLocation.moveAllowed(this)){
+                this.location = nextLocation;
+                if (this.location.getAreaEffect() != null){
+                    this.location.getAreaEffect().activate(this);
+                }
+                Location.LocationItemIterator locationItemIterator = location.getLocationItemIterator();
+                for(locationItemIterator.reset();locationItemIterator.hasNext();locationItemIterator.next()){
+                    locationItemIterator.touchCurrent(this);
+                    if(locationItemIterator.getCurrent().shouldBeRemoved()) locationItemIterator.removeCurrent();
+                }
+                notifyView(direction);
             }
-            Location.LocationItemIterator locationItemIterator = location.getLocationItemIterator();
-            for(locationItemIterator.reset();locationItemIterator.hasNext();locationItemIterator.next()){
-                locationItemIterator.touchCurrent(this);
-                if(locationItemIterator.getCurrent().shouldBeRemoved()) locationItemIterator.removeCurrent();
-            }
-            notifyView(direction);
         }
     }
 
