@@ -126,9 +126,7 @@ public class Viewport extends JPanel {
     }
 
     public void updateMap(MapView lastMapView, MapView currentMapView){
-        for(Viewport child: children){
-            child.remove(lastMapView);
-            child.add(currentMapView);
-        }
+        this.remove(lastMapView);
+        this.remove(currentMapView);
     }
 }
