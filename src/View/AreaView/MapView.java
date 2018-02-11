@@ -47,7 +47,7 @@ public class MapView extends Viewport {
         }
         for(Viewport child: children){
             if(child.getLocationX() <= offsetJ + 3 && child.getLocationX() >= offsetJ - 2&&
-                    child.getLocationY() <= offsetJ + 10 && child.getLocationY() >= offsetJ - 2 ){
+                    child.getLocationY() <= offsetI + 10 && child.getLocationY() >= offsetI - 2 ){
                 child.draw(graphics2D, child.getLocationX() - offsetJ, child.getLocationY() - offsetI);
             }
         }
