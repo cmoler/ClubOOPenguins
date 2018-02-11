@@ -18,6 +18,10 @@ public interface ImagesInfo {
     public static final String ITEM_TELEPORTER_FILELOCATION = "resources/images/Portal_box.png";
     public static final String RUNESCAPE_GUI_FILELOCATION = "resources/images/Interface.png";
 
+    public static final String RED_CROSS_FILELOCATION = "resources/images/RedCross.png";
+    public static final String SKULL_CROSS_BONES_FILELOCATION = "resources/images/SkullCrossBone.png";
+    public static final String GOLD_STAR_FILELOCATION = "resources/images/goldstar.png";
+
     public static final Image RUNESCAPE_GUI = SpriteParser.getSpriteParser().getRunescapeGUI();
 
     public static final Image ICE_IMAGE = SpriteParser.getSpriteParser().getIceImage();
@@ -37,9 +41,8 @@ public interface ImagesInfo {
 
     public static final Image AVATAR_IMAGE = SpriteParser.getSpriteParser().getAvatarImage();
 
-
-
-
-
+    public static final Image RED_CROSS_IMAGE = SpriteParser.getSpriteParser().getRedCrossImage();
+    public static final Image SKULL_CROSS_BONES_IMAGE = SpriteParser.getSpriteParser().getSkullAndCrossBonesImage();
+    public static final Image GOLD_STAR_IMAGE = SpriteParser.getSpriteParser().getGoldStarImage();
 
 }

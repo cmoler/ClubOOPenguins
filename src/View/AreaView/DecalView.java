@@ -12,15 +12,14 @@ public class DecalView extends Viewport {
 
     private Image decalImage;
 
-    public DecalView(String fileName){
-        ImageIcon imageIcon = new ImageIcon(fileName);
-        decalImage = imageIcon.getImage();
+    public DecalView(Image image){
+        this.decalImage = image;
     }
 
     @Override
     public void draw(Graphics2D graphics2D, int x, int y) {
-        graphics2D.drawImage(decalImage, x* SpriteSizes.TERRAIN_WIDTH, y*SpriteSizes.TERRAIN_HEIGHT,
-                SpriteSizes.TERRAIN_WIDTH, SpriteSizes.TERRAIN_HEIGHT,this );
+        graphics2D.drawImage(decalImage, x* SpriteSizes.TERRAIN_WIDTH + SpriteSizes.TERRAIN_WIDTH/4, y*SpriteSizes.TERRAIN_HEIGHT + SpriteSizes.TERRAIN_HEIGHT/4,
+                SpriteSizes.DECAL_WIDTH, SpriteSizes.DECAL_HEIGHT,this );
     }
 
     @Override
