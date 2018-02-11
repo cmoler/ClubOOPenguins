@@ -18,25 +18,29 @@ import java.io.FileNotFoundException;
 
 public class MenuController implements Controller {
 
+
     private MainController mainController;
     private GameLoader gameLoader;
     private GameSaver gameSaver;
     private int currentlySelected = 3;
     private MapBuilder mapBuilder;
     private EntityBuilder entityBuilder;
+    private boolean gameInitialized;
 
 
 
     public MenuController(MainController mainController){
         this.mainController = mainController;
-
+        gameInitialized = false;
 
     }
 
     @Override
     public void handleEscape() {
         System.out.println("Command: close menu");
-        mainController.setActiveContext(GameContext.AREA);
+        if(gameInitialized){
+            mainController.setActiveContext(GameContext.AREA);
+        }
     }
 
     @Override
@@ -125,6 +129,7 @@ public class MenuController implements Controller {
             Entity e = entityBuilder.buildEntity( "0001");
             avatarView1 = entityBuilder.getAvatarView();
             mainController.setEntity(e);
+            gameInitialized = true;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
