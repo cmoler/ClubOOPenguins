@@ -5,7 +5,6 @@ import Configs.ImagesInfo;
 import Configs.TextBoxInfo;
 import View.Viewport;
 
-import javax.xml.soap.Text;
 import java.awt.*;
 
 
