@@ -1,13 +1,13 @@
 package View.AreaView;
 
+import Configs.Commons;
+import Configs.SpriteSizes;
 import Model.Entity.Entity;
-import Model.Map.Map;
 import Model.Map.MapIterator;
 import Model.Map.World;
 import View.Viewport;
 
 import java.awt.*;
-import java.util.List;
 
 public class MapView extends Viewport {
 
@@ -17,10 +17,26 @@ public class MapView extends Viewport {
     private int initialI;
     private int initialJ;
 
+    private int desiredPlayerXTileOffset;
+    private int desiredPlayerYTileOffset;
+
     private Entity entity;
 
     public MapView() {
+    }
 
+    private void calculatePlayerOffSet(){
+        double DESIRED_PLAYER_X_RATIO = 265.0f/768.0f;
+        double DESIRED_PLAYER_Y_RATIO = 165.0f/501.0f;
+
+        double DESIRED_PLAYER_X = DESIRED_PLAYER_X_RATIO * Commons.SCREEN_WIDTH;
+        double DESIRED_PLAYER_Y = DESIRED_PLAYER_Y_RATIO * Commons.SCREEN_HEIGHT;
+
+        int desiredPlayerXTile = (int)(DESIRED_PLAYER_X / SpriteSizes.TERRAIN_WIDTH);
+        int desiredPlayerYTile = (int)(DESIRED_PLAYER_Y / SpriteSizes.TERRAIN_HEIGHT);
+
+        desiredPlayerXTileOffset = desiredPlayerXTile - initialJ;
+        desiredPlayerYTileOffset = desiredPlayerYTile - initialI;
     }
 
     public void setEntity(Entity entity){
@@ -32,6 +48,7 @@ public class MapView extends Viewport {
                 initialJ = mapIterator.getJ();
             }
         }
+        calculatePlayerOffSet();
     }
 
     @Override
@@ -46,9 +63,9 @@ public class MapView extends Viewport {
             }
         }
         for(Viewport child: children){
-            if(child.getLocationX() <= offsetJ + 3 && child.getLocationX() >= offsetJ - 2&&
-                    child.getLocationY() <= offsetI + 10 && child.getLocationY() >= offsetI - 2 ){
-                child.draw(graphics2D, child.getLocationX() - offsetJ, child.getLocationY() - offsetI);
+            if(child.getLocationX() <= offsetJ + 10 && child.getLocationX() >= offsetJ - 10&&
+                    child.getLocationY() <= offsetI + 10 && child.getLocationY() >= offsetI - 10 ){
+                child.draw(graphics2D, child.getLocationX() - offsetJ + desiredPlayerXTileOffset, child.getLocationY() - offsetI + desiredPlayerYTileOffset);
             }
         }
     }
