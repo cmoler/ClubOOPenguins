@@ -32,7 +32,7 @@ public class MapBuilder {
 
     public Map buildMap(String gameName, String mapID) throws FileNotFoundException {
         viewport = new MapView();
-        // will change file location after testing
+
         String filename = "resources/maps/" + gameName + "MapModel" + mapID + ".txt";
 
         Scanner s = new Scanner(new File(filename));
@@ -184,10 +184,7 @@ public class MapBuilder {
 //            }
 //            Entity e = new Entity(locations[entityX][entityY]);
 //        }
-        map = new Map(locations, locations[defaultY][defaultX]);
-        World world = World.getWorld();
-        world.addMap(mapID, map, viewport);
-        return map;
+        return new Map(locations, locations[defaultY][defaultX]);
     }
 
 }
