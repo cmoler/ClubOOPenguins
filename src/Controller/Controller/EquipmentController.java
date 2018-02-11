@@ -1,6 +1,8 @@
 package Controller.Controller;
 
+import Controller.Contexts.GameContext;
 import Model.Map.Direction;
+import View.StatusView.StatusViewPort;
 
 public class EquipmentController implements Controller {
 
@@ -19,6 +21,11 @@ public class EquipmentController implements Controller {
     @Override
     public void handleI() {
 
+    }
+
+    @Override
+    public void handleT() {
+        mainController.setActiveContext(GameContext.AREA);
     }
 
     @Override
