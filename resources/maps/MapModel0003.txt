@@ -110,7 +110,6 @@ MAP
 			TRUE
 			NONE
 			ITEMS
-				TAKEABLE
 		2,0
 			ICE
 			FALSE
@@ -486,9 +485,9 @@ MAP
 			DAMAGE
 			ITEMS
 		8,8
-			GLACIER
+			ICE
 			FALSE
-			DAMAGE
+			KILL
 			ITEMS
 		8,9
 			ICE
@@ -539,9 +538,9 @@ MAP
 			DAMAGE
 			ITEMS
 		9,8
-			GLACIER
+			ICE
 			FALSE
-			DAMAGE
+			KILL
 			ITEMS
 		9,9
 			ICE
