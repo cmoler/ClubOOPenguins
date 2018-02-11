@@ -17,7 +17,8 @@ public class Entity{
 
     private int velocity = 5;
 
-    private int health = 100; // default health?
+    private int maxHealth = 100;
+    private int health = maxHealth; // default health?
     private int experience = 0;
     private int level = 1; // default level
     private Inventory inventory = new Inventory();
@@ -52,8 +53,8 @@ public class Entity{
 
     public void heal(int healing){
         health += healing;
-        if (health > 100)
-            health = 100;
+        if (health > maxHealth)
+            health = maxHealth;
         notifyView();
     }
 
@@ -62,6 +63,10 @@ public class Entity{
         if (canLevelUp())
             level++;
         notifyView();
+    }
+
+    public void modifyMaxHealth(int health){
+        maxHealth += health;
     }
 
     // don't think this needs to be public
