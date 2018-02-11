@@ -24,7 +24,7 @@ public class View extends JFrame {
         // TODO: this location constructor is just to get rid of errors
         MapBuilder mapBuilder = new MapBuilder();
         try {
-            mapBuilder.buildMap("0001");
+            mapBuilder.buildMap("Default","0001");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -32,7 +32,7 @@ public class View extends JFrame {
 
         EntityBuilder entityBuilder = new EntityBuilder();
         try {
-            entityBuilder.buildEntity("0001");
+            entityBuilder.buildEntity("Default", "0001");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

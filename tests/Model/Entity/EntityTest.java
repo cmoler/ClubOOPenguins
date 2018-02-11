@@ -16,7 +16,7 @@ class EntityTest {
     @Test
     void isAlive() throws FileNotFoundException {
         MapBuilder mb = new MapBuilder();
-        Map m = mb.buildMap("0001");
+        Map m = mb.buildMap("Default","0001");
         World.getWorld().changeCurrentMapTo(m);
         Entity e = new Entity(m.getDefaultLocation());
         e.takeDamage(70);
