@@ -1,11 +1,15 @@
 package View.AreaView;
 
 
+import Configs.ImagesInfo;
 import Model.Entity.Entity;
+import Model.Item.Item;
 import Model.Map.Location;
+import View.AreaView.ItemView.ItemView;
 import View.Viewport;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class LocationView extends Viewport {
@@ -30,10 +34,41 @@ public class LocationView extends Viewport {
 
 
     //Remove all itemViews?
-    public void reset(){
-        for(Viewport child: children){
-            getParent().remove(child);
+    public void removeItemViews(){
+        for (int i = 0; i<children.size(); i++){
+            if(children.get(i) instanceof ItemView){
+                children.remove(i);
+                i--;
+            }
         }
+    }
+
+    //Readd Items that are still on it
+    public void addItemViews(){
+
+        List<Item> items = location.getItems();
+        List<ItemView> itemViews = new ArrayList<ItemView>();
+        for (int i = 0; i<items.size(); i++){
+            switch (items.get(i).getItemType()){
+                case ONESHOT:
+                    itemViews.add(new ItemView(ImagesInfo.ITEM_ONESHOT_IMAGE));
+                    break;
+                case INTERACTIVE:
+                    itemViews.add(new ItemView(ImagesInfo.ITEM_ITERACTIVE_IMAGE));
+                    break;
+                case TAKEABLE:
+                    itemViews.add(new ItemView(ImagesInfo.ITEM_TAKEABLE_IMAGE));
+                    break;
+                case TELEPORTER:
+                    itemViews.add(new ItemView(ImagesInfo.ITEM_TELEPORTER_IMAGE));
+                    break;
+            }
+        }
+
+        for(ItemView itemView: itemViews){
+            children.add(itemView);
+        }
+
     }
 
 
@@ -53,7 +88,8 @@ public class LocationView extends Viewport {
 
     @Override
     public void update(){
-       // reset();
+        removeItemViews();
+        addItemViews();
         repaint();
     }
 

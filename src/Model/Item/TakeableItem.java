@@ -12,4 +12,9 @@ public class TakeableItem extends Item{
     public boolean shouldBeRemoved(){
         return true; // always true?
     }
+    public ItemType getItemType() {
+        return ItemType.TAKEABLE
+                ;
+    }
+
 }
