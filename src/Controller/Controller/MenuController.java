@@ -148,7 +148,7 @@ public class MenuController implements Controller {
                     break;
 
                 case 1:
-                    System.out.println("selected nija");
+                    System.out.println("selected ninja");
                     avatarView1.setAvatarImage(SpriteParser.getSpriteParser().getAvatarImage_NINJA());
                     break;
             }
