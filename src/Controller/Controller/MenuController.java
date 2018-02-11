@@ -65,6 +65,7 @@ public class MenuController implements Controller {
     }
 
     private void exitGame() {
+        System.exit(0);
     }
 
     @Override
