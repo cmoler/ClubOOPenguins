@@ -104,11 +104,19 @@ public class Inventory {
             return items.size() > index;
         }
 
+        public boolean hasPrev(){
+            return index > 1;
+        }
+
+        public void prev(){
+            index -= 1;
+        }
+
         public void next(){
             index += 1;
         }
 
-        public Item getCurrent(){
+        public TakeableItem getCurrent(){
             return items.get(index);
         }
     }

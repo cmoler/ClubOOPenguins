@@ -2,17 +2,31 @@ package Controller.Controller;
 
 import Configs.InventorySizes;
 import Controller.Contexts.GameContext;
+import Model.Entity.Equipment;
+import Model.Entity.Inventory;
+import Model.Item.Item;
+import Model.Item.TakeableItem;
 import Model.Map.Direction;
 import View.StatusView.StatusViewPort;
 
 public class InventoryController implements Controller {
 
     private MainController mainController;
-    private int itemIndex;
+    private int viewItemIndex;
+    private Inventory inventory;
+    private Equipment equipment;
+    private Inventory.InventoryIterator inventoryIterator;
 
     public InventoryController(MainController mainController) {
         this.mainController = mainController;
-        itemIndex = 0;
+        viewItemIndex = 0;
+    }
+
+    public void setInventory(Inventory inventory){
+        this.inventory = inventory;
+        this.equipment = inventory.getEquipment();
+        inventoryIterator = inventory.getIterator();
+        inventoryIterator.reset();
     }
 
     @Override
@@ -24,12 +38,16 @@ public class InventoryController implements Controller {
     @Override
     public void handleI() {
         mainController.setActiveContext(GameContext.AREA);
-        itemIndex = 0;
+        viewItemIndex = 0;
+        inventoryIterator.reset();
     }
 
     @Override
     public void handleEnter() {
-        mainController.getAreaViewPort().setRenderOption(StatusViewPort.RenderOption.EQUIPMENT);
+        TakeableItem currentItem = inventoryIterator.getCurrent();
+        equipment.equip(currentItem);
+        System.out.println("Equipment has a " + equipment.getEquipped().getItemType());
+        //mainController.getAreaViewPort().setRenderOption(StatusViewPort.RenderOption.EQUIPMENT);
     }
 
     @Override
@@ -37,32 +55,51 @@ public class InventoryController implements Controller {
 
         switch(direction){
             case N:
-                itemIndex -= InventorySizes.INVENTORY_COLUMNS;
-                if(itemIndex < 0){
-                    itemIndex = 0;
+                viewItemIndex -= InventorySizes.INVENTORY_COLUMNS;
+
+                for(int shiftIndex = 0; shiftIndex < InventorySizes.INVENTORY_COLUMNS; shiftIndex++){
+                    if(inventoryIterator.hasPrev()) {
+                        inventoryIterator.prev();
+                    }
                 }
-                mainController.getAreaViewPort().moveCursor(itemIndex);
+
+                if(viewItemIndex < 0){
+                    viewItemIndex = 0;
+                }
+                mainController.getAreaViewPort().moveCursor(viewItemIndex);
                 break;
             case E:
-                itemIndex += 1;
-                if(itemIndex > (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
-                    itemIndex = (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS);
+                viewItemIndex += 1;
+                if(inventoryIterator.hasNext()){
+                    inventoryIterator.next();
                 }
-                mainController.getAreaViewPort().moveCursor(itemIndex);
+                if(viewItemIndex > (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
+                    viewItemIndex = (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS);
+                }
+                mainController.getAreaViewPort().moveCursor(viewItemIndex);
                 break;
             case W:
-                itemIndex -= 1;
-                if(itemIndex < 0){
-                    itemIndex = 0;
+                viewItemIndex -= 1;
+                if(inventoryIterator.hasPrev()){
+                    inventoryIterator.prev();
                 }
-                mainController.getAreaViewPort().moveCursor(itemIndex);
+
+                if(viewItemIndex < 0){
+                    viewItemIndex = 0;
+                }
+                mainController.getAreaViewPort().moveCursor(viewItemIndex);
                 break;
             case S:
-                itemIndex += InventorySizes.INVENTORY_COLUMNS;
-                if(itemIndex > (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
-                    itemIndex = (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS);
+                viewItemIndex += InventorySizes.INVENTORY_COLUMNS;
+                for(int shiftIndex = 0; shiftIndex < InventorySizes.INVENTORY_COLUMNS; shiftIndex++){
+                    if(inventoryIterator.hasNext()) {
+                        inventoryIterator.next();
+                    }
                 }
-                mainController.getAreaViewPort().moveCursor(itemIndex);
+                if(viewItemIndex > (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
+                    viewItemIndex = (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS);
+                }
+                mainController.getAreaViewPort().moveCursor(viewItemIndex);
                 break;
         }
     }

@@ -1,6 +1,7 @@
 package View.StatusView;
 
 import Configs.Commons;
+import Configs.SpriteParser;
 import Model.Entity.Equipment;
 import View.Viewport;
 
@@ -23,10 +24,9 @@ public class EquipmentView extends Viewport {
     @Override
     public void draw(Graphics2D graphics2D) {
         //TODO get item equipment
-        ImageIcon imageIcon = new ImageIcon("takeableItem.png");
-        Image itemImage = imageIcon.getImage();
+        Image imageIcon = SpriteParser.getSpriteParser().getTakeAbleItemImage();
 
-        graphics2D.drawImage(itemImage, EQUIPMENT_X, EQUIPMENT_Y, this);
+        graphics2D.drawImage(imageIcon, EQUIPMENT_X, EQUIPMENT_Y, this);
     }
 
     @Override

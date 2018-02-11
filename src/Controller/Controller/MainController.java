@@ -4,6 +4,7 @@ import Controller.Contexts.*;
 import Controller.Input.Input;
 import Controller.Game.OOPenguinGameFrame;
 import Model.Entity.Entity;
+import Model.Entity.Inventory;
 import Model.Map.Direction;
 import View.MenuView.MenuViewPort;
 import Controller.Utility.EntityBuilder;
@@ -120,6 +121,7 @@ public class MainController {
 
     public void setEntity(Entity entity){
         this.entity = entity;
+        inventoryController.setInventory(entity.getInventory());
     }
 
     public Entity getEntity() {
