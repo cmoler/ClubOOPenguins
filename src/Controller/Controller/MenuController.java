@@ -30,6 +30,49 @@ public class MenuController implements Controller {
     public MenuController(MainController mainController){
         this.mainController = mainController;
 
+
+    }
+
+    @Override
+    public void handleEscape() {
+        System.out.println("Command: close menu");
+        mainController.setActiveContext(GameContext.AREA);
+
+    }
+
+    @Override
+    public void handleI() {
+        mainController.getViewPort().setRenderOption(StatusViewPort.RenderOption.INVENTORY);
+
+    }
+
+    @Override
+    public void handleE() {
+        mainController.getViewPort().setRenderOption(StatusViewPort.RenderOption.EQUIPMENT);
+    }
+
+    @Override
+    public void handleNumpad(Direction direction) {
+        switch (direction){
+        case N:
+            mainController.setSelectedMenuView(1);
+        break;
+
+        case S:
+            mainController.setSelectedMenuView(-1);
+        break;
+        }
+    }
+
+    public void saveGame(String filepath, Entity entity) {
+
+    }
+
+    public void loadGame(String filepath) {
+
+    }
+
+    public void startGame(){
         mapBuilder = new MapBuilder();
         try {
             mapBuilder.buildMap("0001");
@@ -58,48 +101,6 @@ public class MenuController implements Controller {
         viewport.add(statusViewPort);
 
         mainController.setViewPort(viewport);
-    }
-
-    @Override
-    public void handleEscape() {
-        System.out.println("Command: close menu");
-        mainController.setActiveContext(GameContext.AREA);
-
-    }
-
-    @Override
-    public void handleI() {
-        mainController.getViewPort().setRenderOption(StatusViewPort.RenderOption.INVENTORY);
-
-    }
-
-    @Override
-    public void handleE() {
-        mainController.getViewPort().setRenderOption(StatusViewPort.RenderOption.EQUIPMENT);
-    }
-
-    public void handleNumpad(Direction direction) {
-        switch (direction){
-        case N:
-            mainController.setSelectedMenuView(1);
-        break;
-
-        case S:
-            mainController.setSelectedMenuView(-1);
-        break;
-        }
-    }
-
-    public void saveGame(String filepath, Entity entity) {
-
-    }
-
-    public void loadGame(String filepath) {
-
-    }
-
-    public void startGame(){
-        String def = "";
 
 
     }
