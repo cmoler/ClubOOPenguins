@@ -72,4 +72,34 @@ public class Location {
             viewport.update();
         }
     }
+
+    public LocationItemIterator getLocationItemIterator(){
+        return new LocationItemIterator();
+    }
+
+    public class LocationItemIterator{
+        int index;
+
+        public void reset(){
+            index = 0;
+        }
+
+        public boolean hasNext(){
+            return items.size() > index;
+        }
+
+        public void next(){
+            index += 1;
+        }
+
+        public Item getCurrent(){
+            return items.get(index);
+        }
+
+        public void touchCurrent(Entity entity) {
+            items.get(index).touch(entity);
+        }
+
+        public void removeCurrent() { items.remove(index); }
+    }
 }

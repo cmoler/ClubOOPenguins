@@ -85,12 +85,10 @@ public class Entity{
             if (this.location.getAreaEffect() != null){
                 this.location.getAreaEffect().activate(this);
             }
-            if (this.location.getItems() != null){
-                for (Item item : this.location.getItems()){
-                    item.touch(this);
-                    if(item.shouldBeRemoved())
-                        this.location.getItems().remove(item);
-                }
+            Location.LocationItemIterator locationItemIterator = location.getLocationItemIterator();
+            for(locationItemIterator.reset();locationItemIterator.hasNext();locationItemIterator.next()){
+                locationItemIterator.touchCurrent(this);
+                if(locationItemIterator.getCurrent().shouldBeRemoved()) locationItemIterator.removeCurrent();
             }
             notifyView(direction);
         }
