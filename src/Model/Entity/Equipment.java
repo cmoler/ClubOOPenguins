@@ -19,14 +19,18 @@ public class Equipment {
     }
 
     public boolean equip(TakeableItem item){
-        equipped = item;
-        entity.modifyMaxHealth(50);
-        notifyView();
-        return true;
+        if (equipped == null)
+        {
+            equipped = item;
+            entity.modifyMaxHealth(50);
+            notifyView();
+            return true;
+        }
+        return false;
     }
 
     public boolean unEquip(TakeableItem item){
-        if(equipped == item) {
+        if(equipped != null) {
             equipped = null;
             entity.modifyMaxHealth(-50);
             notifyView();

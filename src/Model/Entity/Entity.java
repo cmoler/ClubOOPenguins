@@ -73,9 +73,9 @@ public class Entity{
 
     public void modifyMaxHealth(int health){
         maxHealth += health;
-        if (health > maxHealth)
+        if (this.health > maxHealth)
         {
-            health = maxHealth;
+            this.health = maxHealth;
         }
 
     }
