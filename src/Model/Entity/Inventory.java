@@ -94,7 +94,7 @@ public class Inventory {
     }
 
     public class InventoryIterator{
-        int index;
+        public int index;
 
         public void reset(){
             index = 0;
@@ -105,7 +105,7 @@ public class Inventory {
         }
 
         public boolean hasPrev(){
-            return index > 1;
+            return index >= 1;
         }
 
         public void prev(){
@@ -117,7 +117,10 @@ public class Inventory {
         }
 
         public TakeableItem getCurrent(){
-            return items.get(index);
+            if(index < items.size()){
+                return items.get(index);
+            }
+            return null;
         }
     }
 
