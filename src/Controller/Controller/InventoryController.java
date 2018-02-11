@@ -27,7 +27,7 @@ public class InventoryController implements Controller {
     }
 
     @Override
-    public void handleE() {
+    public void handleEnter() {
         mainController.getAreaViewPort().setRenderOption(StatusViewPort.RenderOption.EQUIPMENT);
     }
 

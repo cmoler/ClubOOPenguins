@@ -6,13 +6,13 @@ public class EquipmentController implements Controller {
 
     private MainController mainController;
 
+
     public EquipmentController(MainController mainController){
         this.mainController = mainController;
     }
 
     @Override
     public void handleEscape() {
-        System.out.println("PRESSED ESCAPE while in EQUIpment");
 
     }
 
@@ -22,7 +22,7 @@ public class EquipmentController implements Controller {
     }
 
     @Override
-    public void handleE() {
+    public void handleEnter() {
 
     }
 

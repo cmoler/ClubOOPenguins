@@ -6,7 +6,7 @@ public interface Controller {
 
     void handleEscape();
     void handleI();
-    void handleE();
+    void handleEnter();
     void handleNumpad(Direction direction);
 
 
