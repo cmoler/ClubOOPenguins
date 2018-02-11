@@ -1,5 +1,6 @@
 package Model.Map;
 
+import Model.Item.Item;
 import Model.Map.Terrain.Ice;
 import View.Viewport;
 import Model.Map.Location;
@@ -58,7 +59,7 @@ public class Map {
         // for testing: Locations need to be initialized to test Entity movement
         for (int i = 0; i < numRows; i++) {
             for (int j = 0; j < numCols; j++) {
-                locations[i][j] = new Location(new Ice(), false, null, null);
+                locations[i][j] = new Location(new Ice(), false, null, new ArrayList<Item>());
             }
         }
 
