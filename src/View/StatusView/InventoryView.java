@@ -19,6 +19,7 @@ public class InventoryView extends Viewport {
     private Image highlighter;
     private int highlighterX = ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0));
     private int highlighterY = ((int) (Commons.SCREEN_HEIGHT  * 221.0/765.0) + 170);
+    private boolean selected = false;
 
     public InventoryView(Inventory inventory){
         inventory.attach(this);
@@ -41,9 +42,12 @@ public class InventoryView extends Viewport {
 
             }
         }
-
-        graphics2D.setColor(new Color(200,200,50,90));
-        graphics2D.fillRect(highlighterX, highlighterY, ITEM_WIDTH, InventorySizes.ITEM_HEIGHT);
+        if(selected) {
+            graphics2D.setColor(new Color(200, 200, 50, 90));
+            graphics2D.fillRect(highlighterX, highlighterY, InventorySizes.ITEM_WIDTH, InventorySizes.ITEM_HEIGHT);
+            graphics2D.fillRect(((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)), ((int)(Commons.SCREEN_HEIGHT  * 221.0/765.0) + 170),
+                    InventorySizes.ITEM_WIDTH * 5, InventorySizes.ITEM_HEIGHT * 5);
+        }
     }
 
     @Override
@@ -56,5 +60,10 @@ public class InventoryView extends Viewport {
         //offset + index * itemwidth * modulo so you dont go over
         highlighterX = ((int) (Commons.SCREEN_WIDTH  * 564.0/765.0)) + ITEM_WIDTH * (index % InventorySizes.INVENTORY_COLUMNS);
         highlighterY = ((int) (Commons.SCREEN_HEIGHT  * 221.0/765.0)+170) + ITEM_WIDTH * (index / InventorySizes.INVENTORY_ROWS);
+    }
+
+    @Override
+    public void setRenderInventorySelection(boolean flag){
+        selected = flag;
     }
 }

@@ -128,4 +128,16 @@ public class Viewport extends JPanel {
         this.remove(lastMapView);
         this.add(currentMapView);
     }
+
+    public void setRenderInventorySelection(boolean flag){
+        for(Viewport child: children){
+            child.setRenderInventorySelection(flag);
+        }
+    }
+
+    public void setRenderEquipmentSelection(boolean flag){
+        for(Viewport child: children){
+            child.setRenderEquipmentSelection(flag);
+        }
+    }
 }
