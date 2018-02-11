@@ -44,7 +44,6 @@ class InventoryTest {
     void equip() {
         Entity e = new Entity();
         TakeableItem item1 = new TakeableItem();
-        TakeableItem item2 = new TakeableItem();
         Inventory i = new Inventory(e);
         assertEquals(true, i.equip(item1));
         assertEquals(item1, i.getEquipped());
@@ -54,11 +53,10 @@ class InventoryTest {
     void unEquip() {
         Entity e = new Entity();
         TakeableItem item1 = new TakeableItem();
-        TakeableItem item2 = new TakeableItem();
         Inventory i = new Inventory(e);
         i.equip(item1);
-        assertEquals(false, i.unEquip(item2));
         assertEquals(true, i.unEquip(item1));
+        assertEquals(false, i.unEquip(item1));
     }
 
 }

@@ -21,7 +21,7 @@ class EntityTest {
         World.getWorld().changeCurrentMapTo(m);
         Entity e = new Entity(m.getDefaultLocation());
         e.takeDamage(70);
-        assertEquals(true, e.isAlive(), "e should not be alive since it took 70 damage");
+        assertEquals(true, e.isAlive(), "e should be alive since it took 70 damage");
         e.takeDamage(40);
         assertEquals(false, e.isAlive(), "e should not be alive since it took 110 damage");
     }
