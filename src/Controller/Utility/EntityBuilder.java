@@ -16,6 +16,7 @@ import View.AreaView.TerrainView;
 import View.StatusView.StatusViewPort;
 import View.Viewport;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -120,6 +121,10 @@ public class EntityBuilder {
 
     public AvatarView getAvatarView() {
         return avatarView;
+    }
+
+    public void setAvatarViewImage(Image e){
+        this.avatarView.setAvatarImage(e);
     }
 
     public StatusViewPort getStatusViewport() {

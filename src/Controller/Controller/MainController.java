@@ -114,8 +114,10 @@ public class MainController {
         menuViewPort.setSelectedMenuView(i);
     }
 
-    public void gameLoop(){
+    public void setSelectedAvatarView(int i) { menuViewPort.setSelectedAvatarView(i); }
 
+
+    public void gameLoop() {
     }
 
     private class ScheduleTask extends TimerTask {

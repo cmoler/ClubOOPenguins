@@ -20,7 +20,6 @@ public class AvatarView extends Viewport {
     private int velocity = 1;
 
     public AvatarView(Entity entity, int x, int y){
-        avatarImage = ImagesInfo.AVATAR_IMAGE;
         this.entity = entity;
         entity.attach(this);
         this.x = x;
@@ -72,7 +71,7 @@ public class AvatarView extends Viewport {
                 break;
             case E:
                 x += velocity;
-                break;
+                 break;
             case SE:
                 y += velocity;
                 x += velocity;
@@ -92,6 +91,10 @@ public class AvatarView extends Viewport {
                 x -= velocity;
                 break;
         }*/
+    }
+
+    public void setAvatarImage(Image e){
+        this.avatarImage = e;
     }
 
     private void playerOffset(){

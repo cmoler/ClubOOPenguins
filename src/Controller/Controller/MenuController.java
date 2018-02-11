@@ -1,5 +1,6 @@
 package Controller.Controller;
 
+import Configs.SpriteParser;
 import Controller.Utility.EntityBuilder;
 import Controller.Utility.GameLoader;
 import Controller.Utility.GameSaver;
@@ -23,6 +24,7 @@ public class MenuController implements Controller {
     private GameLoader gameLoader;
     private GameSaver gameSaver;
     private int currentlySelected = 3;
+    private int currentlySelectedAvatar = 0;
     private MapBuilder mapBuilder;
     private EntityBuilder entityBuilder;
     private boolean gameInitialized;
@@ -83,6 +85,16 @@ public class MenuController implements Controller {
             if(currentlySelected < 3) currentlySelected++;
         break;
 
+        case E:
+            currentlySelectedAvatar = 1;
+            mainController.setSelectedAvatarView(1);
+        break;
+
+        case W:
+            currentlySelectedAvatar = 1;
+            mainController.setSelectedAvatarView(0);
+        break;
+
         case S:
             if(currentlySelected > 0) currentlySelected--;
             mainController.setSelectedMenuView(-1);
@@ -125,9 +137,23 @@ public class MenuController implements Controller {
             World.getWorld().addMap("0002", m2, mapView2);
             World.getWorld().addMap("0003", m3, mapView3);
             World.getWorld().changeCurrentMapTo(m1);
+            //TODO set correct sprite
 
-            Entity e = entityBuilder.buildEntity( "0001");
+            Entity e = entityBuilder.buildEntity("0001");
             avatarView1 = entityBuilder.getAvatarView();
+            switch (currentlySelectedAvatar){
+                case 0:
+                    System.out.println("selected default");
+                    avatarView1.setAvatarImage(SpriteParser.getSpriteParser().getAvatarImage());
+                    break;
+
+                case 1:
+                    System.out.println("selected nija");
+                    avatarView1.setAvatarImage(SpriteParser.getSpriteParser().getAvatarImage_NINJA());
+                    break;
+            }
+
+
             mainController.setEntity(e);
             gameInitialized = true;
         } catch (FileNotFoundException e) {

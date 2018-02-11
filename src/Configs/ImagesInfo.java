@@ -7,6 +7,7 @@ public interface ImagesInfo {
 
     public static final String TILE_SHEET = "resources/images/terrain.png";
     public static final String AVATAR_SHEET = "resources/images/bluePenguin.png";
+    public static final String AVATAR_SHEET_NINJA = "resources/images/Penguin_Chat_3_Ninja_spritesheet.png";
 
     public static final String AREAEFFECT_DAMAGE_FILELOCATION = "resources/images/Red_AOE.png";
     public static final String AREAEFFECT_HEAL_FILELOCATION = "resources/images/Green_AOE.png";
@@ -42,6 +43,8 @@ public interface ImagesInfo {
     public static final Image ITEM_TELEPORTER_IMAGE = SpriteParser.getSpriteParser().getTeleporterItemImage();
 
     public static final Image AVATAR_IMAGE = SpriteParser.getSpriteParser().getAvatarImage();
+    public static final Image AVATAR_IMAGE_NINJA1 = SpriteParser.getSpriteParser().getAvatarImage_NINJA();
+
 
     public static final Image RED_CROSS_IMAGE = SpriteParser.getSpriteParser().getRedCrossImage();
     public static final Image SKULL_CROSS_BONES_IMAGE = SpriteParser.getSpriteParser().getSkullAndCrossBonesImage();
