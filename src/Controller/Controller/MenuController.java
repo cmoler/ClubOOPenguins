@@ -108,13 +108,13 @@ public class MenuController implements Controller {
         AvatarView avatarView3 = null;
 
         try {
-            Map m1 = mapBuilder.buildMap("Default","0001");
+            Map m1 = mapBuilder.buildMap("0001");
             mapView1 = mapBuilder.getViewport();
 
-            Map m2 = mapBuilder.buildMap("Default","0002");
+            Map m2 = mapBuilder.buildMap("0002");
             mapView2 = mapBuilder.getViewport();
 
-            Map m3 = mapBuilder.buildMap("Default","0003");
+            Map m3 = mapBuilder.buildMap("0003");
             mapView3 = mapBuilder.getViewport();
 
 
@@ -123,7 +123,7 @@ public class MenuController implements Controller {
             World.getWorld().addMap("0003", m3, mapView3);
             World.getWorld().changeCurrentMapTo(m1);
 
-            Entity e = entityBuilder.buildEntity("Default", "0001");
+            Entity e = entityBuilder.buildEntity( "0001");
             avatarView1 = entityBuilder.getAvatarView();
             mainController.setEntity(e);
         } catch (FileNotFoundException e) {
