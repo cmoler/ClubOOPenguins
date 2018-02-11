@@ -27,7 +27,6 @@ public class MainController {
     private EquipmentController equipmentController;
 
     private Viewport areaViewport;
-
     private MenuViewPort menuViewPort;
 
     public MainController() {
@@ -97,9 +96,6 @@ public class MainController {
         return this.areaViewport;
     }
 
-    public Viewport getStatusViewPort(){
-        return areaViewport.getChildren().get(2).getChildren().get(0);
-    }
 
     public void setSelectedMenuView(int i) {
         menuViewPort.setSelectedMenuView(i);
@@ -109,13 +105,13 @@ public class MainController {
     }
 
     public void setMenuRender() {
-        areaViewport.setVisible(false);
         menuViewPort.setVisible(true);
+        areaViewport.setVisible(false);
     }
 
     public void setAreaRender(){
-        menuViewPort.setVisible(false);
         areaViewport.setVisible(true);
+        menuViewPort.setVisible(false);
     }
 
     public void moveEntity(Direction direction){

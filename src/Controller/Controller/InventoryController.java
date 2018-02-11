@@ -12,6 +12,7 @@ public class InventoryController implements Controller {
 
     public InventoryController(MainController mainController) {
         this.mainController = mainController;
+        itemIndex = 0;
     }
 
     @Override
@@ -22,8 +23,8 @@ public class InventoryController implements Controller {
 
     @Override
     public void handleI() {
-        mainController.getAreaViewPort().setRenderOption(StatusViewPort.RenderOption.INVENTORY);
-
+        mainController.setActiveContext(GameContext.AREA);
+        itemIndex = 0;
     }
 
     @Override
@@ -33,34 +34,35 @@ public class InventoryController implements Controller {
 
     @Override
     public void handleNumpad(Direction direction) {
+
         switch(direction){
             case N:
                 itemIndex -= InventorySizes.INVENTORY_COLUMNS;
                 if(itemIndex < 0){
                     itemIndex = 0;
                 }
-                mainController.getStatusViewPort().moveCursor(itemIndex);
+                mainController.getAreaViewPort().moveCursor(itemIndex);
                 break;
             case W:
                 itemIndex += 1;
                 if(itemIndex > (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
                     itemIndex = (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS);
                 }
-                mainController.getStatusViewPort().moveCursor(itemIndex);
+                mainController.getAreaViewPort().moveCursor(itemIndex);
                 break;
             case E:
                 itemIndex -= 1;
                 if(itemIndex < 0){
                     itemIndex = 0;
                 }
-                mainController.getStatusViewPort().moveCursor(itemIndex);
+                mainController.getAreaViewPort().moveCursor(itemIndex);
                 break;
             case S:
                 itemIndex += InventorySizes.INVENTORY_COLUMNS;
                 if(itemIndex > (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS)){
                     itemIndex = (InventorySizes.INVENTORY_COLUMNS  * InventorySizes.INVENTORY_ROWS);
                 }
-                mainController.getStatusViewPort().moveCursor(itemIndex);
+                mainController.getAreaViewPort().moveCursor(itemIndex);
                 break;
         }
     }
