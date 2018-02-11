@@ -15,7 +15,7 @@ public class MapIterator{
     }
 
     public Location currentItem() {
-        return map.getLocation(i,j);
+        return map.getLocationIJ(i,j);
     }
 
     public boolean isValid() {

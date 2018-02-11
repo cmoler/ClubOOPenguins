@@ -146,8 +146,13 @@ public class Map {
         return defaultLocation;
     }
 
-    public Location getLocation(int x, int y) {
+
+    public Location getLocationXY(int x, int y) {
         return locations[y][x];
+    }
+
+    public Location getLocationIJ(int i, int j) {
+        return locations[i][j];
     }
 
     public void setLocation(int x, int y, Location location) {locations[x][y] = location;}
