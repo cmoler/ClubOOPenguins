@@ -105,13 +105,13 @@ public class MainController {
     }
 
     public void setMenuRender() {
-        areaViewport.setVisible(false);
         menuViewPort.setVisible(true);
+        areaViewport.setVisible(false);
     }
 
     public void setAreaRender(){
-        menuViewPort.setVisible(false);
         areaViewport.setVisible(true);
+        menuViewPort.setVisible(false);
     }
 
     public void moveEntity(Direction direction){
