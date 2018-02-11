@@ -5,7 +5,9 @@ import Controller.Utility.GameLoader;
 import Controller.Utility.GameSaver;
 import Controller.Utility.MapBuilder;
 import Controller.Contexts.GameContext;
+import Model.Entity.Entity;
 import Model.Map.Direction;
+import Model.Map.Map;
 import Model.Map.World;
 import View.AreaView.AvatarView;
 import View.AreaView.MapView;
@@ -90,21 +92,25 @@ public class MenuController implements Controller {
 
     public void startGame(){
         mapBuilder = new MapBuilder();
+        entityBuilder = new EntityBuilder();
+
         try {
-            World.getWorld().changeCurrentMapTo(mapBuilder.buildMap("Default","0001"));
+            Map m1 = mapBuilder.buildMap("Default","0001");
+            Map m2 = mapBuilder.buildMap("Default","0002");
+            Map m3 = mapBuilder.buildMap("Default","0003");
+
+            World.getWorld().addMap("0001", m1);
+            World.getWorld().addMap("0002", m2);
+            World.getWorld().addMap("0003", m3);
+            World.getWorld().changeCurrentMapTo(m1);
+
+            Entity e = entityBuilder.buildEntity("Default", "0001");
+            mainController.setEntity(e);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
         MapView mapView = mapBuilder.getViewport();
-
-        entityBuilder = new EntityBuilder();
-        try {
-            mainController.setEntity(entityBuilder.buildEntity("Default", "0001"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
         AvatarView avatarView = entityBuilder.getAvatarView();
 
         StatusViewPort statusViewPort = entityBuilder.getStatusViewport();
