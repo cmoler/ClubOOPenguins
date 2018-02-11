@@ -37,7 +37,6 @@ public class MenuController implements Controller {
     public void handleEscape() {
         System.out.println("Command: close menu");
         mainController.setActiveContext(GameContext.AREA);
-
     }
 
     @Override
