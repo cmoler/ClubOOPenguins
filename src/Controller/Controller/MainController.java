@@ -96,9 +96,6 @@ public class MainController {
         return this.areaViewport;
     }
 
-    public Viewport getStatusViewPort(){
-        return areaViewport.getChildren().get(2).getChildren().get(0);
-    }
 
     public void setSelectedMenuView(int i) {
         menuViewPort.setSelectedMenuView(i);
