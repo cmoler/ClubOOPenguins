@@ -100,7 +100,7 @@ public class MenuController implements Controller {
 
         entityBuilder = new EntityBuilder();
         try {
-            entityBuilder.buildEntity("0001");
+            entityBuilder.buildEntity("Default", "0001");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

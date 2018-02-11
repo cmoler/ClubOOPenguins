@@ -30,9 +30,9 @@ public class MapBuilder {
         return viewport;
     }
 
-    public Map buildMap(String mapID) throws FileNotFoundException {
+    public Map buildMap(String gameName, String mapID) throws FileNotFoundException {
         // will change file location after testing
-        String filename = "resources/maps/MapModel" + mapID + ".txt";
+        String filename = "resources/maps/" + gameName + "MapModel" + mapID + ".txt";
 
         Scanner s = new Scanner(new File(filename));
         List<String> mapData = new ArrayList<String>();

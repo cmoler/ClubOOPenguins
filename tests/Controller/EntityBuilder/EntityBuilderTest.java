@@ -10,6 +10,6 @@ class EntityBuilderTest {
     @Test
     void buildEntity() throws FileNotFoundException {
         EntityBuilder eb = new EntityBuilder();
-        eb.buildEntity("0001");
+        eb.buildEntity("Default","0001");
     }
 }

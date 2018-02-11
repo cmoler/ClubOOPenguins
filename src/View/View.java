@@ -23,7 +23,7 @@ public class View extends JFrame {
 /*
         mapBuilder = new MapBuilder();
         try {
-            mapBuilder.buildMap("0001");
+            mapBuilder.buildMap("Default","0001");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -31,7 +31,7 @@ public class View extends JFrame {
 
         entityBuilder = new EntityBuilder();
         try {
-            entityBuilder.buildEntity("0001");
+            entityBuilder.buildEntity("Default", "0001");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
