@@ -2,6 +2,7 @@ package Model.Map;
 
 import Controller.Utility.MapBuilder;
 import View.AreaView.MapView;
+import View.View;
 import View.Viewport;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class World {
 
     public static World instance = null;
     private Map currentMap;
-    private MapView currentMapView;
+    private Viewport viewport;
     private HashMap<String,Map> maps = new HashMap<String,Map>();
     private HashMap<Map,MapView> mapViews = new HashMap<Map,MapView>();
 
@@ -30,19 +31,18 @@ public class World {
         return instance;
     }
 
+    public void setViewport(Viewport viewport){
+        this.viewport = viewport;
+    }
+
     public void changeCurrentMapTo(Map map){
+        if(viewport!=null)viewport.add(mapViews.get(map));
+        if(currentMap!=null)viewport.remove(mapViews.get(currentMap));
         currentMap = map;
-        MapView lastMapView = currentMapView;
-        currentMapView = mapViews.get(map);
-        notifyView(lastMapView, currentMapView);
     }
 
     public Map getCurrentMap(){
         return currentMap;
-    }
-
-    public MapView getCurrentMapView(){
-        return currentMapView;
     }
 
     public void addMap(String mapID, Map map, MapView mapView){

@@ -129,11 +129,15 @@ public class MenuController implements Controller {
         statusViewPort.setRenderOption(StatusViewPort.RenderOption.INVENTORY);
 
         mapView1.setEntity(avatarView1.getEntity());
+        mapView2.setEntity(avatarView1.getEntity());
+        mapView3.setEntity(avatarView1.getEntity());
 
         Viewport viewport = new Viewport();
         viewport.add(mapView1);
         viewport.add(statusViewPort);
         viewport.add(avatarView1);
+
+        World.getWorld().setViewport(viewport);
 
         mainController.setAreaViewPort(viewport);
 

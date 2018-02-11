@@ -33,8 +33,8 @@ public class Teleporter extends InteractiveItem{
     public void touch(Entity entity) {
         Map nextMap = World.getWorld().getMap(mapID);
         Location nextLocation = nextMap.getLocationIJ(locationI, locationJ);
-        World.getWorld().changeCurrentMapTo(nextMap);
         entity.teleport(nextLocation);
+        World.getWorld().changeCurrentMapTo(nextMap);
     }
 
     public boolean shouldBeRemoved(){

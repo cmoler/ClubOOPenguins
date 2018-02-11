@@ -98,9 +98,9 @@ public class Viewport extends JPanel {
     }
 
     public void remove(Viewport viewport){
-        for(Viewport child: children){
+        for(int i = 0; i < children.size(); ++i){
             viewport.parent = null;
-            if(child == viewport) children.remove(child);
+            if(children.get(i) == viewport) children.remove(i);
         }
     }
 
