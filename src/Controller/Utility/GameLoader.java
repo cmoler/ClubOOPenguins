@@ -29,24 +29,17 @@ public class GameLoader {
         MapBuilder mapBuilder = new MapBuilder();
         EntityBuilder entityBuilder = new EntityBuilder();
 
-        GameSaver saver = new GameSaver();
-
-        Map map = new Map(6, 5);
-        Entity ent = new Entity(new Location(new Ice(), false, null, null));
-
         File mapDir = new File("resources/maps_save");
         File[] listOfFiles = mapDir.listFiles();
         if(listOfFiles != null) {
             for (int i = 0; i < listOfFiles.length; i++) {
                 if (listOfFiles[i].isFile()) {
                     if (listOfFiles[i].getName().substring(8, 12).equals("0001")) {
-                        map = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
+                        Map map = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
                         World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), map, mapBuilder.getViewport());
                         World.getWorld().changeCurrentMapTo(map);
                         mapView = mapBuilder.getViewport();
                         System.out.println("Built map: " + listOfFiles[i].getName().substring(8, 12));
-
-//                    entityBuilder.buildEntity("0001");
 
                         File entDir = new File("resources/entities_save");
                         File[] listOfEnt = entDir.listFiles();
@@ -72,6 +65,9 @@ public class GameLoader {
                         Map mp = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
                         World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), mp, mapBuilder.getViewport());
                         System.out.println("Built map: " + listOfFiles[i].getName().substring(8, 12));
+                        Map map = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
+                        MapView mapView = mapBuilder.getViewport();
+                        World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), map, mapView);
                     }
 
                 }
