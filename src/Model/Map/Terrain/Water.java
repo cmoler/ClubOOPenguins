@@ -14,4 +14,9 @@ public class Water extends Terrain{
                 return false;
         }
     }
+
+    @Override
+    public TerrainType getTerrainType() {
+        return TerrainType.WATER;
+    }
 }

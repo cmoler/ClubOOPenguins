@@ -12,4 +12,8 @@ public class Glacier extends Terrain{
                 return false;
         }
     }
+    @Override
+    public TerrainType getTerrainType() {
+        return TerrainType.GLACIER;
+    }
 }
