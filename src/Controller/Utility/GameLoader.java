@@ -5,6 +5,7 @@ import Model.Map.Location;
 import Model.Map.Map;
 import Model.Map.Terrain.Ice;
 import Model.Map.World;
+import View.AreaView.AreaViewPort;
 import View.AreaView.AvatarView;
 import View.AreaView.MapView;
 import View.StatusView.StatusViewPort;
@@ -20,6 +21,9 @@ public class GameLoader {
     private String saveFileLocation;
     private Viewport viewport = new Viewport();
     private Entity entity;
+    private MapView mapView;
+    private AvatarView avatarView;
+    private StatusViewPort statusViewPort;
 
     public void loadGame() throws FileNotFoundException {
         MapBuilder mapBuilder = new MapBuilder();
@@ -30,7 +34,6 @@ public class GameLoader {
         if(listOfFiles != null) {
             for (int i = 0; i < listOfFiles.length; i++) {
                 if (listOfFiles[i].isFile()) {
-                    System.out.println(listOfFiles[i].getName().substring(8, 12));
                     if (listOfFiles[i].getName().substring(8, 12).equals("0001")) {
                         StatusViewPort statusViewPort = null;
                         AvatarView avatarView = null;
@@ -39,43 +42,55 @@ public class GameLoader {
                         MapView mapView = mapBuilder.getViewport();
                         World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), map, mapView);
                         World.getWorld().changeCurrentMapTo(map);
+                        mapView = mb.getViewport();
+                        System.out.println("Built map: " + listOfFiles[i].getName().substring(8, 12));
 
                         File entDir = new File("resources/entities_save");
                         File[] listOfEnt = entDir.listFiles();
                         if(listOfEnt != null) {
                             for (int j = 0; j < listOfEnt.length; j++) {
                                 if (listOfEnt[j].isFile()) {
-                                    System.out.println("Entity: " + listOfEnt[j].getName().substring(11, 15));
-                                    if (listOfEnt[j].getName().substring(11, 15).equals("0001")) {
-                                        entity = entityBuilder.buildEntity(listOfEnt[j].getName().substring(11, 15));
-                                        avatarView = entityBuilder.getAvatarView();
-                                        statusViewPort = entityBuilder.getStatusViewport();
-                                        mapView.setEntity(avatarView.getEntity());
+                                    System.out.println("Built entity: " + listOfEnt[j].getName().substring(11, 15));
+                                    if (listOfEnt[j].getName().substring(11, 15).equals("0001")){
+                                        entity = eb.buildEntity(listOfEnt[j].getName().substring(11, 15));
+                                        avatarView = eb.getAvatarView();
+                                        mb.getViewport().setEntity(avatarView.getEntity());
+                                        statusViewPort = eb.getStatusViewport();
+
                                     }
                                 }
                             }
                         }
-                        viewport.add(mapView);
-                        viewport.add(statusViewPort);
-                        viewport.add(avatarView);
-                        World.getWorld().setViewport(viewport);
+//                        viewport.add(mv);
+//                        viewport.add(statusViewPort);
+//                        viewport.add(avatarView);
+//                        World.getWorld().setViewport(viewport);
                     } else {
+                        System.out.println("Built map: " + listOfFiles[i].getName().substring(8, 12));
                         Map map = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
                         MapView mapView = mapBuilder.getViewport();
                         World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), map, mapView);
-                        System.out.println("memes");
                     }
 
                 }
             }
         }
+
     }
 
     public Entity getEntity(){
         return entity;
     }
 
-    public Viewport getViewport() {
-        return viewport;
+    public AvatarView getAvatarView(){
+        return avatarView;
+    }
+
+    public StatusViewPort getStatusViewPort(){
+        return statusViewPort;
+    }
+
+    public MapView getMapView(){
+        return mapView;
     }
 }

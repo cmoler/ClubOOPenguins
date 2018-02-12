@@ -35,6 +35,7 @@ public class Teleporter extends InteractiveItem{
         Location nextLocation = nextMap.getLocationIJ(locationI, locationJ);
         entity.teleport(nextLocation);
         World.getWorld().changeCurrentMapTo(nextMap);
+        System.out.println("Changing to map: " + mapID);
     }
 
     public boolean shouldBeRemoved(){
