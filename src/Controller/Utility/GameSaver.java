@@ -71,8 +71,6 @@ public class GameSaver {
 
                 mapData += "\t\t\tITEMS" + System.lineSeparator();
 
-                //Converts Item list to strings
-                System.out.println("Outside loop");
                 for(int k = 0; k < World.getWorld().getMap(mapID).getLocationIJ(i, j).getItems().size(); k++) {
                     mapData += "\t\t\t\t" + World.getWorld().getMap(mapID).getLocationIJ(i, j).getItems().get(k).getItemType().toString().toUpperCase() + System.lineSeparator();
 
