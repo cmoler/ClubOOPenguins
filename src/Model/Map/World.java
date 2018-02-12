@@ -39,6 +39,11 @@ public class World {
         currentMap = map;
     }
 
+    //For Testing without viewports
+    public void changeCurrentMapTo(Map map, Boolean bool){
+        currentMap = map;
+    }
+
     public Map getCurrentMap(){
         return currentMap;
     }

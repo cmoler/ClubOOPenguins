@@ -63,7 +63,7 @@ class GameSaverTest {
         Map m1 = mb.buildMap("resources/maps", "0001");
         MapView mv = new MapView();
         World.getWorld().addMap("0001", m1, mv);
-        World.getWorld().changeCurrentMapTo(m1);
+        World.getWorld().changeCurrentMapTo(m1, false);
 
         Map m2 = mb.buildMap("resources/maps", "0002");
         World.getWorld().addMap("0002", m2, mv);

@@ -18,7 +18,7 @@ class EntityTest {
     void isAlive() throws FileNotFoundException {
         MapBuilder mb = new MapBuilder();
         Map m = mb.buildMap("0001");
-        World.getWorld().changeCurrentMapTo(m);
+        World.getWorld().changeCurrentMapTo(m, false);
         Entity e = new Entity(m.getDefaultLocation());
         e.takeDamage(70);
         assertEquals(true, e.isAlive(), "e should be alive since it took 70 damage");
@@ -29,7 +29,7 @@ class EntityTest {
     @Test
     void takeDamage() {
         Map m = new Map(5,5);
-        World.getWorld().changeCurrentMapTo(m);
+        World.getWorld().changeCurrentMapTo(m, false);
         Entity e = new Entity(m.getDefaultLocation());
         e.takeDamage(70);
         assertEquals(30, e.getHealth(), "e's health should be 30 since it took 70 damage");
@@ -38,7 +38,7 @@ class EntityTest {
     @Test
     void heal() {
         Map m = new Map(5,5);
-        World.getWorld().changeCurrentMapTo(m);
+        World.getWorld().changeCurrentMapTo(m, false);
         Entity e = new Entity(m.getDefaultLocation());
         e.takeDamage(70);
         e.heal(20);
@@ -48,7 +48,7 @@ class EntityTest {
     @Test
     void gainExperience() {
         Map m = new Map(5,5);
-        World.getWorld().changeCurrentMapTo(m);
+        World.getWorld().changeCurrentMapTo(m, false);
         Entity e = new Entity(m.getDefaultLocation());
         e.gainExperience(50);
         assertEquals(50, e.getExperience(), "e's health should be 50 since it gained 50 xp");
@@ -78,7 +78,7 @@ class EntityTest {
         World world = World.getWorld();
         MapBuilder mb = new MapBuilder();
         Map m = mb.buildMap("0001");
-        world.changeCurrentMapTo(m);
+        world.changeCurrentMapTo(m, false);
         Entity e = new Entity(m.getDefaultLocation());
         e.move(Direction.N);
     }
@@ -86,7 +86,7 @@ class EntityTest {
     @Test
     void moveNormallyWithNoObstacles(){
         Map m = new Map(5,5);
-        World.getWorld().changeCurrentMapTo(m);
+        World.getWorld().changeCurrentMapTo(m, false);
         Entity e = new Entity(m.getDefaultLocation());
         e.move(E);
         assertEquals(m.getLocationIJ(2,3),e.getLocation(),"e should have moved one location to the east");
