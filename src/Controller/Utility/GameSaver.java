@@ -60,7 +60,7 @@ public class GameSaver {
                     mapData += "\t\t\tWATER" + System.lineSeparator();
 
 
-                if(World.getWorld().getMap(mapID).getLocationIJ(i, j).moveAllowed(entity)) mapData += "\t\t\tFALSE" + System.lineSeparator();
+                if(!World.getWorld().getMap(mapID).getLocationIJ(i, j).hasObstacle()) mapData += "\t\t\tFALSE" + System.lineSeparator();
                 else mapData += "\t\t\tTRUE" + System.lineSeparator();
 
                 if(World.getWorld().getMap(mapID).getLocationIJ(i, j).getAreaEffect() != null) {

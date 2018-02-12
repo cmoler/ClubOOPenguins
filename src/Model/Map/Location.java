@@ -102,4 +102,8 @@ public class Location {
 
         public void removeCurrent() { items.remove(index); index--; notifyView();}
     }
+
+    public boolean hasObstacle(){
+        return obstacle;
+    }
 }
