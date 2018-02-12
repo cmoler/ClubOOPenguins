@@ -93,7 +93,7 @@ public class MenuController implements Controller {
         break;
 
         case W:
-            currentlySelectedAvatar = 1;
+            currentlySelectedAvatar = 0;
             mainController.setSelectedAvatarView(0);
         break;
 
