@@ -136,14 +136,8 @@ public class GameSaver {
 
         if(entity.getInventory().getEquipment().getEquipped() != null) {
             entityData += System.lineSeparator() + "\t\t" + "EQUIPMENT";
-            entityData += System.lineSeparator() + "\t\t\t" + entity.getInventory().getEquipment().getEquipped().toString();
+            entityData += System.lineSeparator() + "\t\t\t" + entity.getInventory().getEquipment().getEquipped().getItemType().toString();
         }
-        else
-//            entityData += "\t\t\tNONE" + System.lineSeparator();
-
-//        OutFile(entityData);
-
-//        entityData = entityID.trim();
 
         try(PrintWriter entitySave = new PrintWriter(new FileOutputStream("./resources/entities_save/" + "EntityModel" + entityID + ".txt", false))) {
             entitySave.print(entityData);
