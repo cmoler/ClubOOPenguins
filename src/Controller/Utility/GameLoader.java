@@ -67,6 +67,7 @@ public class GameLoader {
                         System.out.println("Built map: " + listOfFiles[i].getName().substring(8, 12));
                         Map map = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
                         MapView mapView = mapBuilder.getViewport();
+                        mapView.setEntity(entity);
                         World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), map, mapView);
                     }
 
