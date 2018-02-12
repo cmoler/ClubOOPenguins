@@ -49,7 +49,7 @@ public class GameLoader {
                                     if (listOfEnt[j].getName().substring(11, 15).equals("0001")){
                                         entity = entityBuilder.buildEntity("resources/entities_save", listOfEnt[j].getName().substring(11, 15));
                                         avatarView = entityBuilder.getAvatarView();
-                                        mapBuilder.getViewport().setEntity(avatarView.getEntity());
+                                        mapView.setEntity(entity);
                                         statusViewPort = entityBuilder.getStatusViewport();
 
                                     }

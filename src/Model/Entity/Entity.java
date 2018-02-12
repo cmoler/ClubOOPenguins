@@ -66,7 +66,7 @@ public class Entity{
 
     public void gainExperience(int experience){
         this.experience += experience;
-        if (canLevelUp())
+        while (canLevelUp())
             level++;
         notifyView();
     }
