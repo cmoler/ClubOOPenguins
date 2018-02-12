@@ -20,6 +20,7 @@ public class AvatarView extends Viewport {
     private int velocity = 1;
 
     public AvatarView(Entity entity, int x, int y){
+        avatarImage = ImagesInfo.AVATAR_IMAGE;
         this.entity = entity;
         entity.attach(this);
         this.x = x;
