@@ -127,18 +127,18 @@ public class GameSaver {
 
         entityData += "\t" + Integer.toString(entity.getExperience()) + System.lineSeparator();
 
-        entityData += "\t" + "INVENTORY" + System.lineSeparator();
+        entityData += "\t" + "INVENTORY";
 
         Inventory.InventoryIterator invIter = entity.getInventory().getIterator();
 
         for(invIter.reset(); invIter.hasNext(); invIter.next()) {
             System.out.println("Checking for inventory");
-            entityData += "\t\t" + invIter.getCurrent().getItemType().toString() + System.lineSeparator();
+            entityData += System.lineSeparator() + "\t\t" + invIter.getCurrent().getItemType().toString();
         }
 
         if(entity.getInventory().getEquipment().getEquipped() != null) {
-            entityData += "\t\t" + "EQUIPMENT" + System.lineSeparator();
-            entityData += "\t\t\t" + entity.getInventory().getEquipment().getEquipped().toString() + System.lineSeparator();
+            entityData += System.lineSeparator() + "\t\t" + "EQUIPMENT";
+            entityData += System.lineSeparator() + "\t\t\t" + entity.getInventory().getEquipment().getEquipped().toString();
         }
         else
 //            entityData += "\t\t\tNONE" + System.lineSeparator();
@@ -148,7 +148,7 @@ public class GameSaver {
 //        entityData = entityID.trim();
 
         try(PrintWriter entitySave = new PrintWriter(new FileOutputStream("./resources/entities_save/" + "EntityModel" + entityID + ".txt", false))) {
-            entitySave.println(entityData);
+            entitySave.print(entityData);
             entitySave.close();
         }
         catch (Exception e) {
