@@ -9,6 +9,7 @@ import View.AreaView.AreaViewPort;
 import View.AreaView.AvatarView;
 import View.AreaView.MapView;
 import View.StatusView.StatusViewPort;
+import View.Viewport;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -63,10 +64,10 @@ public class GameLoader {
                                 }
                             }
                         }
-                        viewport.add(mv);
-                        viewport.add(statusViewPort);
-                        viewport.add(avatarView);
-                        World.getWorld().setViewport(viewport);
+//                        viewport.add(mv);
+//                        viewport.add(statusViewPort);
+//                        viewport.add(avatarView);
+//                        World.getWorld().setViewport(viewport);
                     } else {
                         Map mp = mb.buildMap(listOfFiles[i].getName().substring(8, 12));
                         World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), mp, mb.getViewport());

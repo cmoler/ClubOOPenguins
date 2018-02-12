@@ -27,7 +27,6 @@ MAP
 			FALSE
 			NONE
 			ITEMS
-				ONESHOT
 		0,4
 			ICE
 			TRUE
