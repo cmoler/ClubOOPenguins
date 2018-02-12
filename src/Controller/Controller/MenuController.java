@@ -21,8 +21,6 @@ public class MenuController implements Controller {
 
 
     private MainController mainController;
-    private GameLoader gameLoader;
-    private GameSaver gameSaver;
     private int currentlySelected = 3;
     private int currentlySelectedAvatar = 0;
     private MapBuilder mapBuilder;
@@ -142,8 +140,6 @@ public class MenuController implements Controller {
         MapView mapView3 = null;
 
         AvatarView avatarView1 = null;
-        AvatarView avatarView2 = null;
-        AvatarView avatarView3 = null;
 
         try {
             Map m1 = mapBuilder.buildMap("0001");
@@ -160,7 +156,6 @@ public class MenuController implements Controller {
             World.getWorld().addMap("0002", m2, mapView2);
             World.getWorld().addMap("0003", m3, mapView3);
             World.getWorld().changeCurrentMapTo(m1);
-            //TODO set correct sprite
 
             Entity e = entityBuilder.buildEntity("0001");
             avatarView1 = entityBuilder.getAvatarView();

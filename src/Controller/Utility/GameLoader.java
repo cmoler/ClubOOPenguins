@@ -26,10 +26,10 @@ public class GameLoader {
     private StatusViewPort statusViewPort;
 
     public void loadGame() throws FileNotFoundException {
-        MapBuilder mb = new MapBuilder();
-        EntityBuilder eb = new EntityBuilder();
+        MapBuilder mapBuilder = new MapBuilder();
+        EntityBuilder entityBuilder = new EntityBuilder();
 
-        GameSaver gs = new GameSaver();
+        GameSaver saver = new GameSaver();
 
         Map map = new Map(6, 5);
         Entity ent = new Entity(new Location(new Ice(), false, null, null));
@@ -46,7 +46,7 @@ public class GameLoader {
                         mapView = mb.getViewport();
                         System.out.println("Built map: " + listOfFiles[i].getName().substring(8, 12));
 
-//                    eb.buildEntity("0001");
+//                    entityBuilder.buildEntity("0001");
 
                         File entDir = new File("resources/entities_save");
                         File[] listOfEnt = entDir.listFiles();
