@@ -38,7 +38,6 @@ MAP
 			FALSE
 			NONE
 			ITEMS
-				TAKEABLE
 		1,1
 			ICE
 			FALSE
@@ -65,7 +64,6 @@ MAP
 			FALSE
 			NONE
 			ITEMS
-				TAKEABLE
 		2,1
 			ICE
 			FALSE
@@ -141,3 +139,4 @@ MAP
 			FALSE
 			NONE
 			ITEMS
+				INTERACTIVE

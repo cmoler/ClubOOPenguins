@@ -62,7 +62,11 @@ public class MenuController implements Controller {
                 exitGame();
                 break;
             case 1:
-                loadGame();
+                try {
+                    loadGame();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
                 break;
             case 2:
                 saveGame();
@@ -103,11 +107,30 @@ public class MenuController implements Controller {
     }
 
     public void saveGame() {
-
+        GameSaver gameSaver = new GameSaver();
+        gameSaver.SaveGame(mainController.getEntity());
     }
 
-    public void loadGame() {
+    public void loadGame() throws FileNotFoundException {
+        GameLoader gameLoader = new GameLoader();
+        gameLoader.loadGame();
+        Entity e = gameLoader.getEntity();
 
+        mainController.setEntity(e);
+
+        Viewport viewport = new Viewport();
+        viewport.add(gameLoader.getMapView());
+        viewport.add(gameLoader.getStatusViewPort());
+        gameLoader.getAvatarView().setAvatarImage(SpriteParser.getSpriteParser().getAvatarImage());
+        viewport.add(gameLoader.getAvatarView());
+
+        World.getWorld().setViewport(viewport);
+
+        mainController.setAreaViewPort(viewport);
+
+        mainController.setAreaRender();
+        mainController.setActiveContext(GameContext.AREA);
+        gameInitialized = true;
     }
 
     public void startGame(){
