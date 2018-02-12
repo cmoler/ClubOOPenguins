@@ -42,7 +42,7 @@ public class GameLoader {
                         MapView mapView = mapBuilder.getViewport();
                         World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), map, mapView);
                         World.getWorld().changeCurrentMapTo(map);
-                        mapView = mb.getViewport();
+                        mapView = mapBuilder.getViewport();
                         System.out.println("Built map: " + listOfFiles[i].getName().substring(8, 12));
 
                         File entDir = new File("resources/entities_save");
@@ -52,10 +52,10 @@ public class GameLoader {
                                 if (listOfEnt[j].isFile()) {
                                     System.out.println("Built entity: " + listOfEnt[j].getName().substring(11, 15));
                                     if (listOfEnt[j].getName().substring(11, 15).equals("0001")){
-                                        entity = eb.buildEntity(listOfEnt[j].getName().substring(11, 15));
-                                        avatarView = eb.getAvatarView();
-                                        mb.getViewport().setEntity(avatarView.getEntity());
-                                        statusViewPort = eb.getStatusViewport();
+                                        entity = entityBuilder.buildEntity(listOfEnt[j].getName().substring(11, 15));
+                                        avatarView = entityBuilder.getAvatarView();
+                                        mapBuilder.getViewport().setEntity(avatarView.getEntity());
+                                        statusViewPort = entityBuilder.getStatusViewport();
 
                                     }
                                 }
