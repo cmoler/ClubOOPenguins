@@ -116,7 +116,7 @@ public class GameSaver {
 
         for(mi.reset(); mi.isValid(); mi.next()) {
             if(mi.currentItem() == World.getWorld().getCurrentMap().getDefaultLocation()) {
-                entityData += "\t" + Integer.toString(mi.getJ()) + "," + Integer.toString(mi.getI()) + System.lineSeparator();
+                entityData += "\t" + 2 + "," + 1 + System.lineSeparator();
                 break;
             }
         }
