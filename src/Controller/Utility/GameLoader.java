@@ -56,7 +56,7 @@ public class GameLoader {
                                         entity = eb.buildEntity(listOfEnt[j].getName().substring(11, 15));
                                         avatarView = eb.getAvatarView();
                                         statusViewPort = eb.getStatusViewport();
-                                        mv.setEntity(entity);
+                                        mv.setEntity(avatarView.getEntity());
                                     }
                                 }
                             }
@@ -75,9 +75,6 @@ public class GameLoader {
                 }
             }
         }
-
-        gs.SaveGame(entity);
-
     }
 
     public Entity getEntity(){

@@ -116,6 +116,8 @@ public class MenuController implements Controller {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        mainController.setAreaRender();
+        mainController.setActiveContext(GameContext.AREA);
     }
 
     public void startGame(){
