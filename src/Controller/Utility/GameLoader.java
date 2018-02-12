@@ -56,15 +56,11 @@ public class GameLoader {
                                 }
                             }
                         }
-//                        viewport.add(mv);
-//                        viewport.add(statusViewPort);
-//                        viewport.add(avatarView);
-//                        World.getWorld().setViewport(viewport);
                     } else {
-                        Map mp = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
-                        World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), mp, mapBuilder.getViewport());
+                        Map map = mapBuilder.buildMap("resources/maps_save", listOfFiles[i].getName().substring(8, 12));
+
                         System.out.println("Built map: " + listOfFiles[i].getName().substring(8, 12));
-                        Map map = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
+
                         MapView mapView = mapBuilder.getViewport();
                         mapView.setEntity(entity);
                         World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), map, mapView);
