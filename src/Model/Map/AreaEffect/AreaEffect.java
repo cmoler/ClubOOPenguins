@@ -51,4 +51,8 @@ public abstract class AreaEffect {
             totalEntitiesOn.decrementAndGet();
         }
     }
+
+    public abstract AreaEffectType getAreaEffectType();
 }
+
+

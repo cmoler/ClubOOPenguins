@@ -17,4 +17,10 @@ public class HealAreaEffect extends AreaEffect{
     public void affect(Entity entity) {
         entity.heal(healAmount);
     }
+
+    @Override
+    public AreaEffectType getAreaEffectType() {
+        return AreaEffectType.HEAL;
+    }
+
 }

@@ -17,4 +17,9 @@ public class DamageAreaEffect extends AreaEffect{
     public void affect(Entity entity) {
         entity.takeDamage(damageAmount);
     }
+
+    @Override
+    public AreaEffectType getAreaEffectType() {
+        return AreaEffectType.DAMAGE;
+    }
 }

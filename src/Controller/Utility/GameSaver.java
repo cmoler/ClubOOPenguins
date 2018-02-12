@@ -1,6 +1,7 @@
 package Controller.Utility;
 
 import Model.Entity.Entity;
+import Model.Entity.EntityType;
 import Model.Item.Teleporter;
 import Model.Map.World;
 import Model.Map.Map;
@@ -27,7 +28,7 @@ public class GameSaver {
         }
     }
 
-    public void SaveMap(String mapID, Entity entity, Map map) {
+    public void SaveMap(String mapID, Entity entity) {
         String mapData = "";
 
         System.out.println("Saving map");
@@ -35,8 +36,8 @@ public class GameSaver {
         mapData += mapID + System.lineSeparator();
         mapData += "MAP" + System.lineSeparator();
 
-        mapData += "\t" + Integer.toString(map.getCols()) + System.lineSeparator();
-        mapData += "\t" + Integer.toString(map.getRows()) + System.lineSeparator();
+        mapData += "\t" + Integer.toString(World.getWorld().getMap(mapID).getCols()) + System.lineSeparator();
+        mapData += "\t" + Integer.toString(World.getWorld().getMap(mapID).getRows()) + System.lineSeparator();
 
         MapIterator mi = new MapIterator(World.getWorld().getMap(mapID));
 
@@ -48,16 +49,22 @@ public class GameSaver {
 
         mapData += "\tLOCATIONS" + System.lineSeparator();
 
-        for(int i = 0; i < map.getRows(); i++) {
-            for(int j = 0; j < map.getCols(); j++) {
+        for(int i = 0; i < World.getWorld().getMap(mapID).getRows(); i++) {
+            for(int j = 0; j < World.getWorld().getMap(mapID).getCols(); j++) {
                 mapData += "\t\t" + Integer.toString(i) + "," + Integer.toString(j) + System.lineSeparator();
-                mapData += "\t\t\t" + map.getLocationIJ(i, j).getTerrain().toString().toUpperCase() + System.lineSeparator();
+                if(!World.getWorld().getMap(mapID).getLocationIJ(i,j).getTerrain().enter(EntityType.ICE) && !World.getWorld().getMap(mapID).getLocationIJ(i,j).getTerrain().enter(EntityType.WATER))
+                    mapData += "\t\t\tGLACIER" + System.lineSeparator();
+                else if(World.getWorld().getMap(mapID).getLocationIJ(i,j).getTerrain().enter(EntityType.WATER))
+                    mapData += "\t\t\tICE" + System.lineSeparator();
+                else if(World.getWorld().getMap(mapID).getLocationIJ(i,j).getTerrain().enter(EntityType.ICE))
+                    mapData += "\t\t\tWATER" + System.lineSeparator();
 
-                if(map.getLocationIJ(i, j).moveAllowed(entity)) mapData += "\t\t\tFALSE" + System.lineSeparator();
+
+                if(World.getWorld().getMap(mapID).getLocationIJ(i, j).moveAllowed(entity)) mapData += "\t\t\tFALSE" + System.lineSeparator();
                 else mapData += "\t\t\tTRUE" + System.lineSeparator();
 
-                if(map.getLocationIJ(i, j).getAreaEffect() != null) {
-                    mapData += "\t\t\t" + map.getLocationIJ(i, j).getAreaEffect().toString().toUpperCase() + System.lineSeparator();
+                if(World.getWorld().getMap(mapID).getLocationIJ(i, j).getAreaEffect() != null) {
+                    mapData += "\t\t\t" + World.getWorld().getMap(mapID).getLocationIJ(i, j).getAreaEffect().getAreaEffectType().toString().toUpperCase() + System.lineSeparator();
                 }
                 else
                     mapData += "\t\t\tNONE" + System.lineSeparator();
@@ -65,14 +72,16 @@ public class GameSaver {
                 mapData += "\t\t\tITEMS" + System.lineSeparator();
 
                 //Converts Item list to strings
-                String[] items = new String[map.getLocationIJ(i, j).getItems().size()];
-                for(Item value : map.getLocationIJ(i, j).getItems()) {
-                    mapData += "\t\t\t\t" + value.getItemType().toString().toUpperCase() + System.lineSeparator();
+                System.out.println("Outside loop");
+                for(int k = 0; k < World.getWorld().getMap(mapID).getLocationIJ(i, j).getItems().size(); k++) {
+                    mapData += "\t\t\t\t" + World.getWorld().getMap(mapID).getLocationIJ(i, j).getItems().get(k).getItemType().toString().toUpperCase() + System.lineSeparator();
 
-                    if(value.getItemType().toString().toUpperCase().equals("TELEPORTER")) {
+                    System.out.println("Adding to items: " + World.getWorld().getMap(mapID).getLocationIJ(i, j).getItems().get(k).getItemType().toString().toUpperCase());
+
+                    if(World.getWorld().getMap(mapID).getLocationIJ(i, j).getItems().get(k).getItemType().toString().toUpperCase().equals("TELEPORTER")) {
                         //Get teleporter info
-                        mapData += "\t\t\t\t\t" + ((Teleporter)value).getMapID() + System.lineSeparator();
-                        mapData += "\t\t\t\t\t" + Integer.toString(((Teleporter)value).getX()) + "," + Integer.toString(((Teleporter)value).getY()) + System.lineSeparator();
+                        mapData += "\t\t\t\t\t" + ((Teleporter)World.getWorld().getMap(mapID).getLocationIJ(i, j).getItems().get(k)).getMapID() + System.lineSeparator();
+                        mapData += "\t\t\t\t\t" + Integer.toString(((Teleporter)World.getWorld().getMap(mapID).getLocationIJ(i, j).getItems().get(k)).getX()) + "," + Integer.toString(((Teleporter)World.getWorld().getMap(mapID).getLocationIJ(i, j).getItems().get(k)).getY()) + System.lineSeparator();
                     }
                     else {
                         //Get item details
@@ -81,7 +90,9 @@ public class GameSaver {
             }
         }
 
-        try(PrintWriter entitySave = new PrintWriter(new FileOutputStream("./resources/saves/" + "MapModel" + mapID + ".txt", false))) {
+        mapData = mapData.trim();
+
+        try(PrintWriter entitySave = new PrintWriter(new FileOutputStream("./resources/maps_save/" + "MapModel" + mapID + ".txt", false))) {
             entitySave.println(mapData);
             entitySave.close();
         }
@@ -91,7 +102,7 @@ public class GameSaver {
     }
 
 
-    public void SaveEntity(Entity entity, String entityID, Inventory inventory) {
+    public void SaveEntity(Entity entity, String entityID) {
         String entityData = "";
 
         System.out.println("Entity ID: " + entityID);
@@ -105,8 +116,10 @@ public class GameSaver {
         MapIterator mi = new MapIterator(World.getWorld().getCurrentMap());
 
         for(mi.reset(); mi.isValid(); mi.next()) {
-            if(mi.currentItem() == World.getWorld().getCurrentMap().getDefaultLocation())
+            if(mi.currentItem() == World.getWorld().getCurrentMap().getDefaultLocation()) {
                 entityData += "\t" + Integer.toString(mi.getJ()) + "," + Integer.toString(mi.getI()) + System.lineSeparator();
+                break;
+            }
         }
 
 
@@ -116,23 +129,25 @@ public class GameSaver {
 
         entityData += "\t" + "INVENTORY" + System.lineSeparator();
 
-        Inventory.InventoryIterator invIter = inventory.getIterator();
+        Inventory.InventoryIterator invIter = entity.getInventory().getIterator();
 
         for(invIter.reset(); invIter.hasNext(); invIter.next()) {
             System.out.println("Checking for inventory");
             entityData += "\t\t" + invIter.getCurrent().getItemType().toString() + System.lineSeparator();
         }
 
-        if(inventory.getEquipment().getEquipped() != null) {
+        if(entity.getInventory().getEquipment().getEquipped() != null) {
             entityData += "\t\t" + "EQUIPMENT" + System.lineSeparator();
-            entityData += "\t\t\t" + inventory.getEquipment().getEquipped().toString() + System.lineSeparator();
+            entityData += "\t\t\t" + entity.getInventory().getEquipment().getEquipped().toString() + System.lineSeparator();
         }
         else
 //            entityData += "\t\t\tNONE" + System.lineSeparator();
 
 //        OutFile(entityData);
 
-        try(PrintWriter entitySave = new PrintWriter(new FileOutputStream("./resources/saves/" + "EntityModel" + entityID + ".txt", false))) {
+//        entityData = entityID.trim();
+
+        try(PrintWriter entitySave = new PrintWriter(new FileOutputStream("./resources/entities_save/" + "EntityModel" + entityID + ".txt", false))) {
             entitySave.println(entityData);
             entitySave.close();
         }
@@ -142,16 +157,16 @@ public class GameSaver {
 
     }
 
-    public void SaveGame(Entity entity, Map map, Inventory inventory, Equipment equipment){
+    public void SaveGame(Entity entity){
 //        Date date = new Date() ;
 //        SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMddHHmmss");
 //
 //        saveFileLocation = saveFileLocation += "/" + dateFormat.format(date);
 
         for(int i = 1; World.getWorld().getMap("000" + Integer.toString(i)) != null; i++)
-            SaveMap("000" + Integer.toString(i), entity, map);
+            SaveMap("000" + Integer.toString(i), entity);
 
-        SaveEntity(entity, "0001", inventory);
+        SaveEntity(entity, "0001");
 
     }
 }

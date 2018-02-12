@@ -21,6 +21,7 @@ class GameLoaderTest {
         GameLoader gl = new GameLoader();
         GameSaver gs = new GameSaver();
 
+        //Save game is called at the end of load game
         gl.loadGame();
 
 //        gs.SaveGame(entity, m, inventory, equipment);

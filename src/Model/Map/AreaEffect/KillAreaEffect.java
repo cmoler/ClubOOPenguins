@@ -10,5 +10,11 @@ public class KillAreaEffect extends AreaEffect{
         entity.takeDamage(entity.getHealth());
         // dependent on Entity's default health level
     }
+
+    @Override
+    public AreaEffectType getAreaEffectType() {
+        return AreaEffectType.KILL;
+    }
+
 }
 
