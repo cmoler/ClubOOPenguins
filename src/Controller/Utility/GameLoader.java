@@ -18,7 +18,7 @@ import java.nio.file.Paths;
 public class GameLoader {
 
     private String saveFileLocation;
-    private World world;
+    private Viewport viewport = new Viewport();
     private Entity entity;
     private MapView mapView;
     private AvatarView avatarView;
@@ -63,7 +63,10 @@ public class GameLoader {
                                 }
                             }
                         }
-
+                        viewport.add(mv);
+                        viewport.add(statusViewPort);
+                        viewport.add(avatarView);
+                        World.getWorld().setViewport(viewport);
                     } else {
                         Map mp = mb.buildMap(listOfFiles[i].getName().substring(8, 12));
                         World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), mp, mb.getViewport());
