@@ -40,10 +40,10 @@ public class GameLoader {
             for (int i = 0; i < listOfFiles.length; i++) {
                 if (listOfFiles[i].isFile()) {
                     if (listOfFiles[i].getName().substring(8, 12).equals("0001")) {
-                        map = mb.buildMap(listOfFiles[i].getName().substring(8, 12));
-                        World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), map, mb.getViewport());
+                        map = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
+                        World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), map, mapBuilder.getViewport());
                         World.getWorld().changeCurrentMapTo(map);
-                        mapView = mb.getViewport();
+                        mapView = mapBuilder.getViewport();
                         System.out.println("Built map: " + listOfFiles[i].getName().substring(8, 12));
 
 //                    entityBuilder.buildEntity("0001");
@@ -55,10 +55,10 @@ public class GameLoader {
                                 if (listOfEnt[j].isFile()) {
                                     System.out.println("Built entity: " + listOfEnt[j].getName().substring(11, 15));
                                     if (listOfEnt[j].getName().substring(11, 15).equals("0001")){
-                                        entity = eb.buildEntity(listOfEnt[j].getName().substring(11, 15));
-                                        avatarView = eb.getAvatarView();
-                                        mb.getViewport().setEntity(avatarView.getEntity());
-                                        statusViewPort = eb.getStatusViewport();
+                                        entity = entityBuilder.buildEntity(listOfEnt[j].getName().substring(11, 15));
+                                        avatarView = entityBuilder.getAvatarView();
+                                        mapBuilder.getViewport().setEntity(avatarView.getEntity());
+                                        statusViewPort = entityBuilder.getStatusViewport();
 
                                     }
                                 }
@@ -69,8 +69,8 @@ public class GameLoader {
 //                        viewport.add(avatarView);
 //                        World.getWorld().setViewport(viewport);
                     } else {
-                        Map mp = mb.buildMap(listOfFiles[i].getName().substring(8, 12));
-                        World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), mp, mb.getViewport());
+                        Map mp = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
+                        World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), mp, mapBuilder.getViewport());
                         System.out.println("Built map: " + listOfFiles[i].getName().substring(8, 12));
                     }
 
