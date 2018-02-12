@@ -65,7 +65,6 @@ public class EntityBuilder {
         List<TakeableItem> inventoryItems = new ArrayList<TakeableItem>();
         List<TakeableItem> equipmentItems = new ArrayList<TakeableItem>();
         List<ItemView> itemViews = new ArrayList<ItemView>();
-        lineIndex++;
         if (lineIndex < entityData.size()){
             while (entityData.get(lineIndex).substring(0, 2).equals("\t\t")) {
                 String itemType = entityData.get(lineIndex).split("\t\t")[1];
@@ -101,7 +100,6 @@ public class EntityBuilder {
             System.out.println("ERROR: no maps have been loaded, so Entity default location is not right");
         e = new Entity(entityType, initialLocation);
 
-        avatarView = new AvatarView(e, xCoord, yCoord);
 
         e.takeDamage(100-health);
         e.gainExperience(experience);
@@ -114,7 +112,7 @@ public class EntityBuilder {
         }
 
         statusViewport = new StatusViewPort(e, i.getEquipment(), i);
-
+        avatarView = new AvatarView(e, xCoord, yCoord);
         return e;
     }
 
