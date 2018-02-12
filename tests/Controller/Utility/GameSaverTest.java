@@ -60,19 +60,19 @@ class GameSaverTest {
     void saveGame() throws FileNotFoundException {
         MapBuilder mb = new MapBuilder();
 
-        Map m1 = mb.buildMap("0001");
+        Map m1 = mb.buildMap("resources/maps", "0001");
         MapView mv = new MapView();
         World.getWorld().addMap("0001", m1, mv);
         World.getWorld().changeCurrentMapTo(m1);
 
-        Map m2 = mb.buildMap("0002");
+        Map m2 = mb.buildMap("resources/maps", "0002");
         World.getWorld().addMap("0002", m2, mv);
 
-        Map m3 = mb.buildMap("0003");
+        Map m3 = mb.buildMap("resources/maps", "0003");
         World.getWorld().addMap("0003", m3, mv);
 
         EntityBuilder eb = new EntityBuilder();
-        Entity entity = eb.buildEntity("0001");
+        Entity entity = eb.buildEntity("resources/entities", "0001");
         Inventory inventory = entity.getInventory();
         Equipment equipment = inventory.getEquipment();
 
