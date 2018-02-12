@@ -14,5 +14,9 @@ public class Ice extends Terrain {
         }
 
     }
+    @Override
+    public TerrainType getTerrainType() {
+        return TerrainType.ICE;
+    }
 
 }
