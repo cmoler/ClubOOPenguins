@@ -25,13 +25,6 @@ public class GameLoader {
         MapBuilder mapBuilder = new MapBuilder();
         EntityBuilder entityBuilder = new EntityBuilder();
 
-        GameSaver saver = new GameSaver();
-
-        Map map;
-        MapView mapView;
-        AvatarView avatarView = null;
-        StatusViewPort statusViewPort = null;
-
         File mapDir = new File("resources/maps_save");
         File[] listOfFiles = mapDir.listFiles();
         if(listOfFiles != null) {
@@ -39,12 +32,13 @@ public class GameLoader {
                 if (listOfFiles[i].isFile()) {
                     System.out.println(listOfFiles[i].getName().substring(8, 12));
                     if (listOfFiles[i].getName().substring(8, 12).equals("0001")) {
-                        map = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
-                        mapView = mapBuilder.getViewport();
+                        StatusViewPort statusViewPort = null;
+                        AvatarView avatarView = null;
+
+                        Map map = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
+                        MapView mapView = mapBuilder.getViewport();
                         World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), map, mapView);
                         World.getWorld().changeCurrentMapTo(map);
-
-//                    entityBuilder.buildEntity("0001");
 
                         File entDir = new File("resources/entities_save");
                         File[] listOfEnt = entDir.listFiles();
@@ -66,9 +60,9 @@ public class GameLoader {
                         viewport.add(avatarView);
                         World.getWorld().setViewport(viewport);
                     } else {
-                        Map mp = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
-                        MapView mv2 = mapBuilder.getViewport();
-                        World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), mp, mv2);
+                        Map map = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
+                        MapView mapView = mapBuilder.getViewport();
+                        World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), map, mapView);
                         System.out.println("memes");
                     }
 
