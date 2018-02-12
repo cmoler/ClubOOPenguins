@@ -3,6 +3,7 @@ package Controller.Utility;
 import Model.Entity.Entity;
 import Model.Entity.EntityType;
 import Model.Item.Teleporter;
+import Model.Map.Terrain.TerrainType;
 import Model.Map.World;
 import Model.Map.Map;
 import Model.Entity.Inventory;
@@ -52,11 +53,11 @@ public class GameSaver {
         for(int i = 0; i < World.getWorld().getMap(mapID).getRows(); i++) {
             for(int j = 0; j < World.getWorld().getMap(mapID).getCols(); j++) {
                 mapData += "\t\t" + Integer.toString(i) + "," + Integer.toString(j) + System.lineSeparator();
-                if(!World.getWorld().getMap(mapID).getLocationIJ(i,j).getTerrain().enter(EntityType.ICE) && !World.getWorld().getMap(mapID).getLocationIJ(i,j).getTerrain().enter(EntityType.WATER))
+                if(World.getWorld().getMap(mapID).getLocationIJ(i,j).getTerrain().getTerrainType() == TerrainType.GLACIER)
                     mapData += "\t\t\tGLACIER" + System.lineSeparator();
-                else if(World.getWorld().getMap(mapID).getLocationIJ(i,j).getTerrain().enter(EntityType.WATER))
+                else if(World.getWorld().getMap(mapID).getLocationIJ(i,j).getTerrain().getTerrainType() == TerrainType.ICE)
                     mapData += "\t\t\tICE" + System.lineSeparator();
-                else if(World.getWorld().getMap(mapID).getLocationIJ(i,j).getTerrain().enter(EntityType.ICE))
+                else if(World.getWorld().getMap(mapID).getLocationIJ(i,j).getTerrain().getTerrainType() == TerrainType.WATER)
                     mapData += "\t\t\tWATER" + System.lineSeparator();
 
 
