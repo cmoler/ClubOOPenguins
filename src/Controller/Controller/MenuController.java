@@ -103,11 +103,19 @@ public class MenuController implements Controller {
     }
 
     public void saveGame() {
-
+        GameSaver saver = new GameSaver();
+        saver.SaveGame(mainController.getEntity());
     }
 
     public void loadGame() {
-
+        GameLoader gameLoader = new GameLoader();
+        try {
+            gameLoader.loadGame();
+            mainController.setAreaViewPort(gameLoader.getViewport());
+            mainController.setEntity(gameLoader.getEntity());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public void startGame(){
