@@ -22,13 +22,13 @@ public class GameLoader {
     private Entity entity;
 
     public void loadGame() throws FileNotFoundException {
-        MapBuilder mb = new MapBuilder();
-        EntityBuilder eb = new EntityBuilder();
+        MapBuilder mapBuilder = new MapBuilder();
+        EntityBuilder entityBuilder = new EntityBuilder();
 
-        GameSaver gs = new GameSaver();
+        GameSaver saver = new GameSaver();
 
         Map map;
-        MapView mv;
+        MapView mapView;
         AvatarView avatarView = null;
         StatusViewPort statusViewPort = null;
 
@@ -39,12 +39,12 @@ public class GameLoader {
                 if (listOfFiles[i].isFile()) {
                     System.out.println(listOfFiles[i].getName().substring(8, 12));
                     if (listOfFiles[i].getName().substring(8, 12).equals("0001")) {
-                        map = mb.buildMap(listOfFiles[i].getName().substring(8, 12));
-                        mv = mb.getViewport();
-                        World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), map, mv);
+                        map = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
+                        mapView = mapBuilder.getViewport();
+                        World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), map, mapView);
                         World.getWorld().changeCurrentMapTo(map);
 
-//                    eb.buildEntity("0001");
+//                    entityBuilder.buildEntity("0001");
 
                         File entDir = new File("resources/entities_save");
                         File[] listOfEnt = entDir.listFiles();
@@ -53,21 +53,21 @@ public class GameLoader {
                                 if (listOfEnt[j].isFile()) {
                                     System.out.println("Entity: " + listOfEnt[j].getName().substring(11, 15));
                                     if (listOfEnt[j].getName().substring(11, 15).equals("0001")) {
-                                        entity = eb.buildEntity(listOfEnt[j].getName().substring(11, 15));
-                                        avatarView = eb.getAvatarView();
-                                        statusViewPort = eb.getStatusViewport();
-                                        mv.setEntity(avatarView.getEntity());
+                                        entity = entityBuilder.buildEntity(listOfEnt[j].getName().substring(11, 15));
+                                        avatarView = entityBuilder.getAvatarView();
+                                        statusViewPort = entityBuilder.getStatusViewport();
+                                        mapView.setEntity(avatarView.getEntity());
                                     }
                                 }
                             }
                         }
-                        viewport.add(mv);
+                        viewport.add(mapView);
                         viewport.add(statusViewPort);
                         viewport.add(avatarView);
                         World.getWorld().setViewport(viewport);
                     } else {
-                        Map mp = mb.buildMap(listOfFiles[i].getName().substring(8, 12));
-                        MapView mv2 = mb.getViewport();
+                        Map mp = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
+                        MapView mv2 = mapBuilder.getViewport();
                         World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), mp, mv2);
                         System.out.println("memes");
                     }
