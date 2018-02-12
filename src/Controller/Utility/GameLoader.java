@@ -19,7 +19,6 @@ import java.nio.file.Paths;
 public class GameLoader {
 
     private String saveFileLocation;
-    private Viewport viewport = new Viewport();
     private Entity entity;
     private MapView mapView;
     private AvatarView avatarView;
@@ -35,7 +34,7 @@ public class GameLoader {
             for (int i = 0; i < listOfFiles.length; i++) {
                 if (listOfFiles[i].isFile()) {
                     if (listOfFiles[i].getName().substring(8, 12).equals("0001")) {
-                        Map map = mapBuilder.buildMap(listOfFiles[i].getName().substring(8, 12));
+                        Map map = mapBuilder.buildMap("resources/maps_save", listOfFiles[i].getName().substring(8, 12));
                         World.getWorld().addMap(listOfFiles[i].getName().substring(8, 12), map, mapBuilder.getViewport());
                         World.getWorld().changeCurrentMapTo(map);
                         mapView = mapBuilder.getViewport();
@@ -48,7 +47,7 @@ public class GameLoader {
                                 if (listOfEnt[j].isFile()) {
                                     System.out.println("Built entity: " + listOfEnt[j].getName().substring(11, 15));
                                     if (listOfEnt[j].getName().substring(11, 15).equals("0001")){
-                                        entity = entityBuilder.buildEntity(listOfEnt[j].getName().substring(11, 15));
+                                        entity = entityBuilder.buildEntity("resources/entities_save", listOfEnt[j].getName().substring(11, 15));
                                         avatarView = entityBuilder.getAvatarView();
                                         mapBuilder.getViewport().setEntity(avatarView.getEntity());
                                         statusViewPort = entityBuilder.getStatusViewport();

@@ -30,10 +30,10 @@ public class MapBuilder {
         return viewport;
     }
 
-    public Map buildMap(String mapID) throws FileNotFoundException {
+    public Map buildMap(String folder, String mapID) throws FileNotFoundException {
         viewport = new MapView();
 
-        String filename = "resources/maps/MapModel" + mapID + ".txt";
+        String filename = folder+"/MapModel" + mapID + ".txt";
 
         Scanner s = new Scanner(new File(filename));
         List<String> mapData = new ArrayList<String>();
@@ -190,6 +190,10 @@ public class MapBuilder {
 //            Entity e = new Entity(locations[entityX][entityY]);
 //        }
         return new Map(locations, locations[defaultY][defaultX]);
+    }
+
+    public Map buildMap(String mapID) throws FileNotFoundException {
+        return buildMap("resources/maps", mapID);
     }
 
 }

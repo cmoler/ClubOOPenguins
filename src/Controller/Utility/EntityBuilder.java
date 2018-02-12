@@ -30,9 +30,8 @@ public class EntityBuilder {
 
     public EntityBuilder(){}
 
-    public Entity buildEntity(String entityID) throws FileNotFoundException {
-
-        String filename = "resources/entities/EntityModel" + entityID + ".txt";
+    public Entity buildEntity(String folder, String entityID) throws FileNotFoundException {
+        String filename = folder+"/EntityModel" + entityID + ".txt";
 
         Scanner s = new Scanner(new File(filename));
         List<String> entityData = new ArrayList<String>();
@@ -117,6 +116,10 @@ public class EntityBuilder {
         statusViewport = new StatusViewPort(e, i.getEquipment(), i);
 
         return e;
+    }
+
+    public Entity buildEntity(String entityID) throws FileNotFoundException {
+        return buildEntity("resources/entities", entityID);
     }
 
     public AvatarView getAvatarView() {
